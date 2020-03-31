@@ -1,0 +1,42 @@
+<h1>Products Stocks</h1>
+
+<p>Stock disponible: <span id="stock-total"><%= @product.stocks.count %></span></p>
+
+<h2>Agregar Stock</h2>
+
+<%= form_with(model: [@product, Stock.new]) do |form| %>
+
+  <div class="field">
+    <%= form.label :stock, "Stock" %>
+    <%= form.text_field :stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, "Precio" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<table id="list-stock" class="data-tables">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Estado</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <%= render @product.stocks %>
+
+  </tbody>
+</table>
+
+<br>

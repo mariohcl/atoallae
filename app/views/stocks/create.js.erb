@@ -1,0 +1,3 @@
+$("#list-stock > tbody").html("");
+$("#stock-total").html("<%= @product.stocks.count %>");
+$("#list-stock > tbody").append("<%= j render @product.stocks %>");
