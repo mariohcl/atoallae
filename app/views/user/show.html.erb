@@ -1,0 +1,10 @@
+<h1>Users#profile</h1>
+<p><%= @user_profile.name %></p>
+
+<p><%= @user_profile.followers_count %></p>
+
+<% if current_user.following?(@user_profile) %>
+  <%= link_to 'Dejar de seguir', seguir_user_path(@user_profile), method: :put %>
+<% else %>
+  <%= link_to 'Seguir', seguir_user_path(@user_profile), method: :put %>
+<% end %>

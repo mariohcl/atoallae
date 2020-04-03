@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :products, :dependent => :destroy
   has_many :comments, :dependent => :destroy
 
+  acts_as_followable
+  acts_as_follower
+
 end

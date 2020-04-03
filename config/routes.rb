@@ -10,8 +10,23 @@ Rails.application.routes.draw do
   devise_for :controllers
 
   devise_for :users, controllers: {
+    sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  # get 'user/:id' => 'user#profile', as: 'user_profile'
+
+  resources :user, only:[:show, :update, :edit]
+
+  resources :user do
+    member do
+      put "seguir" => "user#seguir"
+    end
+  end
+
+
+
+
 
   resources :posts do
     resources :comments, only:[:create]

@@ -4,12 +4,19 @@
 <div class="card" style="width: 18rem;" id="<%= post.id %>">
   <div class="card-body">
     <p class="card-text"><%= post.texto %></p>
-    <small class="card-text"><%= post.user.name %></small>
+    <small class="card-text"><%= link_to post.user.name, user_path(post.user) %></small>
   </div>
   <div class="card-footer">
 
   <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
-  <input id="new_comment" type="text" class="new_comment">
+
+  <% if user_signed_in? %>
+  <input id="new_comment-<%= post.id %>" type="text" class="new_comment">
+  <% else %>
+    Para comentar, debes estar <a href="<%= new_user_session_path %>">logeado</a>
+
+  <% end %>
+
 
 
   </div>
@@ -21,7 +28,7 @@
 <%= link_to 'New Post', new_post_path %>
 
 <script>
-  $("#new_comment").keyup(function (event){
+  $(".new_comment").keyup(function (event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
 
