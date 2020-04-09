@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :pages do
+    resources :events
+  end
+
+  resources :profiles, only:[:show, :update, :edit]
+
+  get '/my_profile' => 'profiles#profile', as: 'my_profile'
   # get 'comments/create'
 
   # get 'stock/index'
@@ -16,7 +23,7 @@ Rails.application.routes.draw do
 
   # get 'user/:id' => 'user#profile', as: 'user_profile'
 
-  resources :user, only:[:show, :update, :edit]
+  # resources :user, only:[:show, :update, :edit]
 
   resources :user do
     member do

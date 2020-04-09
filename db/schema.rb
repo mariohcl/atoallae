@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200402225249) do
+ActiveRecord::Schema.define(version: 20200409000822) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20200402225249) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "description"
+    t.string "place"
+    t.string "date"
+    t.integer "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_events_on_page_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
   create_table "follows", force: :cascade do |t|
     t.string "followable_type", null: false
     t.integer "followable_id", null: false
@@ -40,6 +53,20 @@ ActiveRecord::Schema.define(version: 20200402225249) do
     t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id"
     t.index ["follower_id", "follower_type"], name: "fk_follows"
     t.index ["follower_type", "follower_id"], name: "index_follows_on_follower_type_and_follower_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "cover"
+    t.text "bio"
+    t.integer "user_id"
+    t.string "instagram"
+    t.string "facebook"
+    t.string "twitter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -59,6 +86,17 @@ ActiveRecord::Schema.define(version: 20200402225249) do
     t.integer "user_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "username"
+    t.string "fullname"
+    t.text "bio"
+    t.integer "user_id"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "stocks", force: :cascade do |t|

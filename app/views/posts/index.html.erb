@@ -1,31 +1,38 @@
+<div class="container">
+
 <h1>Posts</h1>
 
-<% @posts.each do |post| %>
-<div class="card" style="width: 18rem;" id="<%= post.id %>">
-  <div class="card-body">
-    <p class="card-text"><%= post.texto %></p>
-    <small class="card-text"><%= link_to post.user.name, user_path(post.user) %></small>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+
+<div class="row">
+  <% @posts.reverse_each do |post| %>
+
+  <div class="card" style="width: 18rem;" id="<%= post.id %>">
+    <div class="card-body">
+      <p class="card-text"><%= post.texto %></p>
+      <small class="card-text"><%= link_to post.user.name, profile_path(post.user.profile) %></small>
+    </div>
+    <div class="card-footer">
+
+    <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
+
+    <% if user_signed_in? %>
+    <input id="new_comment-<%= post.id %>" type="text" class="new_comment">
+    <% else %>
+      Para comentar, debes estar <a href="<%= new_user_session_path %>">logeado</a>
+    <% end %>
+
+
+    </div>
+
+
   </div>
-  <div class="card-footer">
-
-  <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
-
-  <% if user_signed_in? %>
-  <input id="new_comment-<%= post.id %>" type="text" class="new_comment">
-  <% else %>
-    Para comentar, debes estar <a href="<%= new_user_session_path %>">logeado</a>
-
   <% end %>
-
-
-
-  </div>
+</div>
 
 
 </div>
-<% end %>
 
-<%= link_to 'New Post', new_post_path %>
 
 <script>
   $(".new_comment").keyup(function (event){

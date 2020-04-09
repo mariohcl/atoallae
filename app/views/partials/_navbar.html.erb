@@ -8,7 +8,8 @@
     <ul class="navbar-nav mr-auto">
 
       <% if user_signed_in? %>
-        <%= current_user.email %>
+        <%= link_to current_user.email, my_profile_path %>
+        <%= link_to 'mis paginas', pages_path %>
       <% else %>
         Ingreso
       <% end %>
