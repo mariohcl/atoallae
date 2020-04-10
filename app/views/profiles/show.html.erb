@@ -35,6 +35,12 @@
 
 <p>Seguidores: <%= @profile.user.followers.count %> </p>
 
-<% @profile.user.followers.each do |f| %>
-<%= render 'partials/follower', f: f %>
+<% @profile.user.followers.each do |follower_user| %>
+  <%= render 'partials/follower', f: follower_user %>
+<% end %>
+
+<p>Seguidos: <%= @profile.user.all_following.count %> </p>
+
+<% @profile.user.all_following.each do |f| %>
+  <%= render 'partials/follower', f: f %>
 <% end %>

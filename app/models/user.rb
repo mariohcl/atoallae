@@ -14,4 +14,21 @@ class User < ApplicationRecord
   acts_as_followable
   acts_as_follower
 
+  acts_as_voter
+
+  def my_posts
+
+    followers_id = []
+
+    self.all_following.each do |f|
+      followers_id << f.id
+    end
+
+    followers_id << id
+
+    posts = Post.where(user_id: followers_id)
+
+    return posts
+  end
+
 end

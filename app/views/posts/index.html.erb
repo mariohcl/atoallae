@@ -5,12 +5,21 @@
 <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
 
 <div class="row">
-  <% @posts.reverse_each do |post| %>
+  <% current_user.my_posts.reverse_each do |post| %>
 
   <div class="card" style="width: 18rem;" id="<%= post.id %>">
     <div class="card-body">
       <p class="card-text"><%= post.texto %></p>
       <small class="card-text"><%= link_to post.user.name, profile_path(post.user.profile) %></small>
+
+      <% if current_user.liked? post %>
+        <%= link_to 'dejar de gustar', like_post_path(post), method: :put %>
+      <% else %>
+        <%= link_to 'me gusta', like_post_path(post), method: :put %>
+      <% end %>
+
+      <small><%= post.get_likes.size %></small>
+
     </div>
     <div class="card-footer">
 
@@ -27,6 +36,18 @@
 
 
   </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <% current_user.all_following_pages.each do |page| %>
+
+    <% page.events.each do |event| %>
+      <div>
+        <p><%= event.title %></p>
+      </div>
+    <% end %>
+
   <% end %>
 </div>
 

@@ -24,6 +24,16 @@ class EventsController < ApplicationController
     @page = Page.find(params[:page_id])
   end
 
+  def like
+    @event = Event.find(params[:id])
+      if current_user.liked? @event
+        @event.unliked_by current_user
+      else
+        @event.liked_by current_user
+      end
+    redirect_to page_event_path(@event.page, @event)
+  end
+
   # POST /events
   # POST /events.json
   def create

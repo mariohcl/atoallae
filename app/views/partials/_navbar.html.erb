@@ -9,7 +9,8 @@
 
       <% if user_signed_in? %>
         <%= link_to current_user.email, my_profile_path %>
-        <%= link_to 'mis paginas', pages_path %>
+        <%= link_to 'paginas', pages_path %>
+        <%= link_to 'mis paginas', my_pages_path %>
       <% else %>
         Ingreso
       <% end %>

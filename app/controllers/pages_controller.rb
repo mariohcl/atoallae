@@ -21,6 +21,10 @@ class PagesController < ApplicationController
   def edit
   end
 
+  def my_pages
+    @my_pages = current_user.pages
+  end
+
   def follow
     @page = Page.find(params[:id])
     if current_user.following?(@page)
@@ -35,6 +39,7 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
     @page = Page.new(page_params)
+    @page.user = current_user
 
     respond_to do |format|
       if @page.save
@@ -79,6 +84,6 @@ class PagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.require(:page).permit(:name, :image, :cover, :bio, :user_id, :instagram, :facebook, :twitter)
+      params.require(:page).permit(:name, :image, :cover, :bio, :instagram, :facebook, :twitter)
     end
 end

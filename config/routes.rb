@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   resources :pages do
-    resources :events
+    resources :events do
+      member do
+        put "like" => "events#like"
+      end
+    end
     member do
       put "follow" => "pages#follow"
     end
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
   resources :profiles, only:[:show, :update, :edit]
 
   get '/my_profile' => 'profiles#profile', as: 'my_profile'
+  get '/my_pages' => 'pages#my_pages', as: 'my_pages'
   # get 'comments/create'
 
   # get 'stock/index'
@@ -36,6 +41,10 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, only:[:create]
+
+    member do
+      put "like" => "posts#like"
+    end
   end
 
   root to:'posts#index'

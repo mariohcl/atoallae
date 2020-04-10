@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
-
-<p>
   <strong>Title:</strong>
   <%= @event.title %>
 </p>
@@ -25,10 +20,13 @@
   <%= @event.date %>
 </p>
 
-<p>
-  <strong>Page:</strong>
-  <%= @event.page %>
-</p>
+<% if current_user.liked? @event %>
+  <%= link_to 'No asistir', like_page_event_path(@event), method: :put %>
+<% else %>
+  <%= link_to 'Asistir', like_page_event_path(@event), method: :put %>
+<% end %>
+
+<small><%= @event.get_likes.size %></small>
 
 <%= link_to 'Edit', edit_page_event_path(@event.page, @event) %> |
 <%= link_to 'Back', page_path(@event.page) %>
