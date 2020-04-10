@@ -5,6 +5,14 @@
   <%= @profile.username %>
 </p>
 
+<% if current_user != @profile.user %>
+  <% if current_user.following?(@profile.user) %>
+    <%= link_to 'Dejar de seguir', follow_profile_path(@profile.user), method: :put %>
+  <% else %>
+    <%= link_to 'Seguir', follow_profile_path(@profile.user), method: :put %>
+  <% end %>
+<% end %>
+
 <p>
   <strong>Fullname:</strong>
   <%= @profile.fullname %>
@@ -22,5 +30,11 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @profile.avatar %>
+  <%= image_tag(@profile.avatar)%>
 </p>
+
+<p>Seguidores: <%= @profile.user.followers.count %> </p>
+
+<% @profile.user.followers.each do |f| %>
+<%= render 'partials/follower', f: f %>
+<% end %>

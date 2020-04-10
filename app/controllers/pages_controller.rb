@@ -21,6 +21,16 @@ class PagesController < ApplicationController
   def edit
   end
 
+  def follow
+    @page = Page.find(params[:id])
+    if current_user.following?(@page)
+      current_user.stop_following(@page)
+    else
+      current_user.follow(@page)
+    end
+      redirect_to @page
+  end
+
   # POST /pages
   # POST /pages.json
   def create

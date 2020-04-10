@@ -21,6 +21,7 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'carrierwave'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -25,6 +25,17 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
   end
 
+  def follow
+
+    @user = User.find(params[:id])
+    if current_user.following?(@user)
+      current_user.stop_following(@user)
+    else
+      current_user.follow(@user)
+    end
+      redirect_to profile_path(@user.profile)
+  end
+
   # POST /profiles
   # POST /profiles.json
   def create
@@ -73,6 +84,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:username, :fullname, :bio, :user_id, :avatar)
+      params.require(:profile).permit(:username, :fullname, :bio, :avatar)
     end
 end

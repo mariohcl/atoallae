@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :pages do
     resources :events
+    member do
+      put "follow" => "pages#follow"
+    end
   end
 
   resources :profiles, only:[:show, :update, :edit]
@@ -25,15 +28,11 @@ Rails.application.routes.draw do
 
   # resources :user, only:[:show, :update, :edit]
 
-  resources :user do
+  resources :profiles do
     member do
-      put "seguir" => "user#seguir"
+      put "follow" => "profiles#follow"
     end
   end
-
-
-
-
 
   resources :posts do
     resources :comments, only:[:create]

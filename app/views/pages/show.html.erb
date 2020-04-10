@@ -5,14 +5,27 @@
   <%= @page.name %>
 </p>
 
+  <% if current_user.following?(@page) %>
+    <%= link_to 'Dejar de seguir', follow_page_path(@page), method: :put %>
+  <% else %>
+    <%= link_to 'Seguir', follow_page_path(@page), method: :put %>
+  <% end %>
+
+  <p>Seguidores: <%= @page.followers.count %> </p>
+
+  <% @page.followers.each do |f| %>
+  <%= render 'partials/follower', f: f %>
+
+  <% end %>
+
 <p>
   <strong>Image:</strong>
-  <%= @page.image %>
+  <%= image_tag(@page.image)%>
 </p>
 
 <p>
   <strong>Cover:</strong>
-  <%= @page.cover %>
+  <%= image_tag(@page.cover)%>
 </p>
 
 <p>
