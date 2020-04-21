@@ -1,0 +1,151 @@
+<section class="wrap">
+
+   <div class="trame"></div>
+
+    <section class="wrap-center">
+
+        <div class="welcome">
+             <h1>bienvenidos</h1>
+             <h2>atoallae</h2>
+        </div>
+
+        <h2>Inicia tu sesión en nuestro sitio, si no está registrado <span>¿Qué esperas?</span></h2>
+
+
+        <nav>
+            <ul>
+              <% if user_signed_in? %>
+
+                <li><%= link_to 'Ir al Muro de Actividad', posts_path, class: 'activity' %></li>
+                <li><a href="<%= destroy_user_session_path %>" data-method="DELETE" class="registro">Cerrar Sesión</a></li>
+
+              <% else %>
+
+                <li><a href="<%= new_user_session_path %>" class="sesion">Iniciar Sesión</a></li>
+                <li><a href="<%= new_user_registration_path %>" class="registro">Crear Cuenta</a></li>
+                <% end %>
+            </ul>
+        </nav>
+
+    </section>
+
+</section>
+
+<section class="wrap-content">
+
+   <section class="wrap-center-about">
+
+      <article>
+       <span>lipsum dol</span>
+
+       <h1>Lorem ipsum dolor sit amet, consectetur
+       adipisicing elit. Maxime esse expedita culpa
+       odio ipsa. </h1>
+
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum ut quam non semper. Proin sit amet est at tortor consequat pretium ac non nulla. Sed enim ex, venenatis eget tempor id, dictum ac arcu. Nam ut tristique leo, gravida porttitor est. Aliquam efficitur aliquam dolor non ullamcorper. Mauris mattis velit vel justo vestibulum rutrum.</p>
+
+      </article>
+      <article>
+          <%= image_tag("logo-about.png", :alt => "Acerca de - Logo Atoallae") %>
+      </article>
+
+
+
+   </section>
+
+   <section class="wrap-center-instagram">
+
+      <%= image_tag("logo-atoallae-instagram.svg", :alt => "Logo AtoaLlae") %>
+
+       <h1>instagram</h1>
+
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit iure
+       fugiat dolore vitae debitis, qui dignissimos, necessitatibus error optio nobis,
+       ducimus maiores inventore molestias.</p>
+
+       <section class="grid-container">
+
+           <section>
+                 <div id="instagram-feed4" class="instagram_feed"></div>
+           </section>
+
+           <script src="js/jquery.instagramFeed.js"></script>
+           <script >
+                (function($){
+                    $(window).on('load', function(){
+                        $.instagramFeed({
+                            'tag': 'atoallae',
+                            'container': "#instagram-feed4",
+                            'display_profile': true,
+                            'display_gallery': true,
+                            'items': 16,
+                            'items_per_row': 5,
+                            'margin': 0.5
+                        });
+                    });
+                })(jQuery);
+            </script>
+
+            <a href="#" class="access">Revisar más imágenes en INSTAGRAM</a>
+
+       </section>
+
+
+
+   </section>
+
+   <section class="wrap-center-store">
+
+      <%= image_tag("Product-store.png", :alt => "Imagen Producto Store AtoaLlae", :class => 'product-img') %>
+      <section class="store-header">
+
+          <%= image_tag("Logo-atoallae.svg", :alt => "Logo AtoaLlae") %>
+
+          <article class="text-header-store">
+              <h1>store</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, dignissimos explicabo quo assumenda.</p>
+          </article>
+
+
+      </section>
+
+      <section class="store-grid">
+
+              <% @products.each do |product| %>
+
+              <article class="product" style="background-image: url(<%= product.imagen %>);">
+
+                <div class="trame-product"></div>
+
+                  
+
+                  <div class="info-product">
+                      <h1><%= product.name %></h1>
+                      <p><%= product.description %></p>
+
+                  </div>
+                  <div class="product-more">
+
+                     <div class="product-more-info">
+                         <div class="product-info-bloque">
+
+                             <%= link_to product, class: 'more-info' do %>
+                               <i class="fas fa-search"></i> ver más info
+                             <% end %>
+
+                         </div>
+                         <div class="product-info-bloque">
+                             <a href=""  class="cart-access"> <%= image_tag("cart-home.svg", :alt => "Carrito compra") %></a>
+                         </div>
+                     </div>
+
+                  </div>
+              </article>
+
+              <% end %>
+
+          </section>
+
+   </section>
+
+</section>

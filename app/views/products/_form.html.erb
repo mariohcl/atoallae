@@ -21,9 +21,9 @@
     <%= form.text_field :description, id: :product_description %>
   </div>
 
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :product_photo %>
+  <div class="field field-avatar">
+    <%= form.label :imagen, 'Seleccionar Imagen' %>
+    <%= form.file_field :imagen, id: :product_imagen %>
   </div>
 
   <% if !product.id %>

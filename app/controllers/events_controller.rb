@@ -43,7 +43,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to page_event_path(@event.page), notice: 'Event was successfully created.' }
+        format.html { redirect_to page_event_path(@event.page, @event), notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -71,7 +71,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to page_events_path, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -84,6 +84,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :description, :place, :date)
+      params.require(:event).permit(:title, :description, :place, :date, :eventimage, :map)
     end
 end

@@ -10,6 +10,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @user_profile = User.find(params[:id])
+    @posts = Post.all
   end
 
   # GET /profiles/new
@@ -23,6 +25,8 @@ class ProfilesController < ApplicationController
 
   def profile
     @profile = current_user.profile
+    @posts = Post.all
+    @post = Post.new
   end
 
   def follow
@@ -84,6 +88,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:username, :fullname, :bio, :avatar)
+      params.require(:profile).permit(:username, :fullname, :bio, :avatar, :instagram, :facebook, :twitter, :cover)
     end
 end

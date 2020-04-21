@@ -1,58 +1,160 @@
-<div class="container">
+<section class="header-user-wall">
 
-<h1>Posts</h1>
 
-<%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+    <section class="header-user-wall-center">
 
-<div class="row">
-  <% current_user.my_posts.reverse_each do |post| %>
+       <section class="wall-friends-grid">
 
-  <div class="card" style="width: 18rem;" id="<%= post.id %>">
-    <div class="card-body">
-      <p class="card-text"><%= post.texto %></p>
-      <small class="card-text"><%= link_to post.user.name, profile_path(post.user.profile) %></small>
+          <h1>amigos</h1>
 
-      <% if current_user.liked? post %>
-        <%= link_to 'dejar de gustar', like_post_path(post), method: :put %>
-      <% else %>
-        <%= link_to 'me gusta', like_post_path(post), method: :put %>
-      <% end %>
+           <nav>
+               <ul>
 
-      <small><%= post.get_likes.size %></small>
+                 <% current_user.following_by_type('User').each do |user_profile| %>
+                    <%= render 'partials/follower-index', profile: user_profile.profile %>
+                <% end %>
 
+               </ul>
+           </nav>
+
+       </section>
+
+    </section>
+
+
+</section>
+
+
+
+<section class="wrap-profile">
+    <section class="wrap-profile-center wrap-profile-center-wall">
+
+       <div id="tabs-container">
+
+
+        <div class="tab">
+
+            <div id="tab-1" class="tab-content">
+
+              <section class="post">
+
+                 <article class="publicar">
+
+                  <h1>crear una publicación</h1>
+
+                    <%= render 'form', post: @post %>
+
+                 </article>
+
+                 <%= render 'partials/post' %>
+
+
+                 <i class="fa fa-spinner fa-spin"></i>
+
+
+
+              </section>
+
+              <section class="sidebar-post">
+                 <article class="friend">
+                     <h1>Eventos</h1>
+
+                     <div class="grid-events">
+
+                       <% @events.each do |event| %>
+
+                         <section class="event-container">
+                             <div class="head-event">
+                                 <a href=""  style="background-image: url('<%= event.eventimage %>');"></a>
+                                 <div class="info-header-event">
+                                     <h1><%= event.title %></h1>
+                                     <p><%= event.date %>   23:30 hrs  <a href="">Tempo Discotheque</a></p>
+                                 </div>
+                             </div>
+
+                             <a href="<%= page_event_path(event.page, event) %>">
+                                 <p><%= event.description %> <span>Más info</span></p>
+
+                                 <div class="img-event" style="background-image: url('<%= event.eventimage %>');"></div>
+
+                             </a>
+
+                             <div class="foot-event">
+                                 <div class="bloque">
+                                     <h1>asistentes</h1>
+                                     <nav>
+                                          <a href="#" style="background-image: url(images/profile-user/user-11.jpg);"></a>
+                                          <a href="#" style="background-image: url(images/profile-user/user-15.jpg);"></a>
+                                          <a href="#" style="background-image: url(images/profile-user/user-18.jpg);"></a>
+                                      </nav>
+                                 </div>
+                                 <div class="bloque">
+                                     <a href="#" class="action-btn">asistir</a>
+                                 </div>
+                             </div>
+                         </section>
+
+                         <% end %>
+
+
+
+
+                         <div class="see-more">
+                             <a href="">explorar más eventos</a>
+                         </div>
+
+                     </div>
+
+
+
+                     <h1>atoallae store</h1>
+
+                     <div class="grid-store">
+
+                       <% @products.each do |product| %>
+
+                         <div class="product-content">
+                           <a href="<%= product %>">
+                           <img src="<%= product.imagen %>" alt="">
+                           <h1><%= product.name %></h1>
+                           <p>atoallae store</p>
+                           </a>
+                         </div>
+
+                       <% end %>
+
+
+                     </div>
+
+                     <div class="aside-footer">
+                         <p>ATOALLAE © 2020 - 2021</p>
+                     </div>
+
+                 </article>
+              </section>
+
+
+            </div>
+
+
+        </div>
     </div>
-    <div class="card-footer">
 
-    <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
-
-    <% if user_signed_in? %>
-    <input id="new_comment-<%= post.id %>" type="text" class="new_comment">
-    <% else %>
-      Para comentar, debes estar <a href="<%= new_user_session_path %>">logeado</a>
-    <% end %>
+    </section>
+</section>
 
 
-    </div>
 
 
-  </div>
-  <% end %>
-</div>
-
-<div class="row">
-  <% current_user.all_following_pages.each do |page| %>
-
-    <% page.events.each do |event| %>
-      <div>
-        <p><%= event.title %></p>
-      </div>
-    <% end %>
-
-  <% end %>
-</div>
 
 
-</div>
+
+
+
+
+
+
+
 
 
 <script>
@@ -60,7 +162,8 @@
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
 
-        var post_id = $(this).parent().parent().attr("id");
+        // var post_id = $(this).parent().parent().attr("id");
+        var post_id = $(this).attr("id").split("-")[1]
         $.ajax({
           url: '/posts/'+ post_id +'/comments',
           type: 'post',

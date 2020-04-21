@@ -1,33 +1,62 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header class="main-header">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <% if user_signed_in? %>
 
-      <% if user_signed_in? %>
-        <%= link_to current_user.email, my_profile_path %>
-        <%= link_to 'paginas', pages_path %>
-        <%= link_to 'mis paginas', my_pages_path %>
-      <% else %>
-        Ingreso
-      <% end %>
+  <section class="header-inter-center">
 
-      <% if user_signed_in? %>
-        <li>
-          <a href="<%= destroy_user_session_path %>" data-method="DELETE">Salir</a>
-        </li>
-      <% else %>
-        <li>
-          <a href="<%= new_user_session_path %>">Ingreso</a>
-        </li>
-        <li>
-          <a href="<%= new_user_registration_path %>">Registro</a>
-        </li>
-      <% end %>
+     <nav class="navbar navbar-expand-lg container-fullwidth custom-nav">
 
-    </ul>
-  </div>
-</nav>
+      <a href="<%= home_index_path %>"> <%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %> </a>
+
+       <div class="der-bloque">
+
+       <div class="user-top-info">
+           <a href="<%= profile_path(current_user.profile) %>" style="background-image: url(<%= current_user.profile.avatar %>);" class="user"></a>
+           <span><%= current_user.profile.fullname %></span>
+       </div>
+
+       <input type="text" placeholder="Buscar">
+
+         <a href="" class="cart"><%= image_tag("cart-active.svg", :alt => "Carrito compra") %></a>
+
+         <a href="" class="bell">
+             <%= image_tag("bell-active.svg", :alt => "Bell icon") %>
+         </a>
+
+       <div class="dropdown ">
+
+          <button class="btn nav-custom-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag("menu.svg", :alt => "Menu") %>
+          </button>
+          <div class="dropdown-menu show-custom" aria-labelledby="dropdownMenuButton">
+            <%= link_to 'Actividad', posts_path, class: 'dropdown-item' %>
+            <%= link_to 'Mis paginas', my_pages_path, class: 'dropdown-item' %>
+            <%= link_to 'Paginas', pages_path, class: 'dropdown-item' %>
+            <%= link_to 'Store', products_path, class: 'dropdown-item' %>
+            <%= link_to 'Nuevo Producto', new_product_path, class: 'dropdown-item' %>
+            <a href="<%= destroy_user_session_path %>" data-method="DELETE" class="dropdown-item">Cerrar Sesión</a>
+          </div>
+        </div>
+
+        </div>
+    </nav>
+
+   </section>
+
+  <% else %>
+
+  <a href="#"><%= image_tag("Logo-atoallae.svg", :alt => "Logo Atoallae") %></a>
+
+  <nav>
+      <ul>
+          <li><a href="<%= new_user_session_path %>">Iniciar Sesión</a></li>
+          <li><a href="<%= new_user_registration_path %>" class="main-link">Crear Cuenta</a></li>
+          <li><a href="https://www.instagram.com/atoallae/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/atoallae/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+      </ul>
+  </nav>
+
+  <% end %>
+
+
+</header>

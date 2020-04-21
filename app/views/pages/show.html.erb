@@ -1,60 +1,73 @@
-<p id="notice"><%= notice %></p>
+<section class="header-user-profile">
+    <section class="bg-cover" style="background-image: url(<%= @page.cover %>);"></section>
 
-<p>
-  <strong>Name:</strong>
-  <%= @page.name %>
-</p>
+    <section class="header-user-profile-center">
 
-  <% if current_user.following?(@page) %>
-    <%= link_to 'Dejar de seguir', follow_page_path(@page), method: :put %>
-  <% else %>
-    <%= link_to 'Seguir', follow_page_path(@page), method: :put %>
-  <% end %>
+       <section class="main-profile-info-container">
 
-  <p>Seguidores: <%= @page.followers.count %> </p>
+            <section class="profile-info">
 
-  <% @page.followers.each do |f| %>
-  <%= render 'partials/follower', f: f %>
+               <a href="#" class="image-profile" style="background-image: url(<%= @page.image %>);"></a>
+                <article class="info">
+                    <h1><%= @page.name %></h1>
 
-  <% end %>
+                      <%= link_to 'Editar Página', edit_page_path(@page), class: 'editar' %>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@page.image)%>
-</p>
+                      <p><%= @page.bio %></p>
 
-<p>
-  <strong>Cover:</strong>
-  <%= image_tag(@page.cover)%>
-</p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @page.bio %>
-</p>
+                    <% if current_user.following?(@page) %>
+                     <div class="follow-blo">
+                       <p class="siguiendo"><i class="fas fa-user-plus"></i> Siguiendo</p>
+                       <%= link_to 'Dejar de seguir', follow_page_path(@page), method: :put, class: 'disable' %>
+                      </div>
+                    <% else %>
+                      <%= link_to 'Seguir', follow_page_path(@page), method: :put %>
+                    <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @page.user %>
-</p>
 
-<p>
-  <strong>Instagram:</strong>
-  <%= @page.instagram %>
-</p>
 
-<p>
-  <strong>Facebook:</strong>
-  <%= @page.facebook %>
-</p>
+                </article>
+            </section>
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @page.twitter %>
-</p>
+            <section class="profile-info-foot">
+                <section class="follows-dats">
+                    <a href="#"><span><%= @page.followers.count %></span> seguidores</a>
+                </section>
 
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+                <section class="social-menu">
+                    <nav>
+                        <ul>
+                            <% if @page.instagram != '' %>
+                              <li> <a href="https://www.instagram.com/<%= @page.instagram %>" target="_blank"><i class="fab fa-instagram"></i></a> </li>
+                            <% end %>
+                            <% if @page.facebook != '' %>
+                              <li> <a href="https://www.facebook.com/<%= @page.facebook %>" target="_blank"><i class="fab fa-facebook-f"></i></a> </li>
+                            <% end %>
+                            <% if @page.twitter != '' %>
+                              <li> <a href="https://www.twitter.com/<%= @page.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a> </li>
+                            <% end %>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+
+        </section>
+
+    </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
 <%= link_to 'Nuevo Evento', new_page_event_path(@page) %>
 
 <p id="notice"><%= notice %></p>

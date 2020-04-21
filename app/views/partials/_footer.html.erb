@@ -1,0 +1,32 @@
+<footer>
+  <section class="footer-center">
+    <a href="<%= home_index_path %>"> <%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %> </a>
+
+    <% if user_signed_in? %>
+    <nav>
+      <ul>
+        <%= link_to 'Actividad', posts_path, class: 'dropdown-item' %>
+        <%= link_to 'Mis paginas', my_pages_path, class: 'dropdown-item' %>
+        <%= link_to 'Paginas', pages_path, class: 'dropdown-item' %>
+        <%= link_to 'Store', products_path, class: 'dropdown-item' %>
+        <%= link_to 'Nuevo Producto', new_product_path, class: 'dropdown-item' %>
+        <a href="<%= destroy_user_session_path %>" data-method="DELETE" class="dropdown-item">Cerrar Sesión</a>
+      </ul>
+    </nav>
+    <% else %>
+
+    <nav class="no-registro-nav">
+        <ul>
+            <li><a href="<%= new_user_session_path %>">Iniciar Sesión</a></li>
+            <li><a href="<%= new_user_registration_path %>" class="main-link">Crear Cuenta</a></li>
+            <li><a href="https://www.instagram.com/atoallae/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/atoallae/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+    </nav>
+
+    <% end %>
+
+    <p class="credits">Derechos Reservados © <span>atoallae</span> 2020 - 2021, Santiago Chile </p>
+
+  </section>
+</footer>

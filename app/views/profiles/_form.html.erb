@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field field-avatar">
+    <%= form.label :avatar, 'Seleccionar imagen de perfil' %>
+    <%= form.file_field :avatar, id: :profile_avatar %>
+  </div>
+
+  <div class="field field-avatar">
+    <%= form.label :cover, 'Seleccionar cover' %>
+    <%= form.file_field :cover, id: :profile_cover %>
+  </div>
+
   <div class="field">
     <%= form.label :username %>
     <%= form.text_field :username, id: :profile_username %>
@@ -27,9 +37,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar, id: :profile_avatar %>
+    <%= form.label :instagram %>
+    <%= form.text_field :instagram, id: :profile_instagram %>
   </div>
+
+  <div class="field">
+    <%= form.label :facebook %>
+    <%= form.text_field :facebook, id: :profile_facebook %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter %>
+    <%= form.text_field :twitter, id: :profile_twitter %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>

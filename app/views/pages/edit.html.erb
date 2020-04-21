@@ -1,6 +1,32 @@
-<h1>Editing Page</h1>
+<section class="wrap-edit-profile">
+  <section class="wrap-edit-profile-center">
 
-<%= render 'form', page: @page %>
+    <h1>Editar Página</h1>
+    <p>Aquí podrás editar tu perfil, cambiar datos y los accesos a tus cuentas de redes sociales</p>
 
-<%= link_to 'Show', @page %> |
-<%= link_to 'Back', pages_path %>
+    <div id="tabs-container">
+
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Info de tu página</a></li>
+        </ul>
+
+        <div class="tab">
+
+            <div id="tab-1" class="tab-content">
+
+              <%= render 'form', page: @page %>
+
+              <nav class="access-form">
+                <ul>
+                  <li><%= link_to 'Ver página', @page %></li>
+                  <li><%= link_to 'Volver', pages_path %></li>
+                </ul>
+              </nav>
+
+            </div>
+
+        </div>
+    </div>
+
+  </section>
+</section>

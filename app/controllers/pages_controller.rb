@@ -25,6 +25,7 @@ class PagesController < ApplicationController
     @my_pages = current_user.pages
   end
 
+
   def follow
     @page = Page.find(params[:id])
     if current_user.following?(@page)

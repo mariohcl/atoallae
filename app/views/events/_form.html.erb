@@ -21,9 +21,19 @@
     <%= form.text_field :description, id: :event_description %>
   </div>
 
+  <div class="field field-avatar">
+    <%= form.label :eventimage, 'Seleccionar imagen' %>
+    <%= form.file_field :eventimage, id: :event_eventimage %>
+  </div>
+
   <div class="field">
     <%= form.label :place %>
     <%= form.text_field :place, id: :event_place %>
+  </div>
+
+  <div class="field">
+    <%= form.label :map %>
+    <%= form.text_field :map, id: :event_map %>
   </div>
 
   <div class="field">

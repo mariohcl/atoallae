@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   resources :pages do
     resources :events do
       member do
@@ -47,6 +49,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root to:'posts#index'
+  root to:'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

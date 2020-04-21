@@ -1,46 +1,163 @@
-<p id="notice"><%= notice %></p>
+<section class="header-user-profile">
+    <section class="bg-cover" style="background-image: url(<%= @profile.cover %>);"></section>
+    <section class="header-user-profile-center">
+       <section class="main-profile-info-container">
+            <section class="profile-info">
 
-<p>
-  <strong>Username:</strong>
-  <%= @profile.username %>
-</p>
+               <a href="#" class="image-profile" style="background-image: url(<%= @profile.avatar %>);"></a>
+                <article class="info">
+                    <h1><%= @profile.username %></h1>
 
-<% if current_user != @profile.user %>
-  <% if current_user.following?(@profile.user) %>
-    <%= link_to 'Dejar de seguir', follow_profile_path(@profile.user), method: :put %>
-  <% else %>
-    <%= link_to 'Seguir', follow_profile_path(@profile.user), method: :put %>
-  <% end %>
-<% end %>
+                      <%= link_to my_profile_path, class:"editar" do %>
+                         <i class="far fa-edit"></i> Editar Perfil
+                       <% end %>
 
-<p>
-  <strong>Fullname:</strong>
-  <%= @profile.fullname %>
-</p>
+                    <p><span><%= @user_profile.profile.fullname %></span>
+                      <%= @profile.bio %></p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+                    <% if current_user != @profile.user %>
+                      <% if current_user.following?(@profile.user) %>
+                        <div class="follow-blo">
+                          <p class="siguiendo"><i class="fas fa-user-plus"></i> Siguiendo</p>
+                          <%= link_to 'Dejar de seguir', follow_profile_path(@profile.user), method: :put, class: 'disable' %>
+                        </div>
+                      <% else %>
+                        <%= link_to 'Seguir', follow_profile_path(@profile.user), method: :put %>
+                      <% end %>
+                    <% end %>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= image_tag(@profile.avatar)%>
-</p>
 
-<p>Seguidores: <%= @profile.user.followers.count %> </p>
+                </article>
+            </section>
 
-<% @profile.user.followers.each do |follower_user| %>
-  <%= render 'partials/follower', f: follower_user %>
-<% end %>
+            <section class="profile-info-foot">
+                <section class="follows-dats">
+                    <a href="#"><span><%= @profile.user.all_following.count %> </span> seguidos</a>
+                    <a href="#"><span><%= @profile.user.followers.count %></span> seguidores</a>
+                </section>
 
-<p>Seguidos: <%= @profile.user.all_following.count %> </p>
+                <section class="social-menu">
+                    <nav>
+                        <ul>
+                            <% if @profile.instagram != '' %>
+                              <li> <a href="https://www.instagram.com/<%= @profile.instagram %>" target="_blank"><i class="fab fa-instagram"></i></a> </li>
+                            <% end %>
+                            <% if @profile.facebook != '' %>
+                              <li> <a href="https://www.facebook.com/<%= @profile.facebook %>" target="_blank"><i class="fab fa-facebook-f"></i></a> </li>
+                            <% end %>
+                            <% if @profile.twitter != '' %>
+                              <li> <a href="https://www.twitter.com/<%= @profile.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a> </li>
+                            <% end %>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
 
-<% @profile.user.all_following.each do |f| %>
-  <%= render 'partials/follower', f: f %>
-<% end %>
+
+<section class="wrap-profile">
+    <section class="wrap-profile-center">
+
+       <div id="tabs-container">
+
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">publicaciones</a></li>
+            <li><a href="#tab-2">instagram feed</a></li>
+        </ul>
+
+        <div class="tab">
+
+            <div id="tab-1" class="tab-content">
+
+              <section class="post">
+
+                 <article class="publicar">
+
+                  <h1>crear una publicación</h1>
+
+                    <%= render 'posts/form', post: Post.new %>
+
+                 </article>
+
+                 <%= render 'partials/post-profile' %>
+
+                 <i class="fa fa-spinner fa-spin"></i>
+
+              </section>
+
+              <section class="sidebar-post">
+                 <article class="friend">
+                     <h1>seguidores</h1>
+
+                     <div class="grid-friends">
+
+                       <% current_user.following_by_type('User').each do |user_profile| %>
+                          <%= render 'partials/follower-index', profile: user_profile.profile %>
+                      <% end %>
+
+                         <a href="#"  style="background-image: url(images/profile-user/user-17.jpg);"></a>
+                     </div>
+
+                     <h1>instagram feed</h1>
+
+                     <div class="grid-insta">
+                          <div id="instagram-feed4" class="instagram_feed"></div>
+
+                          <script src="js/jquery.instagramFeed.js"></script>
+                          <script>
+                               (function($){
+                                   $(window).on('load', function(){
+                                       $.instagramFeed({
+                                           'username': '<%= @profile.instagram %>',
+                                           'container': "#instagram-feed4",
+                                           'display_profile': true,
+                                           'display_gallery': true,
+                                           'items': 11,
+                                           'items_per_row': 5,
+                                           'margin': 0.5
+                                       });
+                                   });
+                               })(jQuery);
+                           </script>
+
+                     </div>
+
+                 </article>
+              </section>
+
+
+            </div>
+
+            <div id="tab-2" class="tab-content">
+
+                <section class="instagram-full-grid">
+                    <div id="instagram-feed6" class="instagram_feed"></div>
+
+                     <script src="js/jquery.instagramFeed.js"></script>
+                          <script>
+                               (function($){
+                                   $(window).on('load', function(){
+                                       $.instagramFeed({
+                                           'username': '<%= @profile.instagram %>',
+                                           'container': "#instagram-feed6",
+                                           'display_profile': true,
+                                           'display_gallery': true,
+                                           'items': 12,
+                                           'items_per_row': 5,
+                                           'margin': 0.5
+                                       });
+                                   });
+                               })(jQuery);
+                           </script>
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+    </section>
+</section>

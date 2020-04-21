@@ -12,11 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :texto %>
-    <%= form.text_area :texto, id: :post_texto %>
+    <%= form.text_area :texto, id: :post_texto, placeholder: '¿Que Sucede?' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Publicar' %>
   </div>
 <% end %>

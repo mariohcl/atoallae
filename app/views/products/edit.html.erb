@@ -1,6 +1,28 @@
-<h1>Editing Product</h1>
+<section class="wrap-edit-profile">
+  <section class="wrap-edit-profile-center">
 
-<%= render 'form', product: @product %>
+    <h1>Editar Producto</h1>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+    <div id="tabs-container">
+
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Info del Producto</a></li>
+        </ul>
+
+        <div class="tab">
+
+            <div id="tab-1" class="tab-content">
+
+            <%= render 'form', product: @product %>
+
+            </div>
+
+            <%= link_to 'Show', @product %> |
+            <%= link_to 'Back', products_path %>
+
+
+        </div>
+    </div>
+
+  </section>
+</section>

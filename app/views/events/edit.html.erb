@@ -1,6 +1,28 @@
-<h1>Editing Event</h1>
+<section class="wrap-edit-profile">
+  <section class="wrap-edit-profile-center">
 
-<%= render 'form', event: @event %>
+    <h1>Editar Evento</h1>
 
-<%= link_to 'Show', page_event_path(@page, @event) %> |
-<%= link_to 'Back', page_events_path %>
+    <div id="tabs-container">
+
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Info de tu Evento</a></li>
+        </ul>
+
+        <div class="tab">
+
+            <div id="tab-1" class="tab-content">
+
+            <%= render 'form', event: @event %>
+
+            </div>
+
+            <%= link_to 'Show', page_event_path(@page, @event) %> |
+            <%= link_to 'Back', page_events_path %>
+
+
+        </div>
+    </div>
+
+  </section>
+</section>

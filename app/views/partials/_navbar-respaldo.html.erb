@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <% if user_signed_in? %>
+        <%= link_to current_user.email, my_profile_path %>
+        <%= link_to 'paginas', pages_path %>
+        <%= link_to 'mis paginas', my_pages_path %>
+      <% else %>
+        Ingreso
+      <% end %>
+
+      <% if user_signed_in? %>
+        <li>
+          <a href="<%= destroy_user_session_path %>" data-method="DELETE">Salir</a>
+        </li>
+      <% else %>
+        <li>
+          <a href="<%= new_user_session_path %>">Ingreso</a>
+        </li>
+        <li>
+          <a href="<%= new_user_registration_path %>">Registro</a>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>

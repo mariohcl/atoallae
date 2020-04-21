@@ -1,3 +1,27 @@
-<h1>Editing Profile</h1>
 
-<%= render 'form', profile: @profile %>
+<section class="wrap-edit-profile">
+  <section class="wrap-edit-profile-center">
+
+    <h1>Editar perfil</h1>
+    <p>Aquí podrás editar tu perfil, cambiar datos y los accesos a tus cuentas de redes sociales</p>
+
+    <div id="tabs-container">
+
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Perfil</a></li>
+        </ul>
+
+        <div class="tab">
+
+            <div id="tab-1" class="tab-content">
+
+              <%= render 'form', profile: @profile %>
+
+            </div>
+
+
+        </div>
+    </div>
+
+  </section>
+</section>

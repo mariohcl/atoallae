@@ -6,6 +6,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @events = Event.all.limit(2).order("RANDOM()")
+    @post = Post.new
+    @profiles = Profile.all
+    @products = Product.all.limit(2).order("RANDOM()")
   end
 
   # GET /posts/1
@@ -29,7 +33,7 @@ class PostsController < ApplicationController
       else
         @post.liked_by current_user
       end
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   # POST /posts
@@ -39,13 +43,14 @@ class PostsController < ApplicationController
     @post.user = current_user
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /posts/1

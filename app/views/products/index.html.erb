@@ -1,33 +1,75 @@
-<p id="notice"><%= notice %></p>
+<section class="wrap-store">
+  <section class="wrap-store-head">
+    <h1>store
+    <span><strong>atoallae</strong> products</span></h1>
 
-<h1>Products</h1>
+    <article class="head-store-con">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Photo</th>
-        <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="store-intro">
+        <%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %>
+        <div class="grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Atque aliquam vitae possimus perspiciatis fuga?
+          sapiente, hic mollitia quae provident.</p>
+      </div>
 
-  <tbody>
+    </article>
+
+  </section>
+
+  <section class="wrap-store-center">
+    <section class="wrap-products-center-inter">
+      <h1>productos</h1>
+    </section>
+  </section>
+
+  <section class="wrap-store-center wrap-store-center-grid">
+
+    <section class="wrap-products-center-inter">
+
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.photo %></td>
-        <td><%= link_to product.stocks.count, product_stocks_path(product)  %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <article class="product">
+      <nav class="custom-pro">
+        <ul>
+          <li><%= link_to 'Editar producto', edit_product_path(product) %></li>
+          <li><%= link_to 'Eliminar Producto', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </nav>
+
+      <img src="<%= product.imagen %>" alt="">
+      <h1><%= product.name %></h1>
+
+      <div class="product-description">
+        <div class="bloque-desc">
+          <p><%= product.description %></p>
+        </div>
+        <div class="bloque-desc">
+          <h2>$12.990</h2>
+          <p>Stock: <span><%= link_to product.stocks.count, product_stocks_path(product)  %> Unidades</span></p>
+
+          <nav>
+            <ul>
+              <li>
+              <%= link_to product, class: 'more-info' do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+              </li>
+              <li><a href="·" class="cart-pro"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+    </article>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    </section>
 
-<%= link_to 'New Product', new_product_path %>
+  </section>
+
+</section>

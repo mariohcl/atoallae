@@ -1,4 +1,4 @@
 $("#total-comments-<%= @comment.post.id %>").html("<%= @comment.post.comments.count %>");
 
-$("#<%= @comment.post.id %> .new_comment").val('');
+$("#new_comment-<%= @comment.post.id %>").val('');
 //Dejar en blanco input
