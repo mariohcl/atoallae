@@ -1,4 +1,9 @@
 $("#total-comments-<%= @comment.post.id %>").html("<%= @comment.post.comments.count %>");
 
 $("#new_comment-<%= @comment.post.id %>").val('');
+$(".comment-write-<%= @comment.post.id %> h1 ").html('<%= @comment.user.profile.username %>');
+$(".comment-write-<%= @comment.post.id %> p ").html('<%= @comment.content %>');
+$('.comment-img-<%= @comment.post.id %>').css('background-image', 'url(<%= @comment.user.profile.avatar %>)');
+
 //Dejar en blanco input
+console.log('<%= @comment.user.profile.avatar %>');

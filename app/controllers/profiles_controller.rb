@@ -12,6 +12,8 @@ class ProfilesController < ApplicationController
   def show
     @user_profile = User.find(params[:id])
     @posts = Post.all
+    @comments = Comment.all.limit(1)
+    @profiles = Profile.all
   end
 
   # GET /profiles/new

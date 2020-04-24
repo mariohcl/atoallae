@@ -1,19 +1,57 @@
-<p id="notice"><%= notice %></p>
+<section class="product-show-wrap">
+  <section class="product-show-wrap-center">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+    <article class="show-product">
+      <img src="<%= @product.imagen %>" alt="">
+      <%= image_tag("grid_dots.png", :alt => "Dots", :class => 'dots') %>
+    </article>
+    <article class="show-product">
+      <h1><%= @product.name %></h1>
+      <nav>
+        <ul>
+          <li><%= link_to 'Editar', edit_product_path(@product) %></li>
+          <li><%= link_to 'Volver', products_path %></li>
+          <li><%= link_to 'Eliminar', @product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </nav>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+      <h2>Precio:</h2>
+      <p><span>Descripción:</span>
+        <%= @product.description %></p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @product.photo %>
-</p>
+        <a href="·" class="cart-pro"><i class="fas fa-shopping-cart"></i> Agregar al carrito</a>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+        <p class="cat"><strong>Categorías:</strong> Lorem, Lorem</p>
+    </article>
+
+  </section>
+</section>
+
+<section class="more-products">
+  <section class="more-products-center">
+    <h1>Quizà te interese</h1>
+
+    <section class="more-products-grid">
+
+      <% @products.each do |product| %>
+
+      <article class="more-single">
+        <img src="<%= product.imagen %>" alt="">
+        <div class="more-info">
+          <h1><%= product.name %></h1>
+          <h2>$12.000</h2>
+          <p><%= truncate(product.description, :length => 60) %></p>
+
+          <%= link_to product, class: 'more-info' do %>
+            <i class="fas fa-search"></i> Más info
+          <% end %>
+        </div>
+      </article>
+
+      <% end %>
+
+    </section>
+
+  </section>
+</section>
+<%= render 'partials/footer-store' %>

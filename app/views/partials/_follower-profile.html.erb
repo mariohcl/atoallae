@@ -1,0 +1,23 @@
+<div class="follower-profile">
+
+  <div class="bloque-follow">
+    <%= image_tag( profile.avatar , alt: "User") %>
+    <div class="info-name">
+      <%= link_to profile.username, profile_path(profile.user) %>
+      <p><%= profile.fullname %></p>
+    </div>
+  </div>
+
+  <div class="bloque-follow">
+    <% if current_user != @profile.user %>
+      <% if current_user.following?(@profile.user) %>
+        <div class="follow-blo">
+          <%= link_to 'siguiendo', follow_profile_path(@profile.user), method: :put, class: 'disable' %>
+        </div>
+      <% else %>
+        <%= link_to 'Seguir', follow_profile_path(@profile.user), method: :put %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

@@ -13,6 +13,8 @@
        <div class="user-top-info">
            <a href="<%= profile_path(current_user.profile) %>" style="background-image: url(<%= current_user.profile.avatar %>);" class="user"></a>
            <span><%= current_user.profile.fullname %></span>
+
+           <%= link_to 'Actividad', posts_path, class: 'activity-navbar' %>
        </div>
 
        <input type="text" placeholder="Buscar">
@@ -45,7 +47,7 @@
 
   <% else %>
 
-  <a href="#"><%= image_tag("Logo-atoallae.svg", :alt => "Logo Atoallae") %></a>
+  <a href="<%= home_index_path %>"> <%= image_tag("Logo-atoallae.svg", :alt => "Logo Atoallae") %> </a>
 
   <nav>
       <ul>

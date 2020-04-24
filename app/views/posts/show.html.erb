@@ -1,7 +1,113 @@
-<p>
-  <strong>Texto:</strong>
-  <%= @post.texto %>
-</p>
+<section class="wrap-profile">
+    <section class="wrap-profile-center wrap-profile-center-show">
+      <div id="tabs-container">
+       <div class="tab">
+        <div id="tab-1" class="tab-content tab-content-custom">
+          <section class="post">
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+            <article class="post-users">
+
+              <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-h"></i>
+                      </a>
+                      <div class="dropdown-menu show-custom" aria-labelledby="navbarDropdown">
+
+                        <%= link_to 'Editar Post', edit_post_path(@post), class: 'dropdown-item' %>
+                        <%= link_to 'Eliminar Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
+
+
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+                  <div class="post-user-header">
+                      <a href="<%= profile_path(@post.user.profile) %>" style="background-image: url(<%= @post.user.profile.avatar %>);"></a>
+                      <div class="info-user-header">
+
+                          <%= link_to @post.user.profile.fullname, profile_path(@post.user.profile), class: 'name-user' %>
+                          <a href="#" class="date">25 feb 2020</a>
+                      </div>
+                  </div>
+                  <div class="post-user-content-body">
+                      <p><%= @post.texto %></p>
+                  </div>
+                  <div class="post-user-footer">
+
+                <div class="info-feed">
+
+                    <div class="bloque">
+
+                      <% if current_user.liked? @post %>
+                        <%= link_to image_tag('heart-active.svg', alt: "Heart active like icon"), like_post_path(@post), method: :put %>
+                        <span><%= @post.get_likes.size %></span>
+                      <% else %>
+                        <%= link_to image_tag('heart.svg', alt: "heart like icon"), like_post_path(@post), method: :put %>
+                        <span><%= @post.get_likes.size %></span>
+                      <% end %>
+
+                        <%= image_tag("comment.svg", :alt => "Comment Icon") %>
+                        <span id="total-comments-<%= @post.id %>"><%= @post.comments.count %></span>
+
+                    </div>
+
+                    <div class="bloque-2">
+                      <% if @post.get_likes.size > 0 %>
+                        <nav>
+                          <% @post.get_likes.by_type(User)[0,3].each  do | image| %>
+                            <a href="#" style="background-image: url(<%= image.voter.profile.avatar %>);"></a>
+                          <% end %>
+                        </nav>
+
+                          <p><span><%= @post.get_likes.by_type(User).last.voter.profile.username %></span> y <span><%= ( @post.get_likes.size.to_i - 1 ) %></span> les gusta tu publicación</p>
+                        <% end %>
+                    </div>
+
+                </div>
+
+                <% if @post.comments.count > 0 %>
+                <div class="comment-feeds">
+                    <a href="#" style="background-image: url(<%= @post.comments.last.user.profile.avatar %>);" class="comment-img-<%= @post.id %>"></a>
+
+                    <div class="comment-write comment-write-<%= @post.id %>">
+                        <h1><%= @post.comments.last.user.profile.username %></h1>
+                        <p><%= @post.comments.last.content %></p>
+                        <!-- <a href=""> <img src="images/heart.svg" alt=""> <span>30</span> </a> -->
+                    </div>
+
+                </div>
+                <% end %>
+
+
+                <div class="user-comment">
+
+                    <a href="<%= my_profile_path %>" style="background-image: url(<%= current_user.profile.avatar %>);" class="user"></a>
+
+                    <% if user_signed_in? %>
+                    <input id="new_comment-<%= @post.id %>" type="text" class="new_comment" placeholder="Escribe un comentario">
+                    <% else %>
+                      Para comentar, debes estar <a href="<%= new_user_session_path %>">logeado</a>
+                    <% end %>
+
+                </div>
+
+                </div>
+
+            </article>
+            <%= link_to 'Volver al muro de actividad', posts_path, class: 'volver-show' %>
+          </section>
+
+        </div>
+       </div>
+      </div>
+
+
+    </section>
+</section>
+
+<%= render 'partials/footer-inter' %>

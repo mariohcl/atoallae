@@ -1,7 +1,6 @@
 <% current_user.posts.reverse_each do |post| %>
 
 <article class="post-users">
-
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -11,8 +10,9 @@
           </a>
           <div class="dropdown-menu show-custom" aria-labelledby="navbarDropdown">
 
-            <a class="dropdown-item" href="#">Editar Post</a>
-            <%= link_to 'Eliminar post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
+            <%= link_to 'Editar Post', edit_post_path(post), class: 'dropdown-item' %>
+            <%= link_to 'Eliminar Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
+
 
           </div>
         </li>
@@ -45,29 +45,47 @@
             <span><%= post.get_likes.size %></span>
           <% end %>
 
+
+            <%= link_to post do %>
             <%= image_tag("comment.svg", :alt => "Comment Icon") %>
             <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
+            <% end %>
         </div>
 
         <div class="bloque-2">
+          <% if post.get_likes.size > 0 %>
             <nav>
-                <a href="#" style="background-image: url(images/profile-user/user-5.jpg);"></a>
-                <a href="#" style="background-image: url(images/profile-user/user-8.jpg);"></a>
-                <a href="#" style="background-image: url(images/profile-user/user-10.jpg);"></a>
-                <a href="#" style="background-image: url(images/profile-user/user-18.jpg);"></a>
+              <% post.get_likes.by_type(User)[0,3].each  do | image| %>
+                <a href="#" style="background-image: url(<%= image.voter.profile.avatar %>);"></a>
+              <% end %>
             </nav>
-            <p><span>Name Ipsum</span> y <span>320</span> les gusta tu publicación</p>
-        </div>
+
+              <p><span><%= post.get_likes.by_type(User).last.voter.profile.username %></span> y <span><%= ( post.get_likes.size.to_i - 1 ) %></span> les gusta tu publicación</p>
+            <% end %>
+
+            </div>
 
     </div>
 
+    <% if post.comments.count > 0 %>
     <div class="comment-feeds">
-        <a href="#" style="background-image: url(images/profile-user/user-3.jpg);"></a>
-        <div class="comment-write">
-            <h1>Name Ipsum</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus similique dolorum doloremque obcaecati velit voluptas, ipsum, iure sint corporis totam.</p>
-            <a href=""> <img src="images/heart.svg" alt=""> <span>30</span> </a>
+        <a href="#" style="background-image: url(<%= post.comments.last.user.profile.avatar %>);" class="comment-img-<%= post.id %>"></a>
+
+        <div class="comment-write comment-write-<%= post.id %>">
+            <h1><%= post.comments.last.user.profile.username %></h1>
+            <p><%= post.comments.last.content %></p>
+            <!-- <a href=""> <img src="images/heart.svg" alt=""> <span>30</span> </a> -->
         </div>
+
+    </div>
+    <% end %>
+
+
+
+    <div class="comment-feeds">
+        <%= link_to post, class: 'mas-comment' do%>
+          <%= image_tag("comment.svg", :alt => "Comment Icon") %> Ver más comentarios
+        <% end %>
     </div>
 
 

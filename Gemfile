@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.7'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'pg', '>= 0.18', '< 2.0' 
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -24,6 +24,8 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave'
 gem 'acts_as_votable'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -34,6 +34,13 @@
 
     <% @products.each do |product| %>
     <article class="product">
+
+      <a href=""></a>
+
+
+      <img src="<%= product.imagen %>" alt="">
+      <h1><%= product.name %></h1>
+
       <nav class="custom-pro">
         <ul>
           <li><%= link_to 'Editar producto', edit_product_path(product) %></li>
@@ -41,12 +48,9 @@
         </ul>
       </nav>
 
-      <img src="<%= product.imagen %>" alt="">
-      <h1><%= product.name %></h1>
-
       <div class="product-description">
         <div class="bloque-desc">
-          <p><%= product.description %></p>
+          <p><%= truncate(product.description, :length => 60) %> <%= link_to 'Ver más', product %> </p>
         </div>
         <div class="bloque-desc">
           <h2>$12.990</h2>
@@ -73,3 +77,4 @@
   </section>
 
 </section>
+<%= render 'partials/footer-store' %>

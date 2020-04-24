@@ -71,6 +71,31 @@ body{
 h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
+.alert-custom{
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 19, 19, 0.9);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in;
+
+  p{
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+  }
+}
+
+div.out{
+  display: none;
+  transition: all 0.3s ease-in;
+}
 
 header{
     width: 100%;
@@ -153,6 +178,14 @@ header{
                         color: $color-uno;
                         font-size: 0.8em;
                         font-weight: 600;
+                    }
+                    .activity-navbar{
+                        color: #FFEB3B;
+                        font-size: 0.8em;
+                        font-weight: 600;
+                        margin: 0 20px;
+                        border-left: 1px solid #434343;
+                        padding-left: 20px;
                     }
                 }
 
@@ -873,6 +906,60 @@ header{
                         }
                     }
                 }
+                .follower-profile{
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 18px;
+
+                  &:last-child{
+                    margin-bottom: 0;
+                  }
+
+                  .bloque-follow{
+                    display: flex;
+                    img{
+                      width: 70px;
+                      height: 70px;
+                      object-fit: cover;
+                      border-radius: 50%;
+                      margin-right: 10px;
+                    }
+                    .info-name{
+                      display: flex;
+                      justify-content: center;
+                      flex-direction: column;
+                      a{
+                        color: #2196F3;
+                        font-weight: 600
+                      }
+                      p{
+                        color: grey;
+                        margin: 0;
+                        font-size: 0.8em;
+                      }
+                    }
+
+                    .follow-blo{
+                      display: flex;
+                      align-items: center;
+                      a{
+                        color: grey;
+                        border: 1px solid #d9d9d9;
+                        padding: 10px 25px;
+                        font-size: 0.75em;
+                        font-weight: 600;
+                        border-radius: 5px;
+
+                        &:hover{
+                          text-decoration: none;
+                        }
+                      }
+                    }
+
+                    &:nth-child(1){
+                    }
+                  }
+                }
                 .social-menu{
                     nav{
                         ul{
@@ -915,9 +1002,20 @@ header{
 
             h1{
                 font-size: 0.9em;
-                margin-bottom: 15px;
+                margin-bottom: 27px;
                 font-weight: 600;
                 text-transform: uppercase;
+
+                a{
+                  text-decoration: none;
+                  color: #bebebe;
+                  margin-left: 15px;
+                  transition: all 0.1s ease-in;
+
+                  &:hover{
+                    color: $color-dos;
+                  }
+                }
             }
             nav{
                 ul{
@@ -936,13 +1034,16 @@ header{
                             }
 
                             img{
-                              width: 60px;
-                              height: 60px;
+                              width: 65px;
+                              height: 65px;
                               object-fit: cover;
                               border-radius: 50%;
                             }
 
                         }
+                    }
+                    li.follower-profile{
+                      display: none;
                     }
                 }
             }
@@ -956,6 +1057,7 @@ header{
 .wrap-profile{
     width: $main-content;
     background: $color-cinco;
+    min-height: 100%;
 
     .wrap-profile-center{
         @include size-container;
@@ -1012,10 +1114,19 @@ header{
         #tab-1 {
          display: flex;
          box-sizing: border-box;
-            justify-content: space-between;
+         justify-content: space-between;
 
             .post{
                 width: 65%;
+
+                a.volver-show{
+                  display: block;
+                  text-align: center;
+                  text-decoration: none;
+                  font-size: 0.8em;
+                  color: #686868;
+                  margin-top: 40px;
+                }
 
                 .publicar{
                     padding-bottom: 50px;
@@ -1128,6 +1239,12 @@ header{
                                 align-items: center;
                                 a{
                                     line-height: 0;
+                                    text-decoration: none;
+                                    transition: all 0.1s ease-in;
+
+                                    &:hover{
+                                      opacity: 0.3;
+                                    }
 
                                     img{
                                         width: 25px;
@@ -1166,7 +1283,7 @@ header{
                                         transition: all 0.1s ease-in;
 
                                         &:hover{
-                                            margin-top: -5px;
+
                                         }
 
                                         &:last-child{
@@ -1193,7 +1310,6 @@ header{
                                 padding: 15px;
                                 background: #f9f9f9;
 
-
                             a{
                                 background-size: cover;
                                 background-position: center;
@@ -1203,6 +1319,20 @@ header{
                                 border-radius: 50%;
                                 border: 2px solid white;
                                 transition: all 0.1s ease-in;
+
+                                &.mas-comment{
+                                  max-width: inherit;
+                                  min-width: inherit;
+                                  font-size: 0.75em;
+                                  text-decoration: none;
+                                  border: none;
+                                  border-radius: 0;
+                                  height: inherit;
+
+                                  img{
+                                    width: 20px;
+                                  }
+                                }
                             }
                             .comment-write{
                                 margin-left: 15px;
@@ -1300,7 +1430,7 @@ header{
                 }
             }
             .sidebar-post{
-                width: 25%;
+                width: 27%;
 
                 .friend{
 
@@ -1509,9 +1639,8 @@ header{
                           img{
                             width: 100%;
                             height: 150px;
-                              object-fit: cover;
-                              margin-bottom: 10px;
-                              border-radius: 5px;
+                            object-fit: cover;
+                            margin-bottom: 10px;
                           }
                           h1{
                             margin: 0 auto;
@@ -1578,6 +1707,17 @@ header{
         }
 
     }
+    .wrap-profile-center-show{
+      padding-top: 100px;
+      .tab{
+        margin: 30px auto;
+        padding: 0;
+        border-top: none;
+      }
+      #tab-1{
+        justify-content: center;
+      }
+    }
 
     .wrap-profile-center-wall{
         padding: 0 0 3% 0;
@@ -1620,7 +1760,7 @@ header{
       input[type="email"], input[type="password"], input[type="text"]{
         background-color: #090909;
         border: none;
-        padding: 10px 25px;
+        padding: 17px 25px;
         box-sizing: border-box;
         border-radius: 5px;
         width: 100%;
@@ -1687,6 +1827,75 @@ header{
         color: #959595;
       }
     }
+
+    .divider{
+      height: 1px;
+      border-bottom: 1px solid #e8e8e8;
+      width: 55%;
+      margin: 20px 0 40px;
+      text-align: center;
+
+      &:after{
+        content: 'O si prefieres';
+        display: inline-block;
+        position: relative;
+        top: -12px;
+        padding: 0 16px;
+        background: #fff;
+        font-size: 0.8em;
+        color: grey;
+      }
+    }
+
+    a.facebook-link{
+      background: #eaeaea;
+      color: darkgrey;
+      width: 57px;
+      height: 37px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1em;
+      border-radius: 5px;
+      transition: all 0.2s ease-in;
+
+      &:hover{
+        background-color: #4267b2;
+        color: white;
+      }
+
+    }
+
+  }
+  .form-login{
+
+    .divider{
+      border-bottom: 1px solid #242424;
+
+      &:after{
+        background: #101010;
+        color: #898989;
+      }
+    }
+
+    a.facebook-link{
+      background-color: #4267b2;
+      color: white;
+      width: 57px;
+      height: 37px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1em;
+      border-radius: 5px;
+      transition: all 0.2s ease-in;
+
+      &:hover{
+        opacity: 0.5;
+      }
+
+    }
+
 
   }
   .sesion-bloque{
@@ -1760,10 +1969,9 @@ header{
       .field{
 
       input[type="text"], input[type="email"], input[type="password"]{
-        background-color: white;
-        border: 1px solid grey;
-        padding: 10px 25px;
-        font-size: 0.7em;
+        background-color: #eaeaea;
+        padding: 17px 25px;
+        font-size: 0.8em;
         color: #4a4a4a;
 
         &::placeholder {
@@ -1796,6 +2004,7 @@ header{
 
 .wrap-edit-profile{
   width: $main-content;
+  min-height: 100%;
   padding-bottom: 50px;
   background: #f1f1f1;
   .wrap-edit-profile-center{
@@ -1980,6 +2189,7 @@ header{
 
 .wrap-pages{
   width: $main-content;
+  min-height: 100%;
   padding: 100px 0;
   background: #f1f1f1;
   .wrap-pages-center{
@@ -2009,16 +2219,11 @@ header{
           font-size: 0.8em;
           color: $color-tit;
         }
-
         a{
           font-size: 0.7em
-
         }
-
-
       }
     }
-
 
     .grid-card-pages{
       margin-top: 25px;
@@ -2028,11 +2233,6 @@ header{
       .card-custom{
         width: 30%;
         margin-bottom: 30px;
-
-        &:hover{
-          margin-top: -10px;
-        }
-
 
       img{
           height: 160px;
@@ -2114,6 +2314,7 @@ header{
   height: 100%;
   padding: 66px 0 0 0;
   position: relative;
+  display: block;
 
   a.editar-evento{
     position: absolute;
@@ -2255,9 +2456,13 @@ header{
 
     .info-event-bloque{
       width: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       h1{
         font-weight: 600;
-        font-size: 2.5em;
+        font-size: 2em;
+        margin-bottom: 15px;
         text-transform: uppercase;
       }
       p{
@@ -2392,34 +2597,27 @@ header{
         border-bottom: 1px solid #ededed;
         width: 100%;
       }
-
       .product{
         width: 30%;
         margin-bottom: 50px;
         position: relative;
-
         .custom-pro{
-          position: absolute;
-          z-index: 999;
-          top: 0;
-          left: 0;
-          background: rgba(255, 255, 255, 0.8);
-          padding: 10px;
-          box-sizing: border-box;
           width: 100%;
+          margin-bottom: 10px;
+          background: #f3f3f3;
+          padding: 5px 10px;
           ul{
             padding: 0;
             display: flex;
             margin: 0;
-            justify-content: space-between;
-
             li{
               list-style: none;
-
+              margin-right: 10px;
               a{
                 font-size: 0.7em;
                 margin-right: 5px;
-                color: grey;
+                color: #4CAF50;
+                font-weight: 600;
               }
             }
           }
@@ -2453,6 +2651,12 @@ header{
             &:nth-child(1){
               p{
                 font-size: 0.7em;
+
+                a{
+                  font-weight: 600;
+                  text-decoration: none;
+                  color: $color-tit;
+                }
               }
             }
             &:nth-child(2){
@@ -2493,6 +2697,176 @@ header{
 
   .wrap-store-center-grid{
     margin-top: 50px;
+  }
+}
+
+
+.product-show-wrap{
+  width: $main-content;
+  padding-top: 150px;
+
+  .product-show-wrap-center{
+    @include size-container;
+    display: flex;
+    justify-content: space-between;
+
+    .show-product{
+      width: 45%;
+      position: relative;
+
+      &:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+
+        &.dots{
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          object-fit: inherit;
+          bottom: -50px;
+          right: -50px;
+          opacity: 0.5;
+        }
+
+      }
+      h1{
+        font-weight: 600;
+        font-size: 1.7em;
+        color: $color-tit;
+      }
+      nav{
+        ul{
+          display: flex;
+          padding: 0;
+          margin: 0;
+
+          li{
+            list-style: none;
+            a{
+              background: none;
+              color: green;
+              padding: 0;
+              margin: 0 10px 0 0;
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+      h2{
+        font-size: 1.3em;
+        color: #4CAF50;
+        margin: 20px 0;
+      }
+      p{
+        white-space: pre-line;
+        font-size: 0.9em;
+        span{
+          font-size: 0.9em;
+          font-weight: 600;
+        }
+      }
+      a{
+        background-color: #4CAF50;
+        color: white;
+        padding: 13px 25px;
+        width: fit-content;
+        transition: all 0.2s ease-in;
+        margin-bottom: 30px;
+        .fas{
+          margin-right: 5px;
+        }
+        &:hover{
+          text-decoration: none;
+          opacity: 0.5;
+        }
+      }
+    }
+
+  }
+}
+
+.more-products{
+  width: $main-content;
+  padding-top: 150px;
+
+  .more-products-center{
+    @include size-container;
+
+    h1{
+      font-size: 1.2em;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ececec;
+      margin-bottom: 32px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #7b7b7b;
+    }
+
+    .more-products-grid{
+      display: flex;
+      justify-content:space-between;
+      margin-bottom: 50px;
+
+      .more-single{
+        width: 31%;
+        display: flex;
+        justify-content: space-between;
+        background: #efefef;
+
+        img{
+          width: 35%;
+          height: 200px;
+          object-fit: cover;
+        }
+        .more-info{
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 10px;
+
+          h1{
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $color-tit;
+            margin: 0 0 8px 0;
+            padding: 0;
+
+          }
+          h2{
+            color: #4CAF50;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+          p{
+            font-size: 0.7em;
+          }
+          a{
+            text-decoration: none;
+            display: inline-block;
+            padding: 0;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: grey;
+
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -2556,5 +2930,41 @@ footer{
         text-transform: uppercase;
       }
     }
+  }
+}
+
+.footer-home{
+    background-color: black;
+    margin-top: 0;
+    padding-top: 10%;
+
+    a{
+      color: white;
+    }
+}
+.footer-sections{
+    background-color: #f1f1f1;
+    margin-top: 0;
+    padding-top: 5%;
+}
+.footer-store{
+    background-color: white;
+    margin-top: 0;
+    padding-top: 5%;
+}
+
+//Custom Bootstrao
+
+.modal-backdrop{
+  z-index: 9;
+  height: 100%;
+}
+
+.modal-custom{
+  top: 60px;
+  background: rgba(0, 0, 0, 0.72);
+
+  .modal-content-custom{
+    padding: 20px;
   }
 }

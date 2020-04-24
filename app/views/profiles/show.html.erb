@@ -8,9 +8,12 @@
                 <article class="info">
                     <h1><%= @profile.username %></h1>
 
+                    <% if current_user == @profile.user %>
+
                       <%= link_to my_profile_path, class:"editar" do %>
                          <i class="far fa-edit"></i> Editar Perfil
                        <% end %>
+                    <% end %>
 
                     <p><span><%= @user_profile.profile.fullname %></span>
                       <%= @profile.bio %></p>
@@ -33,9 +36,22 @@
 
             <section class="profile-info-foot">
                 <section class="follows-dats">
-                    <a href="#"><span><%= @profile.user.all_following.count %> </span> seguidos</a>
+                    <a href="#" data-toggle="modal" data-target="#modalFriends"><span><%= @profile.user.all_following.count %> </span> seguidos</a>
                     <a href="#"><span><%= @profile.user.followers.count %></span> seguidores</a>
                 </section>
+
+                <!-- Modal de amigos -->
+                <div class="modal fade modal-custom" id="modalFriends" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-content-custom">
+
+                      <% current_user.following_by_type('User').each do |user_profile| %>
+                         <%= render 'partials/follower-profile', profile: user_profile.profile %>
+                      <% end %>
+
+                    </div>
+                  </div>
+                </div>
 
                 <section class="social-menu">
                     <nav>
@@ -161,3 +177,33 @@
 
     </section>
 </section>
+
+<%= render 'partials/footer-inter' %>
+
+<script>
+  $(".new_comment").keyup(function (event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+
+        // var post_id = $(this).parent().parent().attr("id");
+        var post_id = $(this).attr("id").split("-")[1]
+        $.ajax({
+          url: '/posts/'+ post_id +'/comments',
+          type: 'post',
+          dataType: 'script',
+          data: {content: $(this).val()}
+        })
+        .done(function() {
+          console.log("success");
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          console.log("complete");
+        });
+
+
+    }
+  })
+</script>

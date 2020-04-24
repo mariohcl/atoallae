@@ -25,3 +25,16 @@ $(document).ready(function() {
 $(document).ready(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+// Alertas
+$(document).ready(function(){
+  setInterval(function(){
+    $('div.alert-cont').addClass("out")
+  }, 2000);
+
+});
+
+//Modal
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
