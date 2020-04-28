@@ -5,5 +5,7 @@ $(".comment-write-<%= @comment.post.id %> h1 ").html('<%= @comment.user.profile.
 $(".comment-write-<%= @comment.post.id %> p ").html('<%= @comment.content %>');
 $('.comment-img-<%= @comment.post.id %>').css('background-image', 'url(<%= @comment.user.profile.avatar %>)');
 
+// $('.comments-new-feed').show();
+
 //Dejar en blanco input
 console.log('<%= @comment.user.profile.avatar %>');

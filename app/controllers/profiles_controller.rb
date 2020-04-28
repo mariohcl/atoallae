@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  skip_authorization_check
 
   # GET /profiles
   # GET /profiles.json
@@ -32,7 +34,6 @@ class ProfilesController < ApplicationController
   end
 
   def follow
-
     @user = User.find(params[:id])
     if current_user.following?(@user)
       current_user.stop_following(@user)

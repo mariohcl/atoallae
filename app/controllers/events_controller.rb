@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  skip_authorization_check
 
   # GET /events
   # GET /events.json
@@ -10,6 +12,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @profiles = Profile.all
   end
 
   # GET /events/new

@@ -7,7 +7,7 @@
 
     <div class="info-event-content">
 
-        <h2>Realizado por <%= image_tag("user-14.jpg", :alt => "Logo Atoallae") %></h2>
+        <h2>Realizado por <img src="<%= @event.page.image %>" alt="" data-toggle="tooltip" data-placement="bottom" title="<%= @event.page.name %>"></h2>
 
         <span class="tag">evento atoallae</span>
         <h1><%= @event.title %></h1>
@@ -26,9 +26,62 @@
           </ul>
         </nav>
 
+        <div class="asist-event">
+
+          <a href="" class="access-to-asist" data-toggle="modal" data-target="#modalAsistentes">
+            <% @event.get_likes.by_type(User)[0,3].each  do | image| %>
+            <img src="<%= image.voter.profile.avatar %>" alt="">
+            <% end %>
+          </a>
+
+          <% if @event.get_likes.size > 0 %>
+
+            <p><span><%= @event.get_likes.by_type(User).last.voter.profile.username %></span>
+
+              <% if @event.get_likes.size.to_i > 1 %>
+                y otras <span><%= ( @event.get_likes.size.to_i - 1 ) %></span> personas asistirán al evento
+              <% else %>
+                asistirà a este evento
+              <% end %>
+            </p>
+
+          <% end %>
+
+        </div>
+
     </div>
 
   </section>
+
+  <!-- Modal de amigos seguidores -->
+  <div class="modal fade modal-custom" id="modalAsistentes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-content-custom">
+
+        <h1>Asistentes al evento
+          <% if @event.get_likes.size.to_i > 1 %>
+          <span><strong><%= @event.get_likes.size %></strong> personas asistirán</span>
+          <% else %>
+          <span><strong><%= @event.get_likes.size %></strong> persona asistirá</span>
+          <% end %>
+          </h1>
+
+        <% @event.get_likes.by_type(User).each  do | user_info| %>
+
+        <div class="asist-content">
+          <div class="asist-bloque">
+            <img src="<%= user_info.voter.profile.avatar %>" alt="">
+            <div class="asist-info">
+              <a href=""><%= user_info.voter.profile.username %></a>
+              <p><%= user_info.voter.profile.username %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 
 
 
@@ -49,7 +102,10 @@
 
       <small><%= @event.get_likes.size %></small>
 
-      <%= link_to 'Back', page_path(@event.page) %>
+      <%= link_to page_path(@event.page) do %>
+        Volver a <%= @event.page.name %>
+      <% end %>
+
     </div>
 
 

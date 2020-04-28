@@ -1,4 +1,4 @@
-<% current_user.posts.reverse_each do |post| %>
+<% @profile.user.posts.reverse_each do |post| %>
 
 <article class="post-users">
   <nav class="navbar navbar-expand-lg navbar-custom">
@@ -60,7 +60,13 @@
               <% end %>
             </nav>
 
-              <p><span><%= post.get_likes.by_type(User).last.voter.profile.username %></span> y <span><%= ( post.get_likes.size.to_i - 1 ) %></span> les gusta tu publicación</p>
+            <p>a <span><%= post.get_likes.by_type(User).last.voter.profile.username %></span>
+              <% if post.get_likes.size.to_i > 1 %>
+                y <span><%= ( post.get_likes.size.to_i - 1 ) %></span> personas más les gusta esto
+              <% else %>
+                le gusta esto
+              <% end %>
+            </p>
             <% end %>
 
             </div>
@@ -78,15 +84,14 @@
         </div>
 
     </div>
-    <% end %>
-
-
 
     <div class="comment-feeds">
         <%= link_to post, class: 'mas-comment' do%>
           <%= image_tag("comment.svg", :alt => "Comment Icon") %> Ver más comentarios
         <% end %>
     </div>
+    <% end %>
+
 
 
     <div class="user-comment">

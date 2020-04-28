@@ -12,7 +12,13 @@ class User < ApplicationRecord
   has_many :pages, :dependent => :destroy
   has_many :events, :dependent => :destroy
 
+  enum role: [:admin,:visit]
 
+  after_initialize do
+    if self.new_record?
+      self.role ||= :visit
+    end
+  end
 
   acts_as_followable
   acts_as_follower

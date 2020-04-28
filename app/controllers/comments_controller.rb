@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+  skip_authorization_check
+  
   def create
     @comment = Comment.new
     @comment.user = current_user

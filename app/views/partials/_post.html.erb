@@ -38,13 +38,9 @@
 
         <div class="bloque">
 
-          <% if current_user.liked? post %>
-            <%= link_to image_tag('heart-active.svg', alt: "Heart active like icon"), like_post_path(post), method: :put %>
-            <span><%= post.get_likes.size %></span>
-          <% else %>
-            <%= link_to image_tag('heart.svg', alt: "heart like icon"), like_post_path(post), method: :put %>
-            <span><%= post.get_likes.size %></span>
-          <% end %>
+            <%= link_to image_tag( (current_user.liked? post)? 'heart-active.svg' :'heart.svg', alt: "Heart active like icon"), like_post_path(post), class: 'heart-'+ post.id.to_s, method: :put, remote: true %>
+            <span class="likescount-<%= post.id %>"><%= post.get_likes.size %></span>
+
 
 
             <%= link_to post do %>
@@ -61,7 +57,15 @@
               <% end %>
             </nav>
 
-              <p><span><%= post.get_likes.by_type(User).last.voter.profile.username %></span> y <span><%= ( post.get_likes.size.to_i - 1 ) %></span> les gusta tu publicación</p>
+              <p>a <span><%= post.get_likes.by_type(User).last.voter.profile.username %></span>
+                <% if post.get_likes.size.to_i > 1 %>
+                  y <span><%= ( post.get_likes.size.to_i - 1 ) %></span> personas más les gusta esto
+                <% else %>
+                  le gusta esto
+                <% end %>
+              </p>
+
+
             <% end %>
         </div>
 
@@ -78,7 +82,6 @@
         </div>
 
     </div>
-    <% end %>
 
     <div class="comment-feeds">
         <%= link_to post, class: 'mas-comment' do%>
@@ -86,6 +89,7 @@
         <% end %>
     </div>
 
+    <% end %>
 
     <div class="user-comment">
 

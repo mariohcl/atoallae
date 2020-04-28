@@ -41,12 +41,16 @@
       <img src="<%= product.imagen %>" alt="">
       <h1><%= product.name %></h1>
 
+      <% if current_user.admin? %>
+
       <nav class="custom-pro">
         <ul>
           <li><%= link_to 'Editar producto', edit_product_path(product) %></li>
           <li><%= link_to 'Eliminar Producto', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </nav>
+
+      <% end %>
 
       <div class="product-description">
         <div class="bloque-desc">

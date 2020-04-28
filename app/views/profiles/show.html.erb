@@ -4,7 +4,7 @@
        <section class="main-profile-info-container">
             <section class="profile-info">
 
-               <a href="#" class="image-profile" style="background-image: url(<%= @profile.avatar %>);"></a>
+               <a class="image-profile" style="background-image: url(<%= @profile.avatar %>);"></a>
                 <article class="info">
                     <h1><%= @profile.username %></h1>
 
@@ -36,22 +36,41 @@
 
             <section class="profile-info-foot">
                 <section class="follows-dats">
+                    <a href="#" data-toggle="modal" data-target="#modalFriendsSeguidores"><span><%= @profile.user.followers.count %></span> seguidores</a>
                     <a href="#" data-toggle="modal" data-target="#modalFriends"><span><%= @profile.user.all_following.count %> </span> seguidos</a>
-                    <a href="#"><span><%= @profile.user.followers.count %></span> seguidores</a>
                 </section>
 
-                <!-- Modal de amigos -->
+                <!-- Modal de amigos seguidores -->
+                <div class="modal fade modal-custom" id="modalFriendsSeguidores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-content-custom">
+
+                      <h1>Seguidores</h1>
+
+                      <% @profile.user.followers_by_type('User').each do |user_profile| %>
+                         <%= render 'partials/follower-profile-seguidores', profile: user_profile.profile %>
+                      <% end %>
+
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal de amigos seguidos -->
                 <div class="modal fade modal-custom" id="modalFriends" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content modal-content-custom">
 
-                      <% current_user.following_by_type('User').each do |user_profile| %>
+                      <h1>Seguidos</h1>
+
+                      <% @profile.user.following_by_type('User').each do |user_profile| %>
                          <%= render 'partials/follower-profile', profile: user_profile.profile %>
                       <% end %>
 
                     </div>
                   </div>
                 </div>
+
+
 
                 <section class="social-menu">
                     <nav>
@@ -110,9 +129,10 @@
 
                      <div class="grid-friends">
 
-                       <% current_user.following_by_type('User').each do |user_profile| %>
+                         <% @profile.user.following_by_type('User').each do |user_profile| %>
                           <%= render 'partials/follower-index', profile: user_profile.profile %>
                       <% end %>
+
 
                          <a href="#"  style="background-image: url(images/profile-user/user-17.jpg);"></a>
                      </div>

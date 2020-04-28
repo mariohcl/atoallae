@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
+  load_and_authorize_resource
+  skip_authorization_check
 
   # GET /posts
   # GET /posts.json
@@ -28,13 +30,22 @@ class PostsController < ApplicationController
   end
 
   def like
+
     @post = Post.find(params[:id])
       if current_user.liked? @post
         @post.unliked_by current_user
+        respond_to do |format|
+         format.js
+        end
       else
         @post.liked_by current_user
+        respond_to do |format|
+         format.js
+        end
       end
-    redirect_to posts_path
+
+
+    # redirect_to posts_path
   end
 
   # POST /posts
@@ -71,6 +82,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

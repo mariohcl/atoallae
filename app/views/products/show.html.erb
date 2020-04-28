@@ -7,6 +7,7 @@
     </article>
     <article class="show-product">
       <h1><%= @product.name %></h1>
+      <% if current_user.admin? %>
       <nav>
         <ul>
           <li><%= link_to 'Editar', edit_product_path(@product) %></li>
@@ -14,6 +15,7 @@
           <li><%= link_to 'Eliminar', @product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </nav>
+      <% end %>
 
       <h2>Precio:</h2>
       <p><span>Descripción:</span>
@@ -29,7 +31,7 @@
 
 <section class="more-products">
   <section class="more-products-center">
-    <h1>Quizà te interese</h1>
+    <h1>Quizá te interese</h1>
 
     <section class="more-products-grid">
 

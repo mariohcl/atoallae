@@ -43,13 +43,8 @@
 
                     <div class="bloque">
 
-                      <% if current_user.liked? @post %>
-                        <%= link_to image_tag('heart-active.svg', alt: "Heart active like icon"), like_post_path(@post), method: :put %>
-                        <span><%= @post.get_likes.size %></span>
-                      <% else %>
-                        <%= link_to image_tag('heart.svg', alt: "heart like icon"), like_post_path(@post), method: :put %>
-                        <span><%= @post.get_likes.size %></span>
-                      <% end %>
+                      <%= link_to image_tag( (current_user.liked? @post)? 'heart-active.svg' :'heart.svg', alt: "Heart active like icon"), like_post_path(@post), class: 'heart-'+ @post.id.to_s, method: :put, remote: true %>
+                      <span class="likescount-<%= @post.id %>"><%= @post.get_likes.size %></span>
 
                         <%= image_tag("comment.svg", :alt => "Comment Icon") %>
                         <span id="total-comments-<%= @post.id %>"><%= @post.comments.count %></span>
@@ -64,23 +59,41 @@
                           <% end %>
                         </nav>
 
-                          <p><span><%= @post.get_likes.by_type(User).last.voter.profile.username %></span> y <span><%= ( @post.get_likes.size.to_i - 1 ) %></span> les gusta tu publicación</p>
+                        <p>a <span><%= @post.get_likes.by_type(User).last.voter.profile.username %></span>
+                          <% if @post.get_likes.size.to_i > 1 %>
+                            y <span><%= ( @post.get_likes.size.to_i - 1 ) %></span> personas más les gusta esto
+                          <% else %>
+                            le gusta esto
+                          <% end %>
+                        </p>
                         <% end %>
                     </div>
 
                 </div>
 
-                <% if @post.comments.count > 0 %>
-                <div class="comment-feeds">
-                    <a href="#" style="background-image: url(<%= @post.comments.last.user.profile.avatar %>);" class="comment-img-<%= @post.id %>"></a>
+                <div class="comment-feeds comments-new-feed" style="display: none">
+                    <a href="#" style="background-image: url('');" class="comment-img-<%= @post.id %>"></a>
 
                     <div class="comment-write comment-write-<%= @post.id %>">
-                        <h1><%= @post.comments.last.user.profile.username %></h1>
-                        <p><%= @post.comments.last.content %></p>
+                        <h1></h1>
+                        <p></p>
+                    </div>
+
+                </div>
+
+                <% if @post.comments.count > 0 %>
+                <% @post.comments.each do |comment|%>
+                <div class="comment-feeds">
+                    <a href="#" style="background-image: url(<%= comment.user.profile.avatar %>);" class=""></a>
+
+                    <div class="comment-write">
+                        <h1><%= comment.user.profile.username %></h1>
+                        <p><%= comment.content %></p>
                         <!-- <a href=""> <img src="images/heart.svg" alt=""> <span>30</span> </a> -->
                     </div>
 
                 </div>
+                <% end %>
                 <% end %>
 
 
@@ -111,3 +124,31 @@
 </section>
 
 <%= render 'partials/footer-inter' %>
+
+<script>
+  $(".new_comment").keyup(function (event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+
+        // var post_id = $(this).parent().parent().attr("id");
+        var post_id = $(this).attr("id").split("-")[1]
+        $.ajax({
+          url: '/posts/'+ post_id +'/comments',
+          type: 'post',
+          dataType: 'script',
+          data: {content: $(this).val()}
+        })
+        .done(function() {
+          console.log("success");
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          console.log("complete");
+        });
+
+
+    }
+  })
+</script>

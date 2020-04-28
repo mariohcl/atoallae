@@ -26,6 +26,7 @@ gem 'carrierwave'
 gem 'acts_as_votable'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+gem 'cancancan'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

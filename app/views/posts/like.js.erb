@@ -1,0 +1,6 @@
+<% if current_user.liked? @post %>
+$('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart-active.svg');
+<% else %>
+$('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart.svg');
+<% end %>
+$('.likescount-'+ <%= @post.id %> ).text(<%= @post.get_likes.size %>);

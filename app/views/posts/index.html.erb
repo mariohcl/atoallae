@@ -9,40 +9,61 @@
 
            <nav>
                <ul>
-
                  <% current_user.following_by_type('User').each do |user_profile| %>
                     <%= render 'partials/follower-index', profile: user_profile.profile %>
                 <% end %>
-
                </ul>
            </nav>
 
        </section>
 
-       <!-- Modal de amigos -->
-       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <!-- Modal de buscar amigos-->
+       <div class="modal modal-custom fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
-           <div class="modal-content">
+           <div class="modal-content modal-content-custom">
 
-             
+             <h1>Buscar amigos</h1>
+
+             <% @profiles.each do |profile| %>
+               <% if current_user != profile.user %>
+                 <% if current_user.following?(profile.user) %>
+                 <% else %>
+
+                 <div class="follower-profile">
+
+                   <div class="bloque-follow">
+                     <%= image_tag( profile.avatar , alt: "User") %>
+                     <div class="info-name">
+                       <%= link_to profile.username, profile_path(profile.user) %>
+                       <p><%= profile.fullname %></p>
+                     </div>
+                   </div>
+
+                   <div class="bloque-follow">
+
+                     <div class="follow-blo">
+                       <%= link_to 'Seguir', follow_profile_path(profile), method: :put, class: 'active-follow' %>
+                     </div>
+
+                   </div>
+
+                 </div>
+                 <% end %> <!--End del segundo if-->
+               <% end %> <!--End del primer if-->
+             <% end %> <!--End del each-->
 
            </div>
          </div>
        </div>
 
-
     </section>
 
-
 </section>
-
-
 
 <section class="wrap-profile">
     <section class="wrap-profile-center wrap-profile-center-wall">
 
        <div id="tabs-container">
-
 
         <div class="tab">
 
@@ -75,9 +96,10 @@
 
                        <% @events.each do |event| %>
 
+
                          <section class="event-container">
                              <div class="head-event">
-                                 <a href=""  style="background-image: url('<%= event.eventimage %>');"></a>
+                                 <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= event.eventimage %>');"></a>
                                  <div class="info-header-event">
                                      <h1><%= event.title %></h1>
                                      <p><%= event.date %>   23:30 hrs  <a href="">Tempo Discotheque</a></p>
@@ -95,9 +117,10 @@
                                  <div class="bloque">
                                      <h1>asistentes</h1>
                                      <nav>
-                                          <a href="#" style="background-image: url(images/profile-user/user-11.jpg);"></a>
-                                          <a href="#" style="background-image: url(images/profile-user/user-15.jpg);"></a>
-                                          <a href="#" style="background-image: url(images/profile-user/user-18.jpg);"></a>
+
+                                          <% event.get_likes.by_type(User)[0,3].each  do | image| %>
+                                            <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= image.voter.profile.avatar %>');"></a>
+                                          <% end %>
                                       </nav>
                                  </div>
                                  <div class="bloque">
@@ -126,14 +149,18 @@
                        <% @products.each do |product| %>
 
                          <div class="product-content">
-                           <a href="<%= product %>">
+                           <%= link_to product do %>
                              <img src="<%= product.imagen %>" alt="">
                              <h1><%= product.name %></h1>
                              <p>atoallae store</p>
-                           </a>
+                           <% end %>
                          </div>
 
                        <% end %>
+
+                       <div class="see-more">
+                           <a href="<%= products_path %>">explorar más productos</a>
+                       </div>
 
 
                      </div>
