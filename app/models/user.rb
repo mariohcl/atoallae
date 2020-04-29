@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_one :profile, :dependent => :destroy
   has_many :pages, :dependent => :destroy
   has_many :events, :dependent => :destroy
+  has_many :orders
 
   enum role: [:admin,:visit]
 

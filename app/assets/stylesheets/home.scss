@@ -97,6 +97,39 @@ div.out{
   transition: all 0.3s ease-in;
 }
 
+.preloader{
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  img{
+    width: 80px;
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+.preloader-none{
+  display: none;
+}
+
+@keyframes spin {
+    0% {
+        opacity: 0.1;
+    }
+    50%{
+      opacity: 0.9
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
 header{
     width: 100%;
     position: absolute;

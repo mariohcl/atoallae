@@ -19,7 +19,11 @@
 
        <input type="text" placeholder="Buscar">
 
-         <a href="" class="cart"><%= image_tag("cart-active.svg", :alt => "Carrito compra") %></a>
+         <% if current_user.orders.count > 0 %>
+           <a href="<%= orders_path %>" class="cart"><%= image_tag("cart-active.svg", :alt => "Carrito compra") %></a>
+         <% else %>
+           <a href="<%= orders_path %>" class="cart"><%= image_tag("cart.svg", :alt => "Carrito compra") %></a>
+         <% end %>
 
          <a href="" class="bell">
              <%= image_tag("bell-active.svg", :alt => "Bell icon") %>

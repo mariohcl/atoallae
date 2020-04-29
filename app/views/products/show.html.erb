@@ -17,13 +17,22 @@
       </nav>
       <% end %>
 
-      <h2>Precio:</h2>
+      <h2>Precio: <%= number_to_currency(@product.stocks.last.price, unit: "$", separator: ",", delimiter: ",", precision: 0) %> CLP</h2>
       <p><span>Descripción:</span>
         <%= @product.description %></p>
 
-        <a href="·" class="cart-pro"><i class="fas fa-shopping-cart"></i> Agregar al carrito</a>
+        <p><span>Stock:</span>
+          <%= @product.stocks.count %></p>
+            <% if @product.stocks.count > 0 %>
+              <%= form_with(model: Order.new, local: true) do |form| %>
+                <%= form.hidden_field :stock_id, value: @product.stocks.last.id %>
+                <%= form.submit "Agregar al carrito" %>
+              <% end %>
+            <% else %>
+              <p>No stock</p>
+          <% end %>
 
-        <p class="cat"><strong>Categorías:</strong> Lorem, Lorem</p>
+        <p class="cat"><strong>Categoría:</strong> <%= @product.category.name %></p>
     </article>
 
   </section>

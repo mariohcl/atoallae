@@ -67,7 +67,20 @@
                 <i class="fas fa-search"></i>
               <% end %>
               </li>
-              <li><a href="·" class="cart-pro"><i class="fas fa-shopping-cart"></i></a></li>
+              <li>
+                <% if product.stocks.count > 0 %>
+                  <%= form_with(model: Order.new) do |form| %>
+
+                    <%= form.hidden_field :stock_id, value: product.stocks.last.id %>
+
+                    <%= form.submit "Agregar al carrito" %>
+
+                  <% end %>
+
+                <% else %>
+                <p>No stock</p>
+              <% end %>
+              </li>
             </ul>
           </nav>
         </div>

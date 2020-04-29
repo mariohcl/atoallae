@@ -1,3 +1,9 @@
+//preloader
+window.onload = function(){
+  $('#preloader').addClass('preloader-none');
+}
+
+//Header Sticky
 $(document).scroll(function() {
     if ($(this).scrollTop() > 200){
         $('header.main-header').addClass("wrap-menu-stick");
