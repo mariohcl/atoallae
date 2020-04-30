@@ -57,7 +57,7 @@
           <p><%= truncate(product.description, :length => 60) %> <%= link_to 'Ver más', product %> </p>
         </div>
         <div class="bloque-desc">
-          <h2>$12.990</h2>
+          <h2><%= number_to_currency(product.stocks.last.price, unit: "$", separator: ",", delimiter: ",", precision: 0) %> CLP</h2>
           <p>Stock: <span><%= link_to product.stocks.count, product_stocks_path(product)  %> Unidades</span></p>
 
           <nav>
@@ -73,7 +73,9 @@
 
                     <%= form.hidden_field :stock_id, value: product.stocks.last.id %>
 
-                    <%= form.submit "Agregar al carrito" %>
+                    <%= button_tag type: 'submit' do %>
+                        <i class="fas fa-shopping-cart"></i>
+                    <% end %>
 
                   <% end %>
 

@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
     @post = Post.find(params[:id])
       if current_user.liked? @post
+        @old_like_user_id = @post.get_like_by_user(current_user.id)
         @post.unliked_by current_user
         respond_to do |format|
          format.js

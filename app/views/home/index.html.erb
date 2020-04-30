@@ -1,5 +1,9 @@
 <div class="preloader" id="preloader">
+  <p class="web-site">atoallae.cl</p>
+
   <%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %>
+
+  <p class="advise"><span><% if user_signed_in? %><%= current_user.profile.fullname %><% end %></span> Estás ingresando a nuestro home</p>
 </div>
 
 <section class="wrap">

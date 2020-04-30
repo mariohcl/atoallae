@@ -1,6 +1,5 @@
 <section class="header-user-wall">
 
-
     <section class="header-user-wall-center">
 
        <section class="wall-friends-grid">
@@ -81,9 +80,7 @@
 
                  <%= render 'partials/post' %>
 
-
                  <i class="fa fa-spinner fa-spin"></i>
-
 
 
               </section>
@@ -102,12 +99,12 @@
                                  <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= event.eventimage %>');"></a>
                                  <div class="info-header-event">
                                      <h1><%= event.title %></h1>
-                                     <p><%= event.date %>   23:30 hrs  <a href="">Tempo Discotheque</a></p>
+                                     <p><%= event.date %>   <a href=""><%= event.page.name %></a></p>
                                  </div>
                              </div>
 
                              <a href="<%= page_event_path(event.page, event) %>">
-                                 <p><%= event.description %> <span>Más info</span></p>
+                                 <p><%= event.description %></p>
 
                                  <div class="img-event" style="background-image: url('<%= event.eventimage %>');"></div>
 
@@ -124,7 +121,7 @@
                                       </nav>
                                  </div>
                                  <div class="bloque">
-                                     <a href="#" class="action-btn">asistir</a>
+                                     <a href="<%= page_event_path(event.page, event) %>" class="action-btn">más info</a>
                                  </div>
                              </div>
                          </section>

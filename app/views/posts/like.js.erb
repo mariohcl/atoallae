@@ -1,6 +1,15 @@
 <% if current_user.liked? @post %>
-$('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart-active.svg');
+  $('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart-active.svg');
+  $('#like-aj-img-'+ <%= @post.id %>).append('<%= link_to @post, :id => "user_like"+@post.id.to_s+"-"+@post.get_likes.by_type(User).last.id.to_s do %><%= image_tag( @post.get_likes.by_type(User).last.voter.profile.avatar, :alt => "Comment Icon") %><% end %>');
 <% else %>
-$('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart.svg');
+  $('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart.svg');
+  $('#user_like<%=@post.id.to_s%>-<%=@old_like_user_id%>').remove();
 <% end %>
+
 $('.likescount-'+ <%= @post.id %> ).text(<%= @post.get_likes.size %>);
+
+<% if @post.get_likes.by_type(User).count == 0 %>
+  $('.section-users-<%= @post.id %>').text('Nadie le gusta tu wea')
+<% else %>
+  $('.section-users-<%= @post.id %>').text('<%= @post.get_likes.by_type(User).last.voter.profile.username %> y a <%= ( @post.get_likes.size.to_i - 1 ) %> personas más les gusta esto')
+<% end %>

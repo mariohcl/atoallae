@@ -1,24 +1,43 @@
-<p id="notice"><%= notice %></p>
+<section class="order-wrap">
+  <section class="order-wrap-center">
 
-<h1>Orders</h1>
+    <h1>Tu compra</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.stock.product.name %>
-        <%= order.stock.product.description %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <article class="product-wrap">
 
-<br>
+      <div class="detail-product">
+        <img src="<%= order.stock.product.imagen %>" alt="">
+        <div>
+          <h1><%= order.stock.product.name %></h1>
+          <span><%= number_to_currency(order.stock.product.stocks.last.price, unit: "$", separator: ",", delimiter: ",", precision: 0) %> CLP</span>
+
+
+          <p><%= order.stock.product.description %></p>
+        </div>
+
+      </div>
+      <div class="detail-last">
+        <%= link_to order, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+
+    </article>
+    <% end %>
+
+
+    <section class="more-access">
+
+      <%= link_to products_path do %>
+        <i class="fas fa-shopping-bag"></i> Seguir comprando
+      <% end %>
+
+      <%= link_to products_path do %>
+        <i class="fas fa-shopping-bag"></i> Pagar
+      <% end %>
+
+    </section>
+
+  </section>
+</section>

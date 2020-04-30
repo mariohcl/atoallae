@@ -50,23 +50,24 @@
         </div>
 
         <div class="bloque-2">
-          <% if post.get_likes.size > 0 %>
-            <nav>
+            <nav id="like-aj-img-<%=post.id.to_s %>">
               <% post.get_likes.by_type(User)[0,3].each  do | image| %>
-                <a href="#" style="background-image: url(<%= image.voter.profile.avatar %>);"></a>
+                <%= link_to post, :id => 'user_like'+post.id.to_s+"-"+image.id.to_s do %>
+                  <%= image_tag( image.voter.profile.avatar, :alt => "Comment Icon") %>
+                <% end %>
               <% end %>
             </nav>
 
-              <p>a <span><%= post.get_likes.by_type(User).last.voter.profile.username %></span>
-                <% if post.get_likes.size.to_i > 1 %>
-                  y <span><%= ( post.get_likes.size.to_i - 1 ) %></span> personas más les gusta esto
-                <% else %>
-                  le gusta esto
-                <% end %>
-              </p>
+            <p>
+              <span class="section-users-<%= post.id %>">
+               <% if (post.get_likes.by_type(User).count > 0) %>
+                a <%= post.get_likes.by_type(User).last.voter.profile.username %> a <span id="like-aj-count"><%=(post.get_likes.size.to_i - 1) %> les gusta esto</span>
+               <% else %>
 
+               <% end %>
+              </span>
+            </p>
 
-            <% end %>
         </div>
 
     </div>

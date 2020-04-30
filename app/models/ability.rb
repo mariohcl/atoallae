@@ -15,10 +15,7 @@ class Ability
         can :destroy, Post, user_id: user.id
         can :create, Comment
         can :update, Profile, user_id: user.id
-        
         can :update, Page, user_id: user.id
-
-        can :update, Event, page_id: page.id
         can :like, Post
         can :like, Event
       end

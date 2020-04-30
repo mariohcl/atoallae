@@ -21,12 +21,16 @@
       <p><span>Descripción:</span>
         <%= @product.description %></p>
 
-        <p><span>Stock:</span>
-          <%= @product.stocks.count %></p>
+        <p><span>Stock:</span> <%= @product.stocks.count %> unidad/es</p>
+
             <% if @product.stocks.count > 0 %>
-              <%= form_with(model: Order.new, local: true) do |form| %>
+              <%= form_with(model: Order.new) do |form| %>
                 <%= form.hidden_field :stock_id, value: @product.stocks.last.id %>
-                <%= form.submit "Agregar al carrito" %>
+                <div class="cart-content">
+                  <%= image_tag("cart-active.svg", :alt => "Carrito compra") %>
+                  <%= form.submit "Agregar al carrito", class: 'cart-access' %>
+                </div>
+
               <% end %>
             <% else %>
               <p>No stock</p>
@@ -50,7 +54,7 @@
         <img src="<%= product.imagen %>" alt="">
         <div class="more-info">
           <h1><%= product.name %></h1>
-          <h2>$12.000</h2>
+          <h2><%= number_to_currency(product.stocks.last.price, unit: "$", separator: ",", delimiter: ",", precision: 0) %> CLP</h2>
           <p><%= truncate(product.description, :length => 60) %></p>
 
           <%= link_to product, class: 'more-info' do %>
