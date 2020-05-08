@@ -18,26 +18,28 @@
                     <p><span><%= @user_profile.profile.fullname %></span>
                       <%= @profile.bio %></p>
 
-
                     <% if current_user != @profile.user %>
-                      <% if current_user.following?(@profile.user) %>
-                        <div class="follow-blo">
-                          <p class="siguiendo"><i class="fas fa-user-plus"></i> Siguiendo</p>
-                          <%= link_to 'Dejar de seguir', follow_profile_path(@profile.user), method: :put, class: 'disable' %>
-                        </div>
-                      <% else %>
-                        <%= link_to 'Seguir', follow_profile_path(@profile.user), method: :put %>
-                      <% end %>
-                    <% end %>
+                    <div id="follow-btn-<%= @profile.user.id %>">
 
+                        <% if current_user.following?(@profile.user) %>
+                          <div class="follow-blo">
+                            <p class="siguiendo"><i class="fas fa-user-plus"></i> Siguiendo</p>
+                            <%= link_to 'Dejar de seguir', follow_profile_path(@profile.user, @profile.user), method: :put, class: 'disable', remote: true %>
+                          </div>
+                        <% else %>
+                          <%= link_to 'Seguir', follow_profile_path(@profile.user, @profile.user), method: :put, remote: true %>
+                        <% end %>
+
+                    </div>
+                    <% end %>
 
                 </article>
             </section>
 
             <section class="profile-info-foot">
                 <section class="follows-dats">
-                    <a href="#" data-toggle="modal" data-target="#modalFriendsSeguidores"><span><%= @profile.user.followers.count %></span> seguidores</a>
-                    <a href="#" data-toggle="modal" data-target="#modalFriends"><span><%= @profile.user.all_following.count %> </span> seguidos</a>
+                    <a href="#" data-toggle="modal" data-target="#modalFriendsSeguidores"><span id="follow-count-<%= @profile.user.id %>"><%= @profile.user.followers.count %></span> seguidores</a>
+                    <a href="#" data-toggle="modal" data-target="#modalFriends"><span id="following-count-<%= @profile.user.id %>"><%= @profile.user.all_following.count %> </span> seguidos</a>
                 </section>
 
                 <!-- Modal de amigos seguidores -->
@@ -48,7 +50,7 @@
                       <h1>Seguidores</h1>
 
                       <% @profile.user.followers_by_type('User').each do |user_profile| %>
-                         <%= render 'partials/follower-profile-seguidores', profile: user_profile.profile %>
+                         <%= render 'partials/follower-profile-seguidores', user_profile: user_profile.profile %>
                       <% end %>
 
                     </div>
@@ -63,7 +65,7 @@
                       <h1>Seguidos</h1>
 
                       <% @profile.user.following_by_type('User').each do |user_profile| %>
-                         <%= render 'partials/follower-profile', profile: user_profile.profile %>
+                         <%= render 'partials/follower-profile-seguidos', user_profile: user_profile.profile %>
                       <% end %>
 
                     </div>
@@ -130,11 +132,9 @@
                      <div class="grid-friends">
 
                          <% @profile.user.following_by_type('User').each do |user_profile| %>
-                          <%= render 'partials/follower-index', profile: user_profile.profile %>
-                      <% end %>
+                            <%= render 'partials/follower-index', profile: user_profile.profile %>
+                        <% end %>
 
-
-                         <a href="#"  style="background-image: url(images/profile-user/user-17.jpg);"></a>
                      </div>
 
                      <h1>instagram feed</h1>
@@ -142,10 +142,9 @@
                      <div class="grid-insta">
                           <div id="instagram-feed4" class="instagram_feed"></div>
 
-                          <script src="js/jquery.instagramFeed.js"></script>
                           <script>
                                (function($){
-                                   $(window).on('load', function(){
+                                   window.addEventListener('turbolinks:load', function(){
                                        $.instagramFeed({
                                            'username': '<%= @profile.instagram %>',
                                            'container': "#instagram-feed4",
@@ -172,7 +171,6 @@
                 <section class="instagram-full-grid">
                     <div id="instagram-feed6" class="instagram_feed"></div>
 
-                     <script src="js/jquery.instagramFeed.js"></script>
                           <script>
                                (function($){
                                    $(window).on('load', function(){

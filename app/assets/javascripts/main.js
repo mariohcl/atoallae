@@ -1,7 +1,7 @@
-//preloader
-window.onload = function(){
-  $('#preloader').addClass('preloader-none');
-}
+$(window).on('turbolinks:load',function() {
+    $("#status").fadeOut();
+    $("#preloader").delay(1000).fadeOut("slow");
+})
 
 //Header Sticky
 $(document).scroll(function() {
@@ -44,3 +44,22 @@ $(document).ready(function(){
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+
+// TopUp
+$(document).ready(function(){
+
+	$('.top-up').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 400);
+	});
+
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.top-up').slideDown(300);
+		} else {
+			$('.top-up').slideUp(300);
+		}
+	});
+
+});

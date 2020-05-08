@@ -1,15 +1,26 @@
 <% if current_user.liked? @post %>
+  //Este codigo es para que aparezca el corazon rojo
   $('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart-active.svg');
+
+  //Este es para que aparezca el circulo con la imagen de la persona que acaba de hacer like, en este caso es el current_user
   $('#like-aj-img-'+ <%= @post.id %>).append('<%= link_to @post, :id => "user_like"+@post.id.to_s+"-"+@post.get_likes.by_type(User).last.id.to_s do %><%= image_tag( @post.get_likes.by_type(User).last.voter.profile.avatar, :alt => "Comment Icon") %><% end %>');
 <% else %>
+  // Este codigo es para que cuando el current_user quita el like, vueva el corazon sin pintar
   $('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart.svg');
+
+  //Este es para que cuando el current_user quita el like, el circulo con la imagen desaparezca
   $('#user_like<%=@post.id.to_s%>-<%=@old_like_user_id%>').remove();
 <% end %>
 
+//Este codigo es para que muestre el conteo de los likes al costado del corazón
 $('.likescount-'+ <%= @post.id %> ).text(<%= @post.get_likes.size %>);
 
 <% if @post.get_likes.by_type(User).count == 0 %>
-  $('.section-users-<%= @post.id %>').text('Nadie le gusta tu wea')
+  $('.section-users-<%= @post.id %>').text('')
+
+<% elsif @post.get_likes.by_type(User).count == 1 %>
+  $('.section-users-<%= @post.id %>').html('<span class="name"><%= @post.get_likes.by_type(User).last.voter.profile.username %></span> le gusta esto')
+
 <% else %>
-  $('.section-users-<%= @post.id %>').text('<%= @post.get_likes.by_type(User).last.voter.profile.username %> y a <%= ( @post.get_likes.size.to_i - 1 ) %> personas más les gusta esto')
+  $('.section-users-<%= @post.id %>').html('<span class="name"><%= @post.get_likes.by_type(User).last.voter.profile.username %></span> y a <span class="num"><%= ( @post.get_likes.size.to_i - 1 ) %></span> persona más les gusta esto')
 <% end %>

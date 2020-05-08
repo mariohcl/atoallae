@@ -7,7 +7,8 @@
 
     <div class="info-event-content">
 
-        <h2>Realizado por <img src="<%= @event.page.image %>" alt="" data-toggle="tooltip" data-placement="bottom" title="<%= @event.page.name %>"></h2>
+        <h2><a href="<%= @event.page.name %>"><img src="<%= @event.page.image %>" alt="<%= @event.page.name %>" title="Foto perfil página <%= @event.page.name %>"></a>
+          Realizado por <span><%= @event.page.name %></span></h2>
 
         <span class="tag">evento atoallae</span>
         <h1><%= @event.title %></h1>
@@ -72,7 +73,7 @@
           <div class="asist-bloque">
             <img src="<%= user_info.voter.profile.avatar %>" alt="">
             <div class="asist-info">
-              <a href=""><%= user_info.voter.profile.username %></a>
+              <a href="<%= profile_path(user_info.voter.profile) %>"><%= user_info.voter.profile.username %></a>
               <p><%= user_info.voter.profile.username %></p>
             </div>
           </div>
@@ -84,10 +85,11 @@
   </div>
 
 
-
+  <% if (user_signed_in? && @event.user == current_user) %>
   <%= link_to edit_page_event_path(@event.page, @event), class:"editar-evento" do %>
      <i class="far fa-edit"></i> Editar información del evento
    <% end %>
+  <% end %>
 
   <section class="content-body-event">
 
@@ -99,12 +101,6 @@
       <p class="place"><strong>Lugar:</strong> <%= @event.place %></p>
       <a href="<%= @event.map %>" target="_blank" class="maps"><%= image_tag("g-maps.svg", :alt => "Google Maps icono") %> Ver ubicación en Googel Maps</a>
       <p class="date"><strong>Fecha:</strong> <%= @event.date %></p>
-
-      <small><%= @event.get_likes.size %></small>
-
-      <%= link_to page_path(@event.page) do %>
-        Volver a <%= @event.page.name %>
-      <% end %>
 
     </div>
 

@@ -58,7 +58,7 @@
         </div>
         <div class="bloque-desc">
           <h2><%= number_to_currency(product.stocks.last.price, unit: "$", separator: ",", delimiter: ",", precision: 0) %> CLP</h2>
-          <p>Stock: <span><%= link_to product.stocks.count, product_stocks_path(product)  %> Unidades</span></p>
+          <p>Stock: <span id="stock-count-store"><%= link_to product.stocks.count, product_stocks_path(product)  %> Unidades</span></p>
 
           <nav>
             <ul>

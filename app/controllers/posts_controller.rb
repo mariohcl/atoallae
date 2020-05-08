@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   load_and_authorize_resource
-  skip_authorization_check
+  check_authorization
 
   # GET /posts
   # GET /posts.json

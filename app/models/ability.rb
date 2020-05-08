@@ -11,13 +11,34 @@ class Ability
         can :manage, :all
       else
         can :read, :all
+
         can :create, Post
-        can :destroy, Post, user_id: user.id
+        can [ :edit, :update, :delete ], Post do |post|
+          post.user_id == user.id
+        end
+
+        can :create, Page
+        can :my_pages, Page
+        can [ :edit, :update, :delete ], Page do |page|
+          page.user_id == user.id
+        end
+
+        can :create, Event
+        can [ :edit, :update, :delete ], Event do |event|
+          event.user_id == user.id
+        end
+
+        # can :edit, Event, user_id: user.id
+
         can :create, Comment
+        can :edit, Profile, user_id: user.id
         can :update, Profile, user_id: user.id
-        can :update, Page, user_id: user.id
         can :like, Post
         can :like, Event
+
+        #Follow
+        can :follow, Profile
+        can :follow, Page
       end
     #
     # The first argument to `can` is the action you are giving the user

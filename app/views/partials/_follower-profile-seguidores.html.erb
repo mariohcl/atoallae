@@ -1,27 +1,27 @@
 <div class="follower-profile">
 
   <div class="bloque-follow">
-    <%= image_tag( profile.avatar , alt: "User") %>
+    <%= image_tag( user_profile.avatar , alt: "User") %>
     <div class="info-name">
-      <%= link_to profile.username, profile_path(profile.user) %>
-      <p><%= profile.fullname %></p>
+      <%= link_to user_profile.username, profile_path(user_profile.user) %>
+      <p><%= user_profile.fullname %></p>
     </div>
   </div>
 
   <div class="bloque-follow">
 
-    <% if current_user != profile.user %>
+    <% if current_user != user_profile.user %>
 
-      <% if current_user.following?(profile.user) %>
+      <% if current_user.following?(user_profile.user) %>
 
-        <div class="follow-blo">
-          <%= link_to 'siguiendo', follow_profile_path(profile.user), method: :put, class: 'disable' %>
+        <div class="follow-blo" id="btn-siguiendo-<%= user_profile.user_id.to_s %>">
+          <%= link_to 'siguiendo', follow_profile_path(user_profile.user.id, @profile.user.id), method: :put, class: 'disable', remote: true %>
         </div>
 
       <% else %>
 
-        <div class="follow-blo">
-          <%= link_to 'Seguir', follow_profile_path(profile), method: :put, class: 'active-follow' %>
+        <div class="follow-blo" id="btn-siguiendo-<%= user_profile.user_id.to_s %>">
+          <%= link_to 'Seguir', follow_profile_path(user_profile.user.id, @profile.user.id), method: :put, class: 'active-follow', remote: true %>
         </div>
 
       <% end %>

@@ -1,1 +1,3 @@
 alert("El producto <%= @order.stock.product.name %> fue agregado al carro");
+
+$('#stock-count-store').html('<%= link_to product.stocks.count, product_stocks_path(product)  %> Unidades');

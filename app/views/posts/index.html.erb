@@ -21,7 +21,7 @@
          <div class="modal-dialog" role="document">
            <div class="modal-content modal-content-custom">
 
-             <h1>Buscar amigos</h1>
+             <h1>Sugerencias</h1>
 
              <% @profiles.each do |profile| %>
                <% if current_user != profile.user %>
@@ -99,7 +99,7 @@
                                  <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= event.eventimage %>');"></a>
                                  <div class="info-header-event">
                                      <h1><%= event.title %></h1>
-                                     <p><%= event.date %>   <a href=""><%= event.page.name %></a></p>
+                                     <p><%= event.date %>   <a href="<%= page_path(event.page) %>"><%= event.page.name %></a></p>
                                  </div>
                              </div>
 

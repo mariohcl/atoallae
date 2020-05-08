@@ -44,4 +44,12 @@ class User < ApplicationRecord
    end
   end
 
+  def follow_user(user, way)
+    if way == true
+      self.follow(user)
+    else
+      self.stop_following(user)
+    end
+  end
+
 end

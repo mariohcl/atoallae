@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :follow]
   load_and_authorize_resource
   skip_authorization_check
 
@@ -35,12 +35,17 @@ class ProfilesController < ApplicationController
 
   def follow
     @user = User.find(params[:id])
+    @current_profile = User.find(params[:id2])
+
     if current_user.following?(@user)
-      current_user.stop_following(@user)
+      current_user.follow_user(@user, false)
+      # current_user.stop_following(@user)
     else
-      current_user.follow(@user)
+      current_user.follow_user(@user, true)
+      # current_user.follow(@user)
     end
-      redirect_to profile_path(@user.profile)
+      # redirect_to profile_path(@user.profile)
+
   end
 
   # POST /profiles

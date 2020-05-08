@@ -34,15 +34,16 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  # get 'user/:id' => 'user#profile', as: 'user_profile'
+  put 'follow/:id/:id2' => 'profiles#follow', as: 'follow_profile'
 
   # resources :user, only:[:show, :update, :edit]
 
-  resources :profiles do
-    member do
-      put "follow" => "profiles#follow"
-    end
-  end
+  # resources :profiles do
+  #   member do
+  #     put "follow" => "profiles#follow"
+  #   end
+  # end
+
 
   resources :posts do
     resources :comments, only:[:create]

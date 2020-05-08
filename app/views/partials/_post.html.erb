@@ -2,6 +2,8 @@
 
 <article class="post-users">
 
+  <% if current_user == post.user %>
+
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -14,12 +16,13 @@
             <%= link_to 'Editar Post', edit_post_path(post), class: 'dropdown-item' %>
             <%= link_to 'Eliminar Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %>
 
-
           </div>
         </li>
       </ul>
     </div>
   </nav>
+
+  <% end %>
 
       <div class="post-user-header">
           <a href="<%= profile_path(post.user.profile) %>" style="background-image: url(<%= post.user.profile.avatar %>);"></a>
@@ -58,14 +61,18 @@
               <% end %>
             </nav>
 
-            <p>
-              <span class="section-users-<%= post.id %>">
-               <% if (post.get_likes.by_type(User).count > 0) %>
-                a <%= post.get_likes.by_type(User).last.voter.profile.username %> a <span id="like-aj-count"><%=(post.get_likes.size.to_i - 1) %> les gusta esto</span>
+            <p class="section-users-<%= post.id %>">
+
+               <% if (post.get_likes.by_type(User).count > 0 && post.get_likes.by_type(User).count == 1) %>
+                 <span class="name"><%= post.get_likes.by_type(User).last.voter.profile.username %></span> le gusta esto
+
+               <% elsif (post.get_likes.by_type(User).count > 1 ) %>
+                 <span class="name"><%= post.get_likes.by_type(User).last.voter.profile.username %></span> y a <span class="num" id="like-aj-count"><%=(post.get_likes.size.to_i - 1) %></span> personas más les gusta esto
+
                <% else %>
 
                <% end %>
-              </span>
+
             </p>
 
         </div>

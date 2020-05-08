@@ -11,7 +11,9 @@
                 <article class="info">
                     <h1><%= @page.name %></h1>
 
-                      <%= link_to 'Editar Página', edit_page_path(@page), class: 'editar' %>
+                      <% if (user_signed_in? && @page.user == current_user) %>
+                        <%= link_to 'Editar Página', edit_page_path(@page), class: 'editar' %>
+                      <% end %>
 
                       <p><%= @page.bio %></p>
 
@@ -58,50 +60,71 @@
 </section>
 
 
+<section class="wrap-profile">
+    <section class="wrap-profile-center">
+
+      <section class="pages-info">
+        <article class="pages-info-bloque">
+
+          <h1>Descripción</h1>
+
+          <p><%= @page.longbio %></p>
+          <%= link_to 'Nuevo Evento', new_page_event_path(@page), class: 'new-event' %>
+
+
+        </article>
+
+        <article class="pages-info-bloque">
+          <h1>Eventos <span><%= @page.name %></span></h1>
+
+          <% @page.events.each do |event| %>
+          <article class="card-event">
+            <div class="card-event-content">
+              <div class="event-info">
+
+                <% if (user_signed_in? && @page.user == current_user) %>
+
+                <nav class="access-edit">
+                  <%= link_to edit_page_event_path(@page, event) do %>
+                    <i class="far fa-edit"></i>
+                  <% end %>
+
+                  <%= link_to page_event_path(@page, event), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                </nav>
+
+                <% end %>
+
+                <h1><%= event.title %></h1>
+                <p class="desc"><%= event.description %></p>
+                <%= link_to 'Ver evento', page_event_path(@page, event) %>
+
+                <div class="assist">
+                  <p>Asistentes</p>
+                  <nav>
+                    <% event.get_likes.by_type(User)[0,3].each  do | image| %>
+                      <%= link_to page_event_path(event.page, event) do %>
+                        <img src="<%= image.voter.profile.avatar %>" alt="">
+                      <% end %>
+                    <% end %>
+                  </nav>
+                </div>
 
 
 
+              </div>
+              <img src="<%= event.eventimage %>" alt="">
+            </div>
 
 
+          </article>
+          <% end %>
 
+        </article>
+      </section>
 
-
-
-
-<%= link_to 'Nuevo Evento', new_page_event_path(@page) %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Place</th>
-      <th>Date</th>
-      <th>Page</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @page.events.each do |event| %>
-      <tr>
-        <td><%= event.user %></td>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.place %></td>
-        <td><%= event.date %></td>
-        <td><%= event.page %></td>
-        <td><%= link_to 'Show', page_event_path(@page, event) %></td>
-        <td><%= link_to 'Edit', edit_page_event_path(@page, event) %></td>
-        <td><%= link_to 'Destroy', page_event_path(@page, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+    </section>
+</section>
 
 <%= render 'partials/footer-inter' %>

@@ -1,8 +1,19 @@
-<h1>Editing Post</h1>
+<section class="wrap-profile">
+    <section class="wrap-profile-center wrap-profile-center-show edit-post">
 
-<%= render 'form', post: @post %>
+      <div class="header-edit">
+        <h1>Editar post</h1>
+        <%= link_to 'Volver', posts_path %>
+      </div>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
 
-<%= render 'partials/footer-inter' %>
+
+    <%= render 'form', post: @post %>
+
+
+
+
+  </section>
+  
+  <%= render 'partials/footer-inter' %>
+</section>

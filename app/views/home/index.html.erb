@@ -1,9 +1,9 @@
-<div class="preloader" id="preloader">
-  <p class="web-site">atoallae.cl</p>
+<span class="top-up"><i class="fas fa-long-arrow-alt-up"></i></span>
 
-  <%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %>
-
-  <p class="advise"><span><% if user_signed_in? %><%= current_user.profile.fullname %><% end %></span> Estás ingresando a nuestro home</p>
+<div id="preloader">
+  <div id="status">
+    <%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %>
+  </div>
 </div>
 
 <section class="wrap">
@@ -13,11 +13,16 @@
     <section class="wrap-center">
 
         <div class="welcome">
+
              <h1>bienvenidos</h1>
              <h2>atoallae</h2>
         </div>
 
-        <h2>Inicia tu sesión en nuestro sitio, si no está registrado <span>¿Qué esperas?</span></h2>
+        <% if user_signed_in? %>
+          <h2>Ahora eres parte de nosotros <span>Navega en nuestro feed</span> y contacta a tus amigos</h2>
+        <% else %>
+          <h2>Inicia tu sesión en nuestro sitio, si no está registrado <span>¿Qué esperas?</span></h2>
+        <% end %>
 
 
         <nav>
@@ -77,8 +82,8 @@
                  <div id="instagram-feed4" class="instagram_feed"></div>
            </section>
 
-           <script src="js/jquery.instagramFeed.js"></script>
            <script >
+
                 (function($){
                     $(window).on('load', function(){
                         $.instagramFeed({
@@ -86,7 +91,7 @@
                             'container': "#instagram-feed4",
                             'display_profile': true,
                             'display_gallery': true,
-                            'items': 16,
+                            'items': 12,
                             'items_per_row': 5,
                             'margin': 0.5
                         });
@@ -142,9 +147,27 @@
                              <% end %>
 
                          </div>
+
+                         <% if user_signed_in? %>
                          <div class="product-info-bloque">
-                             <a href=""  class="cart-access"> <%= image_tag("cart-home.svg", :alt => "Carrito compra") %></a>
+                           <% if product.stocks.count > 0 %>
+                             <%= form_with(model: Order.new) do |form| %>
+
+                               <%= form.hidden_field :stock_id, value: product.stocks.last.id %>
+
+                               <%= button_tag type: 'submit', class: 'cart-access' do %>
+                                   <i class="fas fa-shopping-cart"></i>
+                               <% end %>
+
+                             <% end %>
+
+                           <% end %>
+
                          </div>
+                         <% else %>
+                          <p class="product-advise">Para comprar debes estar <a href="<%= new_user_registration_path %>" class="main-link">Registrado</a>
+                          si ya tienes una cuenta <a href="<%= new_user_session_path %>">Iniciar Sesión</a></p>
+                         <% end %>
                      </div>
 
                   </div>
@@ -153,6 +176,12 @@
               <% end %>
 
           </section>
+
+          <% if user_signed_in? %>
+            <%= link_to products_path, class: 'access-store-home' do %>
+              ver más productos <i class="fas fa-arrow-right"></i>
+            <% end %>
+          <% end %>
 
    </section>
 

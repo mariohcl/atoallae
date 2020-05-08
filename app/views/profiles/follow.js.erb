@@ -1,0 +1,12 @@
+$('#follow-btn').html('');
+
+  <% if current_user.following?(@user) %>
+    $('#follow-btn-<%= @user.id %>').html("<%= j link_to 'Dejar de seguir', follow_profile_path(@user.id, @current_profile.id), method: :put, class: 'disable', remote: true %>");
+    $('#btn-siguiendo-<%= @user.id %>').html('<a class="disable" data-remote="true" rel="nofollow" data-method="put" href="/follow/<%= @user.id %>/<%= @current_profile.id %>">siguiendo</a>');
+  <% else %>
+    $('#follow-btn-<%= @user.id %>').html("<%= j link_to 'Seguir', follow_profile_path(@user.id, @current_profile.id), method: :put, remote: true %>");
+    $('#btn-siguiendo-<%= @user.id %>').html('<a class="active-follow" data-remote="true" rel="nofollow" data-method="put" href="/follow/<%= @user.id %>/<%= @current_profile.id %>">Seguir</a>');
+  <% end %>
+
+$('#follow-count-<%= @current_profile.id %>').html("<%= @current_profile.followers.count %>");
+$('#following-count-<%= @current_profile.id %>').html("<%= @current_profile.all_following.count %>");
