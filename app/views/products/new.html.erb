@@ -15,7 +15,13 @@
 
             <%= render 'form', product: @product %>
 
-            <%= link_to 'Back', products_path %>
+            <nav class="access-form">
+              <ul>
+                <li><%= link_to 'Volver', products_path %></li>
+              </ul>
+            </nav>
+
+
 
             </div>
 
@@ -24,4 +30,4 @@
 
   </section>
 </section>
-<%= render 'partials/footer-store' %>
+<%= render 'partials/footer-inter' %>

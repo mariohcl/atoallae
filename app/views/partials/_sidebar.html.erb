@@ -1,0 +1,74 @@
+<h1>Eventos</h1>
+
+<div class="grid-events">
+
+  <% @events.each do |event| %>
+
+
+    <section class="event-container">
+        <div class="head-event">
+            <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= event.eventimage %>');"></a>
+            <div class="info-header-event">
+                <h1><%= event.title %></h1>
+                <p><%= event.date %>   <a href="<%= page_path(event.page) %>"><%= event.page.name %></a></p>
+            </div>
+        </div>
+
+        <a href="<%= page_event_path(event.page, event) %>">
+            <p><%= event.description %></p>
+
+            <div class="img-event" style="background-image: url('<%= event.eventimage %>');"></div>
+
+        </a>
+
+        <div class="foot-event">
+            <div class="bloque">
+                <h1>asistentes</h1>
+                <nav>
+
+                     <% event.get_likes.by_type(User)[0,3].each  do | image| %>
+                       <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= image.voter.profile.avatar %>');"></a>
+                     <% end %>
+                 </nav>
+            </div>
+            <div class="bloque">
+                <a href="<%= page_event_path(event.page, event) %>" class="action-btn">más info</a>
+            </div>
+        </div>
+    </section>
+
+    <% end %>
+
+
+    <div class="see-more">
+        <a href="">explorar más eventos</a>
+    </div>
+
+</div>
+
+<h1>atoallae store</h1>
+
+<div class="grid-store">
+
+  <% @products.each do |product| %>
+
+    <div class="product-content">
+      <%= link_to product do %>
+        <img src="<%= product.imagen %>" alt="">
+        <h1><%= product.name %></h1>
+        <p>atoallae store</p>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <div class="see-more">
+      <a href="<%= products_path %>">explorar más productos</a>
+  </div>
+
+
+</div>
+
+<div class="aside-footer">
+    <p>ATOALLAE © 2020 - 2021</p>
+</div>

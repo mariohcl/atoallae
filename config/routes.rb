@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get '/my_profile' => 'profiles#profile', as: 'my_profile'
   get '/my_pages' => 'pages#my_pages', as: 'my_pages'
+  get '/my_events' => 'events#my_events', as: 'my_events'
   # get 'comments/create'
 
   # get 'stock/index'

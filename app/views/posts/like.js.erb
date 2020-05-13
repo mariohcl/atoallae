@@ -3,13 +3,16 @@
   $('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart-active.svg');
 
   //Este es para que aparezca el circulo con la imagen de la persona que acaba de hacer like, en este caso es el current_user
-  $('#like-aj-img-'+ <%= @post.id %>).append('<%= link_to @post, :id => "user_like"+@post.id.to_s+"-"+@post.get_likes.by_type(User).last.id.to_s do %><%= image_tag( @post.get_likes.by_type(User).last.voter.profile.avatar, :alt => "Comment Icon") %><% end %>');
+  $('#like-aj-img-'+ <%= @post.id %>).append('<%= link_to @post, :id => "user_like"+@post.id.to_s+"-"+@post.get_likes.by_type(User).last.id.to_s, "data-toggle" => "modal", "data-target" => "#modalLikes"+@post.id.to_s do %><%= image_tag( @post.get_likes.by_type(User).last.voter.profile.avatar, :alt => "Comment Icon") %><% end %>');
+
+  $('#like-aj-img-modal-'+ <%= @post.id %>).append('<%= link_to @post, :id => "user_like_modal"+@post.id.to_s+"-"+@post.get_likes.by_type(User).last.id.to_s do %><%= image_tag( @post.get_likes.by_type(User).last.voter.profile.avatar, :alt => "Comment Icon") %> <p></p> <% end %>');
 <% else %>
   // Este codigo es para que cuando el current_user quita el like, vueva el corazon sin pintar
   $('.heart-'+ <%= @post.id %> + ' img').attr('src', '/uploads/heart.svg');
 
   //Este es para que cuando el current_user quita el like, el circulo con la imagen desaparezca
   $('#user_like<%=@post.id.to_s%>-<%=@old_like_user_id%>').remove();
+  $('#user_like_modal<%=@post.id.to_s%>-<%=@old_like_user_id%>').remove();
 <% end %>
 
 //Este codigo es para que muestre el conteo de los likes al costado del corazón

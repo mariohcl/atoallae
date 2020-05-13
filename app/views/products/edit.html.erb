@@ -15,10 +15,14 @@
 
             <%= render 'form', product: @product %>
 
-            </div>
+            <nav class="access-form">
+              <ul>
+                <li><%= link_to 'Ver producto', @product %></li>
+                <li><%= link_to 'Volver', products_path %></li>
+              </ul>
+            </nav>
 
-            <%= link_to 'Show', @product %> |
-            <%= link_to 'Back', products_path %>
+            </div>
 
 
         </div>

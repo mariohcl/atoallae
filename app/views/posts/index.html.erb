@@ -4,7 +4,7 @@
 
        <section class="wall-friends-grid">
 
-          <h1>amigos seguidos<a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i> Buscar amigos</a></h1>
+          <h1>amigos seguidos</h1>
 
            <nav>
                <ul>
@@ -16,44 +16,6 @@
 
        </section>
 
-       <!-- Modal de buscar amigos-->
-       <div class="modal modal-custom fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content modal-content-custom">
-
-             <h1>Sugerencias</h1>
-
-             <% @profiles.each do |profile| %>
-               <% if current_user != profile.user %>
-                 <% if current_user.following?(profile.user) %>
-                 <% else %>
-
-                 <div class="follower-profile">
-
-                   <div class="bloque-follow">
-                     <%= image_tag( profile.avatar , alt: "User") %>
-                     <div class="info-name">
-                       <%= link_to profile.username, profile_path(profile.user) %>
-                       <p><%= profile.fullname %></p>
-                     </div>
-                   </div>
-
-                   <div class="bloque-follow">
-
-                     <div class="follow-blo">
-                       <%= link_to 'Seguir', follow_profile_path(profile), method: :put, class: 'active-follow' %>
-                     </div>
-
-                   </div>
-
-                 </div>
-                 <% end %> <!--End del segundo if-->
-               <% end %> <!--End del primer if-->
-             <% end %> <!--End del each-->
-
-           </div>
-         </div>
-       </div>
 
     </section>
 
@@ -87,84 +49,8 @@
 
               <section class="sidebar-post">
                  <article class="friend">
-                     <h1>Eventos</h1>
 
-                     <div class="grid-events">
-
-                       <% @events.each do |event| %>
-
-
-                         <section class="event-container">
-                             <div class="head-event">
-                                 <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= event.eventimage %>');"></a>
-                                 <div class="info-header-event">
-                                     <h1><%= event.title %></h1>
-                                     <p><%= event.date %>   <a href="<%= page_path(event.page) %>"><%= event.page.name %></a></p>
-                                 </div>
-                             </div>
-
-                             <a href="<%= page_event_path(event.page, event) %>">
-                                 <p><%= event.description %></p>
-
-                                 <div class="img-event" style="background-image: url('<%= event.eventimage %>');"></div>
-
-                             </a>
-
-                             <div class="foot-event">
-                                 <div class="bloque">
-                                     <h1>asistentes</h1>
-                                     <nav>
-
-                                          <% event.get_likes.by_type(User)[0,3].each  do | image| %>
-                                            <a href="<%= page_event_path(event.page, event) %>"  style="background-image: url('<%= image.voter.profile.avatar %>');"></a>
-                                          <% end %>
-                                      </nav>
-                                 </div>
-                                 <div class="bloque">
-                                     <a href="<%= page_event_path(event.page, event) %>" class="action-btn">más info</a>
-                                 </div>
-                             </div>
-                         </section>
-
-                         <% end %>
-
-
-
-
-                         <div class="see-more">
-                             <a href="">explorar más eventos</a>
-                         </div>
-
-                     </div>
-
-
-
-                     <h1>atoallae store</h1>
-
-                     <div class="grid-store">
-
-                       <% @products.each do |product| %>
-
-                         <div class="product-content">
-                           <%= link_to product do %>
-                             <img src="<%= product.imagen %>" alt="">
-                             <h1><%= product.name %></h1>
-                             <p>atoallae store</p>
-                           <% end %>
-                         </div>
-
-                       <% end %>
-
-                       <div class="see-more">
-                           <a href="<%= products_path %>">explorar más productos</a>
-                       </div>
-
-
-                     </div>
-
-                     <div class="aside-footer">
-                         <p>ATOALLAE © 2020 - 2021</p>
-                     </div>
+                     <%= render 'partials/sidebar' %>
 
                  </article>
               </section>

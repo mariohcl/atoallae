@@ -13,7 +13,7 @@
           <span><%= number_to_currency(order.stock.product.stocks.last.price, unit: "$", separator: ",", delimiter: ",", precision: 0) %> CLP</span>
 
 
-          <p><%= order.stock.product.description %></p>
+          <p><%= truncate(order.stock.product.description, :length => 60)%></p>
         </div>
 
       </div>

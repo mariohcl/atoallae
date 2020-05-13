@@ -16,6 +16,8 @@ class ProfilesController < ApplicationController
     @posts = Post.all
     @comments = Comment.all.limit(1)
     @profiles = Profile.all
+    @events = Event.all.limit(2).order("RANDOM()")
+    @products = Product.all.limit(2).order("RANDOM()")
   end
 
   # GET /profiles/new

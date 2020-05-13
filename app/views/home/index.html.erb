@@ -21,7 +21,8 @@
         <% if user_signed_in? %>
           <h2>Ahora eres parte de nosotros <span>Navega en nuestro feed</span> y contacta a tus amigos</h2>
         <% else %>
-          <h2>Inicia tu sesión en nuestro sitio, si no está registrado <span>¿Qué esperas?</span></h2>
+          <h2>Inicia tu sesión en nuestro sitio, si no está registrado
+            <span>¿Qué esperas?</span></h2>
         <% end %>
 
 
@@ -85,7 +86,7 @@
            <script >
 
                 (function($){
-                    $(window).on('load', function(){
+                    $(window).on('ready turbolinks:load', function(){
                         $.instagramFeed({
                             'tag': 'atoallae',
                             'container': "#instagram-feed4",

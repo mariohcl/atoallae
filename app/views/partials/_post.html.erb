@@ -5,7 +5,7 @@
   <% if current_user == post.user %>
 
   <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse navbar-collapse-custom" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,14 +48,14 @@
 
             <%= link_to post do %>
             <%= image_tag("comment.svg", :alt => "Comment Icon") %>
-            <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
+              <span id="total-comments-<%= post.id %>"><%= post.comments.count %></span>
             <% end %>
         </div>
 
         <div class="bloque-2">
-            <nav id="like-aj-img-<%=post.id.to_s %>">
-              <% post.get_likes.by_type(User)[0,3].each  do | image| %>
-                <%= link_to post, :id => 'user_like'+post.id.to_s+"-"+image.id.to_s do %>
+            <nav id="like-aj-img-<%= post.id.to_s %>">
+              <% post.get_likes.by_type(User)[0,3].each  do |image| %>
+                <%= link_to "#", :id => 'user_like'+post.id.to_s+"-"+image.id.to_s, "data-toggle" => "modal", 'data-target' => '#modalLikes'+post.id.to_s do %>
                   <%= image_tag( image.voter.profile.avatar, :alt => "Comment Icon") %>
                 <% end %>
               <% end %>
@@ -77,6 +77,32 @@
 
         </div>
 
+    </div>
+
+    <!-- Modal de amigos que han dado like -->
+    <div class="modal fade modal-custom" id="modalLikes<%= post.id.to_s %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-custom">
+
+          <h1>Amigos que les gusta tu post</h1>
+
+          <nav id="like-aj-img-modal-<%= post.id.to_s %>" class="likes-modal">
+
+            <% post.get_likes.by_type(User)[0,3].each  do |usermodal| %>
+              <%= link_to "#", :id => 'user_like_modal'+post.id.to_s+"-"+usermodal.id.to_s do %>
+                <%= image_tag( usermodal.voter.profile.avatar, :alt => "Comment Icon") %>
+
+                <p><%= usermodal.voter.profile.username %>
+                <span><%= usermodal.voter.profile.fullname %></span></p>
+
+
+              <% end %>
+            <% end %>
+
+          </nav>
+
+        </div>
+      </div>
     </div>
 
     <% if post.comments.count > 0 %>

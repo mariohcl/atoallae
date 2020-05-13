@@ -27,6 +27,10 @@ class EventsController < ApplicationController
     @page = Page.find(params[:page_id])
   end
 
+  def my_events
+    @my_events = current_user.events
+  end
+
   def like
     @event = Event.find(params[:id])
       if current_user.liked? @event

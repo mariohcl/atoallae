@@ -44,7 +44,7 @@
 
                 <!-- Modal de amigos seguidores -->
                 <div class="modal fade modal-custom" id="modalFriendsSeguidores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
+                  <div class="modal-dialog modal-dialog-custom" role="document">
                     <div class="modal-content modal-content-custom">
 
                       <h1>Seguidores</h1>
@@ -59,7 +59,7 @@
 
                 <!-- Modal de amigos seguidos -->
                 <div class="modal fade modal-custom" id="modalFriends" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
+                  <div class="modal-dialog modal-dialog-custom" role="document">
                     <div class="modal-content modal-content-custom">
 
                       <h1>Seguidos</h1>
@@ -102,7 +102,6 @@
 
         <ul class="tabs-menu">
             <li class="current"><a href="#tab-1">publicaciones</a></li>
-            <li><a href="#tab-2">instagram feed</a></li>
         </ul>
 
         <div class="tab">
@@ -131,34 +130,13 @@
 
                      <div class="grid-friends">
 
-                         <% @profile.user.following_by_type('User').each do |user_profile| %>
+                         <% @profile.user.followers.each do |user_profile| %>
                             <%= render 'partials/follower-index', profile: user_profile.profile %>
                         <% end %>
 
                      </div>
 
-                     <h1>instagram feed</h1>
-
-                     <div class="grid-insta">
-                          <div id="instagram-feed4" class="instagram_feed"></div>
-
-                          <script>
-                               (function($){
-                                   window.addEventListener('turbolinks:load', function(){
-                                       $.instagramFeed({
-                                           'username': '<%= @profile.instagram %>',
-                                           'container': "#instagram-feed4",
-                                           'display_profile': true,
-                                           'display_gallery': true,
-                                           'items': 11,
-                                           'items_per_row': 5,
-                                           'margin': 0.5
-                                       });
-                                   });
-                               })(jQuery);
-                           </script>
-
-                     </div>
+                     <%= render 'partials/sidebar' %>
 
                  </article>
               </section>
@@ -166,29 +144,7 @@
 
             </div>
 
-            <div id="tab-2" class="tab-content">
 
-                <section class="instagram-full-grid">
-                    <div id="instagram-feed6" class="instagram_feed"></div>
-
-                          <script>
-                               (function($){
-                                   $(window).on('load', function(){
-                                       $.instagramFeed({
-                                           'username': '<%= @profile.instagram %>',
-                                           'container': "#instagram-feed6",
-                                           'display_profile': true,
-                                           'display_gallery': true,
-                                           'items': 12,
-                                           'items_per_row': 5,
-                                           'margin': 0.5
-                                       });
-                                   });
-                               })(jQuery);
-                           </script>
-                </section>
-
-            </div>
 
         </div>
     </div>

@@ -1,0 +1,16 @@
+<%= form_with(model: [@product, Stock.new]) do |form| %>
+
+  <div class="field">
+    <%= form.label :stock, "Stock" %>
+    <%= form.text_field :stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, "Precio" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

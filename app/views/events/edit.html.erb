@@ -15,15 +15,14 @@
 
             <%= render 'form', event: @event %>
 
-            </div>
-            
             <nav class="access-form">
               <ul>
-                <li><%= link_to 'Show', page_event_path(@page, @event) %></li>
-                <li><%= link_to 'Back', page_events_path %></li>
+                <li><%= link_to 'Ver Evento', page_event_path(@page, @event) %></li>
+                <li><%= link_to 'Volver', page_events_path %></li>
               </ul>
             </nav>
 
+            </div>
 
         </div>
     </div>

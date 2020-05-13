@@ -18,7 +18,7 @@
            <%= link_to 'Actividad', posts_path, class: 'activity-navbar' %>
        </div>
 
-       <input type="text" placeholder="Buscar">
+       <button type="button" id="search-btn"><i class="fas fa-search"></i></button>
 
          <% if current_user.orders.count > 0 %>
            <a href="<%= orders_path %>" class="cart"><%= image_tag("cart-active.svg", :alt => "Carrito compra") %></a>
@@ -39,6 +39,7 @@
             <%= link_to 'Actividad', posts_path, class: 'dropdown-item' %>
             <%= link_to 'Mis paginas', my_pages_path, class: 'dropdown-item' %>
             <%= link_to 'Paginas', pages_path, class: 'dropdown-item' %>
+            <%= link_to 'Mis Eventos', my_events_path, class: 'dropdown-item' %>
             <%= link_to 'Store', products_path, class: 'dropdown-item' %>
             <% if current_user.admin? %>
             <%= link_to 'Nuevo Producto', new_product_path, class: 'dropdown-item' %>
@@ -67,5 +68,17 @@
 
   <% end %>
 
+  <section class="search" id="search-block">
+    <section class="center-search">
+  <p>Busca a tus amigos</p>
+      <%= form_with url: '/search', method: :get, local: true do |f| %>
+        <%= f.text_field :q, id: :q %>
+        <%= f.submit "Search" %>
+      <% end %>
+
+      <a href="" class="close"><i class="far fa-times-circle"></i></a>
+
+    </section>
+  </section>
 
 </header>

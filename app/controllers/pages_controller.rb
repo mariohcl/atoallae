@@ -6,7 +6,11 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    if params[:search]
+      @pages = Page.where('name ILIKE ?', "%#{params[:search]}%")
+    else
+      @pages = Page.all
+    end
   end
 
   # GET /pages/1

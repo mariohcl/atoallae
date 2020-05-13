@@ -8,10 +8,13 @@
       </section>
       <section class="bloque">
         <%= link_to 'Crear nueva página', new_page_path, class: 'btn btn-success' %>
+
+        <%= form_tag pages_path, method: :get do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag 'Search', name: nil %>
+        <% end %>
       </section>
     </section>
-
-
 
     <section class="grid-card-pages">
 

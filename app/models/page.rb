@@ -5,4 +5,6 @@ class Page < ApplicationRecord
   mount_uploader :cover, BannerUploader
 
   acts_as_followable
+
+  
 end

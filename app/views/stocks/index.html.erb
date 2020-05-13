@@ -1,42 +1,45 @@
-<h1>Products Stocks</h1>
+<section class="wrap-edit-profile">
+  <section class="wrap-edit-profile-center">
 
-<p>Stock disponible: <span id="stock-total"><%= @product.stocks.count %></span></p>
+    <h1>Products Stocks</h1>
 
-<h2>Agregar Stock</h2>
+    <p>Stock disponible: <span id="stock-total"><%= @product.stocks.count %></span></p>
 
-<%= form_with(model: [@product, Stock.new]) do |form| %>
+    <div id="tabs-container">
 
-  <div class="field">
-    <%= form.label :stock, "Stock" %>
-    <%= form.text_field :stock %>
-  </div>
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Agregar Stock del producto</a></li>
+        </ul>
 
-  <div class="field">
-    <%= form.label :price, "Precio" %>
-    <%= form.text_field :price %>
-  </div>
+        <div class="tab">
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+            <div id="tab-1" class="tab-content">
+
+            <%= render 'form', product: @product %>
 
 
-<table id="list-stock" class="data-tables">
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th>Estado</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
+            </div>
 
-  <tbody>
 
-    <%= render @product.stocks %>
+        </div>
 
-  </tbody>
-</table>
+        <table id="list-stock" class="data-tables">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
 
-<br>
+          <tbody>
+
+            <%= render @product.stocks %>
+
+          </tbody>
+        </table>
+    </div>
+
+  </section>
+</section>
