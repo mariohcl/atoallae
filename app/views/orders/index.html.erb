@@ -1,6 +1,8 @@
 <section class="order-wrap">
   <section class="order-wrap-center">
 
+    <% if @orders.count > 0 %>
+
     <h1>Tu compra</h1>
 
     <% @orders.each do |order| %>
@@ -38,6 +40,21 @@
       <% end %>
 
     </section>
+
+    <% else %>
+
+    <h1 class="cart-empty"><%= image_tag("carrito.png", :alt => "Carrito Atoallae") %> Tu carro está vacío</h1>
+    <p>Accede a <a href="<%= products_path %>">nuestra tienda</a> para comprar productos</p>
+
+    <section class="more-access">
+
+      <%= link_to products_path do %>
+        <i class="fas fa-shopping-bag"></i> Visita nuestra Store
+      <% end %>
+
+    </section>
+
+    <% end %>
 
   </section>
 </section>

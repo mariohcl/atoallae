@@ -1,0 +1,29 @@
+<section class="wrap-searching">
+  <section class="wrap-searching-center">
+
+    <% if @profiles.count > 0 %>
+    <h1>Resultados de búsqueda</h1>
+
+    <% @profiles.each do |profile| %>
+      <article class="searching-results">
+        <div class="user">
+          <img src="<%= profile.avatar %>" alt="">
+          <div class="user-info">
+            <a href="<%= profile_path(profile) %>"><%= profile.username %></a>
+            <h2><%= profile.fullname %></h2>
+          </div>
+        </div>
+      </article>
+    <% end %>
+    <% else %>
+
+    <div class="not-results">
+      <h1>N<%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %> HAY RESULTADOS</h1>
+      <p>No hemos encontrado resultados que coincidan con tu búsqueda
+      <span>Te recomendamos intentarlo nuevamente</span></p>
+    </div>
+
+    <% end %>
+  </section>
+</section>
+<%= render 'partials/footer-inter' %>

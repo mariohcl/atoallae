@@ -15,14 +15,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :profiles, only:[:show, :update, :edit]
+  resources :profiles, only:[:index, :show, :update, :edit]
 
   get '/my_profile' => 'profiles#profile', as: 'my_profile'
   get '/my_pages' => 'pages#my_pages', as: 'my_pages'
   get '/my_events' => 'events#my_events', as: 'my_events'
-  # get 'comments/create'
-
-  # get 'stock/index'
+  get '/searching' => 'user#searching', as: 'searching'
 
   resources :products do
     resources :stocks, only:[:index, :create]
@@ -34,17 +32,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+  get '/resultados_busqueda/:search' => 'user#search', as: 'resultados_busqueda'
 
   put 'follow/:id/:id2' => 'profiles#follow', as: 'follow_profile'
-
-  # resources :user, only:[:show, :update, :edit]
-
-  # resources :profiles do
-  #   member do
-  #     put "follow" => "profiles#follow"
-  #   end
-  # end
-
 
   resources :posts do
     resources :comments, only:[:create]

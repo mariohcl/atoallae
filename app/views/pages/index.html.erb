@@ -10,11 +10,16 @@
         <%= link_to 'Crear nueva página', new_page_path, class: 'btn btn-success' %>
 
         <%= form_tag pages_path, method: :get do %>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag 'Search', name: nil %>
+          <%= text_field_tag :search, params[:search], placeholder: 'Buscar página' %>
+          <%= button_tag type: 'submit', name: nil  do %>
+            <i class="fas fa-search"></i>
+          <% end %>
         <% end %>
+
       </section>
     </section>
+
+    <% if @pages.count > 0 %>
 
     <section class="grid-card-pages">
 
@@ -60,9 +65,15 @@
        </div>
      <% end %>
 
-
-
     </section>
+
+    <% else %>
+    <section class="grid-card-pages grid-card-pages-custom">
+      <h1>N<%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %> HAY RESULTADOS</h1>
+      <p>No hemos encontrado resultados que coincidan con tu búsqueda
+      <span>Te recomendamos intentarlo nuevamente</span></p>
+    </section>
+    <% end %>
 
   </section>
 </section>

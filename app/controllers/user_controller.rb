@@ -15,4 +15,9 @@ class UserController < ApplicationController
     end
       redirect_to @profile
   end
+
+  def searching
+    @profiles = Profile.where('username ILIKE ?', "%#{params[:search]}%")
+  end
+
 end
