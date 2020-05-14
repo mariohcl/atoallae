@@ -89,7 +89,7 @@
           <nav id="like-aj-img-modal-<%= post.id.to_s %>" class="likes-modal">
 
             <% post.get_likes.by_type(User)[0,3].each  do |usermodal| %>
-              <%= link_to "#", :id => 'user_like_modal'+post.id.to_s+"-"+usermodal.id.to_s do %>
+              <%= link_to profile_path(usermodal.voter), :id => 'user_like_modal'+post.id.to_s+"-"+usermodal.id.to_s do %>
                 <%= image_tag( usermodal.voter.profile.avatar, :alt => "Comment Icon") %>
 
                 <p><%= usermodal.voter.profile.username %>
