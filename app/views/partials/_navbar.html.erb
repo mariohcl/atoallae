@@ -42,7 +42,6 @@
             <%= link_to 'Actividad', posts_path, class: 'dropdown-item' %>
             <%= link_to 'Mis paginas', my_pages_path, class: 'dropdown-item' %>
             <%= link_to 'Paginas', pages_path, class: 'dropdown-item' %>
-            <%= link_to 'Mis Eventos', my_events_path, class: 'dropdown-item' %>
             <%= link_to 'Store', products_path, class: 'dropdown-item' %>
             <% if current_user.admin? %>
               <%= link_to 'Nuevo Producto', new_product_path, class: 'dropdown-item' %>

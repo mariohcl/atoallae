@@ -1,0 +1,4897 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap");
+/* line 59, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+html {
+  height: 100%;
+}
+
+/* line 63, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* line 71, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* line 74, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.alert-custom {
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 19, 19, 0.9);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in;
+}
+/* line 88, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.alert-custom p {
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+/* line 96, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+div.out {
+  display: none;
+  transition: all 0.3s ease-in;
+}
+
+/* line 101, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.top-up {
+  display: none;
+  padding: 10px;
+  font-size: 21px;
+  color: #fd0e3d;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* line 113, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#preloader {
+  position: fixed;
+  background-color: #000000;
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 121, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#status {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 128, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#status img {
+  width: 90px;
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* line 139, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #131313;
+}
+@media only screen and (max-width: 768px) {
+  /* line 139, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header {
+    padding: 9px 20px;
+  }
+}
+/* line 154, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header a img {
+  width: 180px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 154, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header a img {
+    width: 120px;
+  }
+}
+/* line 162, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav {
+  display: flex;
+  align-items: center;
+}
+/* line 165, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav ul {
+  display: flex;
+  margin: 0;
+}
+/* line 171, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav ul li {
+  list-style: none;
+  margin: 0 5px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 176, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header nav ul li:nth-child(3), header nav ul li:nth-child(4) {
+    display: none;
+  }
+}
+/* line 181, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+/* line 186, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav ul li a:hover {
+  color: yellow;
+}
+/* line 191, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav ul li a.main-link {
+  color: #fd0e3d;
+  font-weight: 600;
+}
+/* line 195, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header nav ul li a .fab {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+/* line 204, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/* line 207, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center img {
+  width: 50px;
+}
+/* line 211, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav {
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 211, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav {
+    padding: 0;
+  }
+}
+/* line 220, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 220, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav .der-bloque {
+    width: 70%;
+    justify-content: flex-end;
+  }
+}
+/* line 229, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque div.user-top-info {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 229, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav .der-bloque div.user-top-info {
+    margin-right: 0;
+  }
+}
+/* line 236, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque div.user-top-info .user {
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 236, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav .der-bloque div.user-top-info .user {
+    margin-right: 0;
+  }
+}
+/* line 247, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque div.user-top-info span {
+  color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  /* line 247, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav .der-bloque div.user-top-info span {
+    display: none;
+  }
+}
+/* line 255, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque div.user-top-info .activity-navbar {
+  color: #FFEB3B;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin: 0 20px;
+  border-left: 1px solid #434343;
+  padding-left: 20px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 255, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav .der-bloque div.user-top-info .activity-navbar {
+    border: none;
+    padding-left: 10px;
+    margin: 0 8px;
+  }
+}
+/* line 270, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque form {
+  background: rgba(128, 128, 128, 0.44);
+  margin-right: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+/* line 279, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque form .fas {
+  color: #777777;
+  margin-left: 10px;
+}
+/* line 284, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque form input[type="text"] {
+  border: none;
+  background: none;
+  color: white;
+  padding: 0 10px;
+  font-size: 0.7em;
+  height: 28px;
+  width: 150px;
+  transition: all 0.2s ease-in;
+}
+@media only screen and (max-width: 768px) {
+  /* line 284, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  header .header-inter-center .custom-nav .der-bloque form input[type="text"] {
+    display: none;
+  }
+}
+/* line 298, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque form input[type="text"]::placeholder {
+  color: #a5a5a5;
+}
+/* line 301, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque form input[type="text"]:focus {
+  outline: 0;
+  background: #555555;
+  color: grey;
+  margin-left: 10px;
+}
+/* line 315, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque a.cart img, header .header-inter-center .custom-nav .der-bloque a.bell img {
+  width: 30px;
+}
+/* line 319, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque a.cart {
+  margin: 10px;
+}
+/* line 322, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque a.bell {
+  position: relative;
+}
+/* line 325, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque a.bell img {
+  animation: 2s bell-vibrate ease-in-out infinite;
+}
+/* line 331, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .nav-custom-btn {
+  color: white;
+  padding: 0;
+  margin-left: 20px;
+}
+/* line 336, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .nav-custom-btn:focus {
+  outline: none;
+}
+/* line 340, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .nav-custom-btn img {
+  width: 25px;
+}
+/* line 345, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .show-custom {
+  text-align: right;
+  right: 0;
+  left: inherit;
+  margin-top: 21px;
+  border: none;
+  background-color: #191919;
+  border-radius: 0;
+  padding-bottom: 21px;
+  width: 200px;
+}
+/* line 356, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .show-custom a {
+  font-size: 0.9em;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+/* line 361, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .show-custom a:hover {
+  color: #fd0e3d;
+  background: none;
+  font-weight: 600;
+}
+/* line 367, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+header .header-inter-center .custom-nav .der-bloque .show-custom a .far, header .header-inter-center .custom-nav .der-bloque .show-custom a .fas {
+  margin-left: 10px;
+}
+
+/* line 380, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#search-btn {
+  border: none;
+  background: #434343;
+  color: #929292;
+  font-size: 0.7em;
+  padding: 9px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 174px;
+  justify-content: flex-end;
+  position: relative;
+}
+/* line 393, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#search-btn:before {
+  content: 'Buscar Amigos';
+  position: absolute;
+  left: 15px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 393, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  #search-btn:before {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* line 380, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  #search-btn {
+    background: none;
+    padding: 0;
+    width: auto;
+    margin: 0 6px;
+    color: #bbbbbb;
+  }
+}
+/* line 411, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#search-btn:focus {
+  outline: none;
+}
+/* line 415, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+#search-btn .fas {
+  margin-left: 50px;
+  font-size: 1.3em;
+}
+@media only screen and (max-width: 768px) {
+  /* line 415, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  #search-btn .fas {
+    font-size: 2em;
+    margin-left: 0;
+  }
+}
+
+/* line 425, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.search {
+  display: none;
+}
+
+/* line 430, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.search-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: #000000e8;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  animation: intro 0.3s linear;
+}
+/* line 446, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.search-active .center-search .follower-profile .bloque-follow {
+  display: flex;
+}
+/* line 448, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.search-active .center-search .follower-profile .bloque-follow img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* line 462, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-menu-stick {
+  position: fixed;
+  z-index: 99999;
+  animation: menu-nav 0.3s linear;
+}
+
+/* line 468, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-image: url(bg.jpg);
+  background-size: cover;
+}
+/* line 474, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .trame {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.54));
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* line 481, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+  position: relative;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+  /* line 481, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    align-items: baseline;
+  }
+}
+/* line 498, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center .welcome {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 498, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center .welcome {
+    width: 100%;
+  }
+}
+/* line 507, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center .welcome h1 {
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 6em;
+  white-space: pre-line;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+  background: linear-gradient(to right, #fe0640 0%, #a20c89 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 768px) {
+  /* line 507, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center .welcome h1 {
+    font-size: xxx-large;
+    text-align: left;
+  }
+}
+/* line 525, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center .welcome h2 {
+  color: rgba(255, 255, 255, 0.09);
+  font-size: 12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: absolute;
+  margin: 0;
+  line-height: 0;
+  margin: 70px auto 0;
+  left: 0;
+  right: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 525, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center .welcome h2 {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    right: 49px;
+    left: inherit;
+    margin: inherit;
+    top: 25%;
+    font-size: 6em;
+  }
+}
+/* line 549, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center h2 {
+  margin-top: 3%;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  /* line 549, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center h2 {
+    margin: 3% 0 5%;
+    font-size: 0.9em;
+    white-space: pre-line;
+  }
+}
+/* line 561, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center h2 span {
+  color: yellow;
+}
+/* line 567, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav {
+  margin-top: 70px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 567, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center nav {
+    position: relative;
+    z-index: 9999999;
+    margin-top: 15px;
+  }
+}
+/* line 574, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul {
+  display: flex;
+  padding: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 574, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center nav ul {
+    flex-direction: column;
+  }
+}
+/* line 580, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul li {
+  list-style: none;
+}
+/* line 583, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul li:nth-child(2) {
+  margin-left: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 583, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center nav ul li:nth-child(2) {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+/* line 591, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul li a {
+  text-decoration: none;
+}
+/* line 594, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul li a.sesion {
+  padding: 18px 32px;
+  color: white;
+  font-size: 0.9em;
+  border-radius: 5px;
+  border: 1px solid #676767;
+}
+@media only screen and (max-width: 768px) {
+  /* line 594, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center nav ul li a.sesion {
+    display: block;
+  }
+}
+/* line 604, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul li a.registro {
+  padding: 18px 32px;
+  background: #fd0e3d;
+  color: white;
+  font-size: 0.9em;
+  border-radius: 5px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  /* line 604, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center nav ul li a.registro {
+    display: block;
+    text-align: center;
+  }
+}
+/* line 617, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap .wrap-center nav ul li a.activity {
+  padding: 18px 32px;
+  color: white;
+  font-size: 0.9em;
+  border-radius: 5px;
+  border: 1px solid #676767;
+}
+@media only screen and (max-width: 768px) {
+  /* line 617, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap .wrap-center nav ul li a.activity {
+    display: block;
+  }
+}
+
+/* line 636, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content {
+  width: 100%;
+  background: black;
+}
+/* line 640, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 5% 0;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 640, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-about {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    flex-direction: column;
+    padding: 15% 0;
+  }
+}
+/* line 652, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article {
+  width: 45%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 652, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-about article {
+    width: 100%;
+  }
+}
+/* line 659, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+  /* line 659, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-about article:nth-child(1) {
+    margin: 5% 0;
+  }
+}
+/* line 669, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 669, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-about article:nth-child(2) {
+    display: none;
+  }
+}
+/* line 679, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article span {
+  color: #fd0e3d;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+/* line 685, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+/* line 692, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article p {
+  color: white;
+  margin: 0;
+  font-size: 0.8em;
+  white-space: pre-line;
+  line-height: 1.5em;
+}
+/* line 700, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-about article img {
+  filter: grayscale(100%);
+  opacity: 0.1;
+}
+/* line 710, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+  margin-top: 8%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 710, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-instagram {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    padding: 20% 0;
+  }
+}
+/* line 720, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram img {
+  width: 90px;
+}
+/* line 724, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram h1 {
+  color: #fd0e3d;
+  text-transform: uppercase;
+  font-size: 5em;
+  font-weight: 600;
+  background: linear-gradient(to right, #fe0640 0%, #a20c89 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 768px) {
+  /* line 724, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-instagram h1 {
+    font-size: 3em;
+  }
+}
+/* line 738, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram p {
+  font-size: 0.9em;
+  color: white;
+  white-space: pre-line;
+}
+@media only screen and (max-width: 768px) {
+  /* line 738, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-instagram p {
+    white-space: inherit;
+  }
+}
+/* line 747, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram #tabs-container {
+  margin: 50px 0;
+}
+/* line 753, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .grid-container {
+  margin-top: 60px;
+  padding: 0 0 70px 0;
+}
+/* line 757, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .grid-container a.access {
+  background: red;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(to right, #fe0640 0%, #a20c89 100%);
+  padding: 18px 32px;
+  font-size: 0.8em;
+  border-radius: 5px;
+}
+/* line 766, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .grid-container a.access:hover {
+  background: none;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #fe0640 0%, #a20c89 100%);
+  border-radius: 5px;
+}
+/* line 778, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .instagram_gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+/* line 784, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .instagram_gallery a {
+  width: 22%;
+  margin-bottom: 40px;
+  position: relative;
+  line-height: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 784, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-instagram .instagram_gallery a {
+    width: 45%;
+  }
+}
+/* line 796, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .instagram_gallery a:hover:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5em;
+  content: "\f002";
+  position: absolute;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+/* line 813, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-instagram .instagram_gallery a img {
+  width: 100%;
+}
+/* line 824, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 9% 0;
+  position: relative;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 824, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+/* line 834, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store img.product-img {
+  position: absolute;
+  right: -130px;
+  top: 170px;
+  width: 60%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 834, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store img.product-img {
+    top: inherit;
+    right: 10px;
+  }
+}
+/* line 846, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-header {
+  width: 65%;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  /* line 846, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-header {
+    width: 100%;
+  }
+}
+/* line 856, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-header img {
+  width: 400px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 856, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-header img {
+    width: 150px;
+  }
+}
+/* line 863, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-header .text-header-store {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  z-index: 99;
+}
+@media only screen and (max-width: 768px) {
+  /* line 863, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-header .text-header-store {
+    align-items: flex-start;
+  }
+}
+/* line 874, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-header .text-header-store h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 15em;
+  margin: 0;
+  line-height: 0.7em;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  /* line 874, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-header .text-header-store h1 {
+    font-size: 5em;
+    margin: 10px 0;
+  }
+}
+/* line 887, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-header .text-header-store p {
+  color: white;
+  font-size: 0.8em;
+  width: 40%;
+  line-height: 1.5em;
+  margin-top: 30px;
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  /* line 887, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-header .text-header-store p {
+    width: inherit;
+    margin-top: 10px;
+  }
+}
+/* line 906, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 906, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-grid {
+    width: 100%;
+  }
+}
+/* line 918, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product {
+  width: 48%;
+  margin-bottom: 30px;
+  background-color: white;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 918, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-grid .product {
+    width: 100%;
+  }
+}
+/* line 936, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .trame-product {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  transition: all 0.2s ease-in;
+}
+/* line 944, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product:hover > .trame-product {
+  opacity: 0.2;
+}
+/* line 948, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .info-product {
+  padding: 25px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 999;
+}
+/* line 953, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .info-product h1 {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1em;
+}
+/* line 961, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .info-product p {
+  margin: 0;
+  font-size: 0.7em;
+  color: white;
+}
+/* line 969, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more {
+  display: flex;
+  align-items: flex-end;
+  height: 450px;
+  position: relative;
+  z-index: 999;
+}
+@media only screen and (max-width: 768px) {
+  /* line 969, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store .store-grid .product .product-more {
+    height: 250px;
+  }
+}
+/* line 980, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+}
+/* line 985, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info .product-info-bloque {
+  display: flex;
+  align-items: center;
+}
+/* line 988, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info .product-info-bloque a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8em;
+  transition: all 0.2s ease-in;
+}
+/* line 996, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info .product-info-bloque a:hover {
+  opacity: 0.5;
+}
+/* line 1001, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info .product-info-bloque button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  color: white;
+  font-size: 1.3em;
+  transition: all 0.3s ease-in;
+}
+/* line 1014, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info .product-info-bloque button:focus {
+  outline: none;
+}
+/* line 1017, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info .product-info-bloque button:hover {
+  opacity: 0.3;
+}
+/* line 1022, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info p.product-advise {
+  font-size: 0.7em;
+  text-align: right;
+  white-space: pre-line;
+  margin: 0;
+  color: white;
+}
+/* line 1029, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info p.product-advise a {
+  font-weight: 600;
+}
+/* line 1033, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info p.product-advise a:first-child {
+  color: yellow;
+}
+/* line 1036, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .product-more .product-more-info p.product-advise a:last-child {
+  color: #4CAF50;
+}
+/* line 1043, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .destacado {
+  background-color: #fd0e3d;
+  position: absolute;
+  margin-top: -20px;
+  padding: 15px 15px 20px;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  right: 0;
+  display: flex;
+  height: 55%;
+}
+/* line 1054, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .destacado h1 {
+  color: white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* line 1060, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store .store-grid .product .destacado img {
+  width: 30px;
+  margin-bottom: 10px;
+}
+/* line 1070, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store a.access-store-home {
+  font-weight: 600;
+  font-size: 2em;
+  text-transform: uppercase;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: right;
+  display: block;
+  color: #2f2f2f;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1070, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-content .wrap-center-store a.access-store-home {
+    width: inherit;
+    font-size: 1.5em;
+    text-align: left;
+  }
+}
+/* line 1089, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-content .wrap-center-store a.access-store-home:hover {
+  color: white;
+}
+
+/* line 1101, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1101, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile {
+    height: 100%;
+  }
+}
+/* line 1110, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .bg-cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 98;
+  background-position: center;
+  background-size: cover;
+}
+/* line 1118, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .bg-cover:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.58);
+}
+/* line 1127, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+  z-index: 99;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+/* line 1135, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container {
+  width: 100%;
+}
+/* line 1137, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info {
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1137, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/* line 1144, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .image-profile {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1144, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .image-profile {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 25px;
+  }
+}
+/* line 1156, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1156, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+/* line 1169, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info h1 {
+  color: white;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1169, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info h1 {
+    font-weight: 600;
+  }
+}
+/* line 1178, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info h1 span {
+  color: yellow;
+  font-size: 0.7em;
+}
+/* line 1183, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info p {
+  margin: 5px 28% 20px 0;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 400;
+  white-space: pre-line;
+}
+/* line 1190, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info p span {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1190, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info p span {
+    color: yellow;
+  }
+}
+/* line 1199, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a {
+  color: white;
+  background-color: #fd0e3d;
+  width: fit-content;
+  padding: 10px 52px;
+  font-size: 0.7em;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.1s ease-in;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1199, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a {
+    font-weight: 600;
+  }
+}
+/* line 1213, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a:hover {
+  opacity: 0.3;
+}
+/* line 1217, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a.disable {
+  color: #bbbbbb;
+  background: none;
+  width: fit-content;
+  padding: 10px;
+  font-size: 0.7em;
+  border-radius: 50px;
+  margin: 0 5px 0 0;
+  font-weight: 600;
+}
+/* line 1227, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a.disable:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1em;
+  content: "\f235";
+  margin-right: 5px;
+  color: #bbbbbb;
+}
+/* line 1238, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a.editar {
+  background: none;
+  padding: 0;
+  color: #FFEB3B;
+  font-weight: 600;
+  padding: 10px 0;
+}
+/* line 1245, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info a.editar .far {
+  margin-right: 5px;
+}
+/* line 1250, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info .siguiendo {
+  color: white;
+  background-color: #4CAF50;
+  width: fit-content;
+  padding: 10px 52px;
+  font-size: 0.7em;
+  border-radius: 50px;
+  margin: 0 5px 0 0;
+}
+/* line 1259, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info .info .follow-blo {
+  display: flex;
+}
+/* line 1264, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.43);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1264, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot {
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px 0;
+  }
+}
+/* line 1277, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .follows-dats a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  margin-right: 15px;
+  transition: all 0.3s ease-in;
+}
+/* line 1286, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .follows-dats a:hover {
+  opacity: 0.3;
+}
+/* line 1290, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .follows-dats a span {
+  color: yellow;
+}
+/* line 1298, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .social-menu nav ul {
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1298, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .social-menu nav ul {
+    margin: 0;
+  }
+}
+/* line 1303, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .social-menu nav ul li {
+  list-style: none;
+  margin: 0 7px;
+}
+/* line 1306, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .social-menu nav ul li a {
+  color: white;
+  transition: all 0.3s ease-in;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1310, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .social-menu nav ul li a .fab {
+    font-size: 1.2em;
+  }
+}
+/* line 1316, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-profile .header-user-profile-center .main-profile-info-container .profile-info-foot .social-menu nav ul li a:hover {
+  opacity: 0.3;
+}
+
+/* line 1330, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall {
+  width: 100%;
+  position: relative;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  padding: 6% 0 2%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1330, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-wall {
+    padding: 14% 0 6%;
+  }
+}
+/* line 1342, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1342, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .header-user-wall .header-user-wall-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    margin-top: 30px;
+  }
+}
+/* line 1353, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid h1 {
+  font-size: 0.9em;
+  margin-bottom: 27px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* line 1359, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid h1 a {
+  text-decoration: none;
+  color: #bebebe;
+  margin-left: 15px;
+  transition: all 0.1s ease-in;
+}
+/* line 1365, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid h1 a:hover {
+  color: #fd0e3d;
+}
+/* line 1371, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid nav ul {
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+}
+/* line 1375, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid nav ul li {
+  list-style: none;
+  display: flex;
+  margin-right: 10px;
+}
+/* line 1379, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid nav ul li a {
+  transition: all 0.1s ease-in;
+}
+/* line 1382, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid nav ul li a:hover {
+  opacity: 0.7;
+}
+/* line 1386, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid nav ul li a img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* line 1395, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.header-user-wall .header-user-wall-center .wall-friends-grid nav ul li.follower-profile {
+  display: none;
+}
+
+/* line 1407, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile {
+  width: 100%;
+  background: #f1f1f1;
+  min-height: 100%;
+}
+/* line 1412, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 3% 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1412, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+/* line 1421, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tabs-menu {
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+/* line 1425, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tabs-menu li {
+  list-style: none;
+  margin-right: 20px;
+}
+/* line 1428, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tabs-menu li.current a {
+  color: #fd0e3d;
+  font-weight: 600;
+  position: relative;
+}
+/* line 1432, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tabs-menu li.current a:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background: red;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 26px;
+  left: 0;
+  right: 0;
+}
+/* line 1446, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tabs-menu li a {
+  color: #6c6c6c;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+/* line 1454, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tab {
+  width: 100%;
+  max-width: 1200px;
+  margin: 49px auto;
+  padding: 3% 0;
+  border-top: 1px solid #dadada;
+}
+/* line 1461, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .tab .tab-content {
+  width: 100%;
+  display: none;
+}
+/* line 1468, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+/* line 1473, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post {
+  width: 65%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1473, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post {
+    width: 100%;
+  }
+}
+/* line 1479, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post a.volver-show {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #686868;
+  margin-top: 40px;
+}
+/* line 1488, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #dadada;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1488, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .publicar {
+    margin-bottom: 30px;
+    padding: 30px 0;
+  }
+}
+/* line 1499, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar h1 {
+  color: #4b4b4b;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+/* line 1506, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar .field textarea {
+  width: 100%;
+  border: none;
+  margin: 15px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+  font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+  font-size: 0.8em;
+}
+/* line 1518, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar .field textarea:focus {
+  outline: none;
+  background: #dedede;
+}
+/* line 1527, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar .actions {
+  text-align: right;
+}
+/* line 1529, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar .actions input[type='submit'] {
+  display: inline-block;
+  background: #fd0e3d;
+  border: none;
+  color: white;
+  padding: 2% 7%;
+  border-radius: 50px;
+  font-size: 0.7em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
+/* line 1541, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar .actions input[type='submit']:focus {
+  outline: none;
+}
+/* line 1545, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .publicar .actions input[type='submit']:hover {
+  opacity: 0.3;
+}
+/* line 1553, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  position: relative;
+}
+/* line 1560, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-header {
+  display: flex;
+}
+/* line 1562, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-header a {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* line 1570, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-header .info-user-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 1574, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-header .info-user-header a {
+  margin: 0;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+}
+/* line 1579, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-header .info-user-header a.name-user {
+  color: #4b4b4b;
+  font-weight: 600;
+}
+/* line 1583, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-header .info-user-header a.date {
+  color: grey;
+  font-size: 0.6em;
+}
+/* line 1591, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-content-body p {
+  font-size: 0.9em;
+  margin: 15px 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1591, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-content-body p {
+    margin: 25px 0;
+  }
+}
+/* line 1601, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1601, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed {
+    flex-direction: column;
+  }
+}
+/* line 1608, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque {
+  display: flex;
+  align-items: center;
+}
+/* line 1611, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque a {
+  line-height: 0;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+}
+/* line 1616, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque a:hover {
+  opacity: 0.3;
+}
+/* line 1620, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque a img {
+  width: 25px;
+}
+/* line 1625, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque a.comment-ico {
+  margin-left: 10px;
+}
+/* line 1629, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque img {
+  width: 25px;
+  margin-left: 10px;
+}
+/* line 1633, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque span {
+  margin: 0 8px;
+  font-weight: 600;
+  color: #4b4b4b;
+  font-size: 0.9em;
+}
+/* line 1640, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1640, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 {
+    align-items: flex-start;
+    margin: 22px 0 0 0;
+  }
+}
+/* line 1649, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 nav {
+  display: flex;
+}
+/* line 1651, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 nav a {
+  background-size: cover;
+  background-position: center;
+  margin-right: -15px;
+  transition: all 0.1s ease-in;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1651, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 nav a {
+    margin-right: -10px;
+  }
+}
+/* line 1661, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 nav a img {
+  max-width: 35px;
+  min-width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1661, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 nav a img {
+    max-width: 25px;
+    min-width: 25px;
+    height: 25px;
+  }
+}
+/* line 1680, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 nav a:last-child {
+  margin-right: 0;
+}
+/* line 1685, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 p {
+  font-size: 0.8em;
+  margin: 5px 0 0 0;
+  font-weight: 400;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1685, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 p {
+    font-size: 0.7em;
+  }
+}
+/* line 1694, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 p span.name, .wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .info-feed .bloque-2 p span.num {
+  font-weight: 600;
+  color: #fd0e3d;
+}
+/* line 1703, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds {
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 15px;
+  background: #f9f9f9;
+}
+/* line 1709, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds a {
+  background-size: cover;
+  background-position: center;
+  max-width: 35px;
+  min-width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.1s ease-in;
+}
+/* line 1719, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds a.mas-comment {
+  max-width: inherit;
+  min-width: inherit;
+  font-size: 0.75em;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  height: inherit;
+}
+/* line 1728, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds a.mas-comment img {
+  width: 20px;
+}
+/* line 1733, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds .comment-write {
+  margin-left: 15px;
+}
+/* line 1735, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds .comment-write h1 {
+  margin: 0 0 5px 0;
+  color: #fd0e3d;
+  font-size: 0.8em;
+  font-weight: 600;
+  white-space: pre-line;
+}
+/* line 1741, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds .comment-write h1 span {
+  font-weight: 100;
+  color: #909090;
+  font-size: 0.75em;
+}
+/* line 1747, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds .comment-write p {
+  margin: 0;
+  font-size: 0.75em;
+}
+/* line 1751, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds .comment-write a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: #4b4b4b;
+  border: none;
+}
+/* line 1759, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .comment-feeds .comment-write a img {
+  margin-right: 5px;
+  width: 20px;
+}
+/* line 1771, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .user-comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+/* line 1776, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .user-comment a {
+  background-size: cover;
+  background-position: center;
+  max-width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.1s ease-in;
+}
+/* line 1787, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .user-comment input[type="text"] {
+  width: 93%;
+  max-width: 93%;
+  border: none;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  transition: all 0.3s ease-in;
+  font-size: 0.8em;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+}
+/* line 1799, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .post-user-footer .user-comment input[type="text"]:focus {
+  outline: none;
+  background: #dedede;
+}
+/* line 1810, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .navbar-custom {
+  position: absolute;
+  right: 20px;
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1816, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .navbar-custom .navbar-collapse-custom {
+    display: inherit;
+  }
+  /* line 1820, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .post .post-users .navbar-custom .navbar-collapse-custom a.nav-link {
+    text-align: right;
+  }
+}
+/* line 1827, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .navbar-custom .fas {
+  color: grey;
+  font-size: 1.3em;
+}
+/* line 1831, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .navbar-custom .show-custom {
+  text-align: right;
+  right: 0;
+  left: inherit;
+  margin-top: -10px;
+}
+/* line 1837, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .post .post-users .navbar-custom .show-custom a {
+  font-size: 0.7em;
+}
+/* line 1845, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post {
+  width: 27%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1845, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center #tab-1 .sidebar-post {
+    display: none;
+  }
+}
+/* line 1854, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend h1 {
+  text-transform: uppercase;
+  color: #4b4b4b;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+/* line 1861, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-friends {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+/* line 1866, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-friends li {
+  list-style: none;
+}
+/* line 1869, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-friends li a img {
+  width: 65px;
+  max-width: 65px;
+  min-width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin: 0 10px 12px 0;
+  object-fit: cover;
+}
+/* line 1886, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+/* line 1891, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .head-event {
+  display: flex;
+}
+/* line 1893, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .head-event a {
+  background-size: cover;
+  background-position: center;
+  width: 25%;
+  max-width: 45px;
+  min-width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 10px 12px 0;
+}
+/* line 1903, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .head-event .info-header-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 1908, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .head-event .info-header-event h1 {
+  margin: 0 0 2px 0;
+  color: #4b4b4b;
+}
+/* line 1912, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .head-event .info-header-event p {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: grey;
+}
+/* line 1916, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .head-event .info-header-event p a {
+  color: #fd0e3d;
+}
+/* line 1923, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container a {
+  text-decoration: none;
+}
+/* line 1925, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container a p {
+  color: #4b4b4b;
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+/* line 1929, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container a p span {
+  color: #fd0e3d;
+  font-weight: 600;
+}
+/* line 1934, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container a .img-event {
+  width: 100%;
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+  margin: 15px 0;
+}
+/* line 1943, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .foot-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 1948, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .foot-event .bloque {
+  display: flex;
+  align-items: center;
+}
+/* line 1951, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .foot-event .bloque h1 {
+  font-size: 0.7em;
+  margin: 0;
+}
+/* line 1956, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .foot-event .bloque nav {
+  display: flex;
+}
+/* line 1958, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .foot-event .bloque nav a {
+  background-size: cover;
+  background-position: center;
+  width: 25%;
+  max-width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 -10px 0 0;
+  border: 2px solid white;
+}
+/* line 1971, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .event-container .foot-event .bloque .action-btn {
+  color: #fd0e3d;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 600;
+}
+/* line 1985, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .see-more {
+  margin-bottom: 50px;
+  text-align: right;
+}
+/* line 1989, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-events .see-more a {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #9f9f9f;
+  text-decoration: none;
+}
+/* line 2000, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .product-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+/* line 2005, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .product-content a {
+  text-decoration: none;
+}
+/* line 2007, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .product-content a img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+/* line 2013, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .product-content a h1 {
+  margin: 0 auto;
+  width: 90%;
+  font-size: 0.8em;
+}
+/* line 2018, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .product-content a p {
+  margin: 0 auto;
+  width: 90%;
+  font-size: 0.7em;
+  color: #c2c2c2;
+}
+/* line 2026, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .see-more {
+  margin-bottom: 50px;
+  text-align: right;
+}
+/* line 2030, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .grid-store .see-more a {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #9f9f9f;
+  text-decoration: none;
+}
+/* line 2040, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .aside-footer {
+  text-decoration: none;
+  margin-top: 50px;
+  text-align: center;
+}
+/* line 2044, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-1 .sidebar-post .friend .aside-footer p {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #4b4b4b;
+}
+/* line 2056, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-2 .instagram_gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 2060, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-2 .instagram_gallery a {
+  width: 25%;
+  overflow: hidden;
+  position: relative;
+}
+/* line 2065, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-2 .instagram_gallery a:hover:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.2em;
+  content: "\f002";
+  position: absolute;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(253, 14, 61, 0.54);
+}
+/* line 2083, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center #tab-2 .instagram_gallery a img {
+  width: 100%;
+}
+/* line 2090, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2090, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center .pages-info {
+    flex-direction: column;
+    margin-top: 25px;
+  }
+}
+/* line 2099, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: fit-content;
+}
+/* line 2106, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque h1 {
+  font-size: 0.8em;
+  color: #4b4b4b;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 600;
+}
+/* line 2114, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque h1 span {
+  color: #fd0e3d;
+  font-weight: 600;
+}
+/* line 2119, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque a.new-event {
+  background: #4CAF50;
+  color: white;
+  font-size: 0.8em;
+  padding: 10px 25px;
+  display: block;
+  width: fit-content;
+  margin-top: 25px;
+  border-radius: 5px;
+}
+/* line 2130, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque p {
+  font-size: 0.8em;
+  color: #4b4b4b;
+  margin-bottom: 0;
+}
+/* line 2138, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque:first-child {
+  width: 40%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2138, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center .pages-info .pages-info-bloque:first-child {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+/* line 2145, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque:last-child {
+  width: 55%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2145, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center .pages-info .pages-info-bloque:last-child {
+    width: 100%;
+  }
+}
+/* line 2153, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event {
+  overflow: hidden;
+}
+/* line 2155, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+/* line 2160, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  height: 350px;
+  width: 100%;
+}
+/* line 2170, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .access-edit {
+  display: flex;
+  margin-bottom: 10px;
+}
+/* line 2173, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .access-edit a {
+  background: none;
+  padding: 0;
+  color: grey;
+  font-size: 1em;
+  margin-right: 10px;
+}
+/* line 2182, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info h1 {
+  border: none;
+  font-size: 1.7em;
+  font-weight: 600;
+  white-space: pre-line;
+  margin-bottom: 0;
+}
+/* line 2189, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info p.desc {
+  font-size: 0.7em;
+  color: #4b4b4b;
+  margin-bottom: 0;
+  margin-right: 54%;
+  font-weight: inherit;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2189, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info p.desc {
+    margin-right: 0;
+  }
+}
+/* line 2200, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info a {
+  background: #fd0e3d;
+  width: fit-content;
+  display: block;
+  padding: 10px 25px;
+  font-size: 0.75em;
+  color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+/* line 2212, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist {
+  display: flex;
+  align-items: center;
+  margin: 30px 0 0 0;
+}
+/* line 2216, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist p {
+  font-weight: 600;
+  color: #4b4b4b;
+  margin-right: 10px;
+  font-size: 0.75em;
+}
+/* line 2222, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist nav {
+  display: flex;
+  align-items: center;
+}
+/* line 2225, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist nav a {
+  padding: 0;
+  background: none;
+  margin-top: 0;
+}
+/* line 2230, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist nav a:first-child > img {
+  margin-left: 0;
+}
+/* line 2234, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist nav a img {
+  width: 30px;
+  height: 30px;
+  margin-left: -10px;
+  position: inherit;
+  border: 2px solid white;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2234, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content .event-info .assist nav a img {
+    display: inherit;
+  }
+}
+/* line 2252, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content img {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  right: -15%;
+  bottom: -30%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2252, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content img {
+    display: none;
+  }
+}
+/* line 2266, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content:last-child {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  margin: 20px 0;
+}
+/* line 2272, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content:last-child p {
+  font-weight: 600;
+  color: #4b4b4b;
+  margin-right: 10px;
+}
+/* line 2277, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content:last-child nav {
+  display: flex;
+  align-items: center;
+}
+/* line 2282, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content:last-child nav a:first-child > img {
+  margin-left: 0;
+}
+/* line 2286, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center .pages-info .pages-info-bloque .card-event .card-event-content:last-child nav a img {
+  width: 30px;
+  height: 30px;
+  margin-left: -10px;
+  position: inherit;
+  border: 2px solid white;
+}
+/* line 2305, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center-show {
+  padding-top: 100px;
+}
+/* line 2307, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center-show .tab {
+  margin: 30px auto;
+  padding: 0;
+  border-top: none;
+}
+/* line 2312, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center-show #tab-1 {
+  justify-content: center;
+}
+/* line 2317, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center-wall {
+  padding: 0 0 3% 0;
+}
+/* line 2320, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .wrap-profile-center-wall .tab {
+  margin-top: 0;
+}
+/* line 2325, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 2330, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post .header-edit {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2330, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .edit-post .header-edit {
+    width: 100%;
+  }
+}
+/* line 2339, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post .header-edit h1 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #4b4b4b;
+}
+/* line 2345, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post .header-edit a {
+  font-weight: 600;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #4b4b4b;
+}
+/* line 2355, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post form {
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2355, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-profile .edit-post form {
+    width: 100%;
+  }
+}
+/* line 2360, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post form textarea {
+  width: 100%;
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0 10px 0;
+  font-size: 0.9em;
+}
+/* line 2369, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post form textarea:focus {
+  outline: none;
+  background-color: #dbdbdb;
+}
+/* line 2374, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-profile .edit-post form input[type="submit"] {
+  border: none;
+  background: #E91E63;
+  color: white;
+  font-size: 0.7em;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+/* line 2386, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2386, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .form-login {
+    flex-direction: column;
+  }
+}
+/* line 2393, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #101010;
+}
+/* line 2402, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque img {
+  width: 70px;
+}
+/* line 2406, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque h2 {
+  color: grey;
+  font-weight: 600;
+  font-size: 0.8em;
+  margin: 10px 0 20px;
+}
+/* line 2412, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque form {
+  width: 55%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2412, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .form-login .form-bloque form {
+    width: 70%;
+  }
+}
+/* line 2418, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field {
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+/* line 2422, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field input[type="email"], .form-login .form-bloque .field input[type="password"], .form-login .form-bloque .field input[type="text"] {
+  background-color: #090909;
+  border: none;
+  padding: 17px 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 0.8em;
+  color: #4a4a4a;
+  transition: all 0.2s ease-in;
+}
+/* line 2433, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field input[type="email"]::placeholder, .form-login .form-bloque .field input[type="password"]::placeholder, .form-login .form-bloque .field input[type="text"]::placeholder {
+  color: #404040;
+}
+/* line 2436, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field input[type="email"]:focus, .form-login .form-bloque .field input[type="password"]:focus, .form-login .form-bloque .field input[type="text"]:focus {
+  outline: 0;
+  background: black;
+  color: white;
+  padding-left: 15px;
+}
+/* line 2448, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field-custom {
+  margin: 25px 0;
+  box-sizing: border-box;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+/* line 2455, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field-custom input[type="checkbox"] {
+  background-color: red;
+}
+/* line 2459, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .field-custom label {
+  font-size: 0.8em;
+  margin-bottom: 0;
+  margin: 0 0 0 3px;
+  color: #434343;
+  font-weight: 600;
+}
+/* line 2469, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque input[type="submit"] {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 0.8em;
+  background-color: #60991d;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+/* line 2481, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque a {
+  text-decoration: none;
+  color: grey;
+  font-size: 0.7em;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+/* line 2488, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque a:hover {
+  color: #959595;
+}
+/* line 2493, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .divider {
+  height: 1px;
+  border-bottom: 1px solid #e8e8e8;
+  width: 55%;
+  margin: 20px 0 40px;
+  text-align: center;
+}
+/* line 2500, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque .divider:after {
+  content: 'O si prefieres';
+  display: inline-block;
+  position: relative;
+  top: -12px;
+  padding: 0 16px;
+  background: #fff;
+  font-size: 0.8em;
+  color: grey;
+}
+/* line 2512, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque a.facebook-link {
+  background: #eaeaea;
+  color: darkgrey;
+  width: 57px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+}
+/* line 2524, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-bloque a.facebook-link:hover {
+  background-color: #4267b2;
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2532, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .form-login .form-login {
+    width: 100%;
+  }
+}
+/* line 2538, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-login .divider {
+  border-bottom: 1px solid #242424;
+}
+/* line 2541, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-login .divider:after {
+  background: #101010;
+  color: #898989;
+}
+/* line 2547, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-login a.facebook-link {
+  background-color: #4267b2;
+  color: white;
+  width: 57px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+}
+/* line 2559, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .form-login a.facebook-link:hover {
+  opacity: 0.5;
+}
+/* line 2567, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .sesion-bloque {
+  width: 60%;
+  background-image: url(login-bg.jpg);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2567, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .form-login .sesion-bloque {
+    display: none;
+  }
+}
+/* line 2582, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .sesion-bloque .sesion-bloque-content {
+  padding: 0 15%;
+  z-index: 99;
+}
+/* line 2585, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .sesion-bloque .sesion-bloque-content h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 1.8em;
+  white-space: pre-line;
+}
+/* line 2590, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .sesion-bloque .sesion-bloque-content h1 span {
+  color: yellow;
+  text-transform: uppercase;
+}
+/* line 2595, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .sesion-bloque .sesion-bloque-content p {
+  color: white;
+  white-space: pre-line;
+  font-size: 0.7em;
+  margin-top: 20px;
+  line-height: 1.6em;
+}
+/* line 2605, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-login .sesion-bloque .bg-login {
+  background-color: rgba(0, 0, 0, 0.83);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 98;
+}
+
+/* line 2617, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .sesion-bloque {
+  background-image: url(register-bg.jpg);
+  text-align: left;
+}
+/* line 2625, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .form-bloque {
+  background-color: white;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2625, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .form-register .form-bloque {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* line 2635, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .form-bloque h2 {
+  color: grey;
+  font-weight: 600;
+  font-size: 0.8em;
+  margin: 10px 0 20px;
+}
+/* line 2646, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .form-bloque form .field input[type="text"], .form-register .form-bloque form .field input[type="email"], .form-register .form-bloque form .field input[type="password"] {
+  background-color: #eaeaea;
+  padding: 17px 25px;
+  font-size: 0.8em;
+  color: #4a4a4a;
+}
+/* line 2652, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .form-bloque form .field input[type="text"]::placeholder, .form-register .form-bloque form .field input[type="email"]::placeholder, .form-register .form-bloque form .field input[type="password"]::placeholder {
+  color: grey;
+}
+/* line 2655, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .form-bloque form .field input[type="text"]:focus, .form-register .form-bloque form .field input[type="email"]:focus, .form-register .form-bloque form .field input[type="password"]:focus {
+  outline: 0;
+  background: grey;
+  color: white;
+  padding-left: 35px;
+}
+/* line 2667, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.form-register .form-bloque form .actions input[type="submit"] {
+  font-size: 0.7em;
+  background-color: #fd0e3d;
+  margin-top: 20px;
+  padding: 12px;
+}
+
+/* line 2680, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile {
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 50px;
+  background: #f1f1f1;
+}
+/* line 2685, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2685, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-edit-profile .wrap-edit-profile-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+/* line 2695, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center h1 {
+  color: #4b4b4b;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2695, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-edit-profile .wrap-edit-profile-center h1 {
+    font-size: 1.5em;
+  }
+}
+/* line 2705, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center p {
+  font-size: 0.8em;
+  color: grey;
+}
+/* line 2710, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container {
+  margin: 30px 0 50px;
+}
+/* line 2712, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tabs-menu {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+/* line 2716, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tabs-menu li {
+  list-style: none;
+  padding: 10px 30px;
+}
+/* line 2720, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tabs-menu li.current {
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* line 2725, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tabs-menu li.current a {
+  color: #007bff;
+  cursor: inherit;
+}
+/* line 2731, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tabs-menu li a {
+  text-decoration: none;
+  font-size: 0.8em;
+  color: grey;
+}
+/* line 2740, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content {
+  display: none;
+  background-color: white;
+  padding: 50px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2740, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content {
+    padding: 25px;
+  }
+}
+/* line 2749, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form {
+  width: 100%;
+}
+/* line 2751, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field {
+  display: flex;
+  flex-direction: column;
+}
+/* line 2755, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field.field-custom {
+  margin-bottom: 20px;
+}
+/* line 2758, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field.field-custom input {
+  line-height: 0;
+}
+/* line 2763, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field.field-avatar {
+  margin-bottom: 20px;
+  width: fit-content;
+}
+/* line 2769, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field label {
+  color: grey;
+  font-size: 0.7em;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+/* line 2776, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field label[for="file-input"] {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  color: #fff;
+  opacity: .9;
+  font-weight: bold;
+}
+/* line 2785, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="file"] {
+  cursor: pointer !Important;
+  font-size: 0.7em;
+  outline: none !important;
+}
+/* line 2790, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="file"]:focus, .wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="file"]:active {
+  outline: none;
+}
+/* line 2794, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="file"]::-webkit-file-upload-button {
+  background: grey;
+  border: 0;
+  padding: 15px 25px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+/* line 2805, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="file"]::-ms-browse {
+  background: grey;
+  border: 0;
+  padding: 15px 25px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+/* line 2816, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field select {
+  background: #ededed;
+  border: none;
+  padding: 10px;
+  font-size: 0.8em;
+}
+/* line 2822, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field select:focus {
+  outline: none;
+}
+/* line 2829, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="text"], .wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field textarea {
+  padding: 10px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #e0e0e0;
+  color: grey;
+  margin-bottom: 15px;
+}
+/* line 2838, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field input[type="text"]:focus, .wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field textarea:focus {
+  outline: none;
+  background-color: #cecece;
+  color: #3e3e3e;
+}
+/* line 2844, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .field span {
+  font-size: 0.7em;
+  margin-bottom: 25px;
+  color: grey;
+  margin-top: -10px;
+}
+/* line 2853, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab .tab-content form .actions input[type="submit"] {
+  border: none;
+  background: #E91E63;
+  color: white;
+  font-size: 0.7em;
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+/* line 2865, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab #tab-1 {
+  display: flex;
+  flex-direction: column;
+}
+/* line 2869, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab #tab-1 nav.access-form {
+  margin-top: 50px;
+}
+/* line 2871, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab #tab-1 nav.access-form ul {
+  padding: 0;
+  display: flex;
+}
+/* line 2874, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab #tab-1 nav.access-form ul li {
+  list-style: none;
+  margin-right: 10px;
+}
+/* line 2877, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .tab #tab-1 nav.access-form ul li a {
+  color: #4b4b4b;
+  font-weight: 600;
+  font-size: 0.7em;
+}
+/* line 2888, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .dataTables_wrapper {
+  margin: 40px 0;
+  font-size: 0.8em;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2892, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-edit-profile .wrap-edit-profile-center #tabs-container .dataTables_wrapper .dataTables_length, .wrap-edit-profile .wrap-edit-profile-center #tabs-container .dataTables_wrapper .dataTables_filter {
+    text-align: left;
+  }
+}
+/* line 2897, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .dataTables_wrapper .data-tables {
+  background: #c2c2c2;
+  margin: 15px 0;
+}
+/* line 2900, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-edit-profile .wrap-edit-profile-center #tabs-container .dataTables_wrapper .data-tables .odd {
+  padding: 10px;
+}
+
+/* line 2915, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages {
+  width: 100%;
+  min-height: 100%;
+  padding: 150px 0 100px;
+  background: #f1f1f1;
+}
+/* line 2922, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2922, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+/* line 2929, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2929, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .header-pages {
+    flex-direction: column;
+  }
+}
+/* line 2939, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2939, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .header-pages .bloque:nth-child(2) {
+    justify-content: flex-start;
+  }
+}
+/* line 2949, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque h1 {
+  font-weight: 600;
+  font-size: 2em;
+  color: #4b4b4b;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 2949, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .header-pages .bloque h1 {
+    font-size: 1.5em;
+  }
+}
+/* line 2959, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque p {
+  font-size: 0.8em;
+  color: #4b4b4b;
+}
+/* line 2963, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque a {
+  font-size: 0.7em;
+}
+/* line 2966, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque form {
+  width: 200px;
+  margin: 0 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 2973, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque form input[type=text] {
+  width: 88%;
+  border: none;
+  height: 32px;
+  border-radius: 5px;
+  background: #dbdbdb;
+  padding: 10px;
+  font-size: 0.8em;
+  transition: all 0.2s ease-in;
+}
+/* line 2983, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque form input[type=text]:focus {
+  outline: none;
+  background: white;
+}
+/* line 2989, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque form button {
+  width: 10%;
+  border: none;
+  height: 32px;
+  background: none;
+}
+/* line 2994, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .header-pages .bloque form button:focus {
+  outline: none;
+}
+/* line 3003, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3003, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .grid-card-pages {
+    margin-top: 80px;
+  }
+}
+/* line 3011, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom {
+  width: 30%;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3011, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .grid-card-pages .card-custom {
+    width: 100%;
+  }
+}
+/* line 3018, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom img {
+  height: 160px;
+  object-fit: cover;
+}
+/* line 3025, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  margin-top: -55px;
+  border: 6px solid white;
+}
+/* line 3035, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body h5 {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #4b4b4b;
+}
+/* line 3041, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body p {
+  font-size: 0.7em;
+  color: #4b4b4b;
+  font-weight: 100;
+  margin: 0 10% 17px 10%;
+}
+/* line 3049, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body nav ul {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+/* line 3053, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body nav ul li {
+  list-style: none;
+}
+/* line 3056, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body nav ul li:nth-child(2) {
+  margin: 0 10px;
+  color: red;
+}
+/* line 3061, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body nav ul li a.ver {
+  color: #8BC34A;
+}
+/* line 3064, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body nav ul li a.edit {
+  color: #03A9F4;
+}
+/* line 3067, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages .card-custom .card-body nav ul li a.delete {
+  color: #F44336;
+}
+/* line 3077, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages h1 {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 3em;
+  margin-top: 50px;
+  letter-spacing: -2px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3077, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .grid-card-pages h1 {
+    font-size: 2em;
+  }
+}
+/* line 3087, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages h1 img {
+  width: 70px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3087, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .grid-card-pages h1 img {
+    width: 40px;
+  }
+}
+/* line 3095, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages p {
+  white-space: pre-line;
+  color: grey;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+/* line 3101, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages p span {
+  font-weight: 100;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3095, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .grid-card-pages p {
+    font-size: 0.7em;
+    margin-top: 10px;
+  }
+}
+/* line 3112, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-pages .wrap-pages-center .grid-card-pages-custom {
+  flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3112, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-pages .wrap-pages-center .grid-card-pages-custom {
+    margin-top: 0;
+  }
+}
+
+/* line 3121, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.bg-event-sticky {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3121, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .bg-event-sticky {
+    background-position: center;
+  }
+}
+/* line 3131, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.bg-event-sticky .bg-trame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to left, rgba(47, 20, 130, 0.8), rgba(29, 49, 155, 0.8));
+}
+
+/* line 3139, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event {
+  width: 100%;
+  height: auto;
+  padding: 150px 0;
+  position: relative;
+  display: block;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3139, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/* line 3151, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event a.editar-evento {
+  position: absolute;
+  bottom: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: fit-content;
+  color: white;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+/* line 3164, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event a.editar-evento:hover {
+  text-decoration: underline;
+}
+/* line 3169, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 3177, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3177, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content {
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+/* line 3187, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content .tag {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 5em;
+  position: relative;
+  -webkit-text-stroke: .12rem currentcolor;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  display: inline-block;
+  opacity: 0.2;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3187, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content .tag {
+    font-size: 2.5em;
+    opacity: 0.05;
+  }
+}
+/* line 3205, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content h1 {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 3em;
+  margin: -35px 0 20px 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3205, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content h1 {
+    font-size: 2.5em;
+  }
+}
+/* line 3215, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content h2 {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3215, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content h2 {
+    flex-direction: initial;
+  }
+}
+/* line 3227, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content h2 span {
+  background: red;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 2px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3227, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content h2 span {
+    margin-left: 5px;
+  }
+}
+/* line 3238, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content h2 img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3238, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content h2 img {
+    margin-right: 15px;
+  }
+}
+/* line 3250, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content p {
+  text-align: center;
+  color: white;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  width: 70%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3250, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content p {
+    text-align: left;
+    margin: 0;
+    width: 100%;
+  }
+}
+/* line 3263, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav {
+  margin-top: 40px;
+}
+/* line 3265, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul {
+  padding: 0;
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3265, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content nav ul {
+    flex-direction: column;
+  }
+}
+/* line 3271, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul a {
+  border: 1px solid white;
+  padding: 18px 32px;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3271, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content nav ul a {
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    padding: 5px 0;
+    border: none;
+  }
+}
+/* line 3288, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul a:first-child {
+  margin-right: 15px;
+  background-color: #fd0e3d;
+  border-color: #fd0e3d;
+}
+/* line 3295, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul a:hover {
+  opacity: 0.5;
+}
+/* line 3298, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul a.no-asistir {
+  margin-right: 10px;
+}
+/* line 3302, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul span {
+  padding: 18px 32px;
+  background-color: #4CAF50;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3302, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content nav ul span {
+    margin-bottom: 10px;
+  }
+}
+/* line 3314, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content nav ul span .fas {
+  margin-right: 3px;
+}
+/* line 3322, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content .asist-event {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0 0 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3322, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .show-event-center .info-event-content .asist-event {
+    align-items: flex-start;
+  }
+}
+/* line 3334, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content .asist-event .access-to-asist img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* line 3342, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content .asist-event p {
+  margin-top: 10px;
+}
+/* line 3344, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .show-event-center .info-event-content .asist-event p span {
+  color: yellow;
+  font-weight: 600;
+}
+/* line 3353, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .asist-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+/* line 3358, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .asist-content .asist-bloque {
+  display: flex;
+}
+/* line 3360, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .asist-content .asist-bloque img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* line 3367, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .asist-content .asist-bloque .asist-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 3371, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .asist-content .asist-bloque .asist-info a {
+  color: #2196F3;
+  font-weight: 600;
+}
+/* line 3375, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .asist-content .asist-bloque .asist-info p {
+  color: grey;
+  margin: 0;
+  font-size: 0.8em;
+}
+/* line 3385, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event {
+  position: relative;
+  width: 60%;
+  margin: 87px auto 0;
+  background: none;
+  padding: 50px;
+  box-sizing: border-box;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3385, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .content-body-event {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+/* line 3401, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event img {
+  width: 40%;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3401, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .content-body-event img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+/* line 3415, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event .info-event-bloque {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3415, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .show-event .content-body-event .info-event-bloque {
+    width: 100%;
+  }
+}
+/* line 3423, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event .info-event-bloque h1 {
+  font-weight: 600;
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+/* line 3429, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event .info-event-bloque p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin-bottom: 28px;
+}
+/* line 3434, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event .info-event-bloque p.place, .show-event .content-body-event .info-event-bloque p.date {
+  margin-bottom: 0;
+}
+/* line 3439, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event .info-event-bloque a.maps {
+  color: #646464;
+  font-size: 0.8em;
+  margin-bottom: 19px;
+  display: inline-block;
+}
+/* line 3445, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.show-event .content-body-event .info-event-bloque a.maps img {
+  width: 15px;
+  height: auto;
+  margin-bottom: 0;
+}
+
+/* line 3459, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store {
+  width: 100%;
+  padding-top: 100px;
+}
+/* line 3463, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3463, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-head {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    justify-content: space-between;
+  }
+}
+/* line 3471, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head h1 {
+  width: 15%;
+  white-space: pre-line;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  transform: rotate(-180deg);
+  font-size: 9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.4em;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3471, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-head h1 {
+    font-size: 5em;
+  }
+}
+/* line 3486, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head h1 span {
+  font-size: 0.24em;
+  color: #3aaa35;
+  font-weight: 400;
+}
+/* line 3492, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con {
+  background-image: url(store-w.jpg);
+  background-size: cover;
+  width: 85%;
+  height: 600px;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3492, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-head .head-store-con {
+    width: 60%;
+    height: 300px;
+  }
+}
+/* line 3504, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro {
+  position: absolute;
+  background-color: white;
+  width: 60%;
+  right: 0;
+  bottom: 0;
+  padding: 30px 0 30px 30px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3504, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-head .head-store-con .store-intro {
+    display: none;
+  }
+}
+/* line 3514, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro img {
+  position: absolute;
+  width: 120px;
+}
+/* line 3518, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 64%;
+  margin-left: 35%;
+  margin-bottom: 20px;
+}
+/* line 3525, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro .grid div {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid white;
+}
+/* line 3532, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro .grid div:nth-child(1) {
+  background-image: url(store-h1.jpg);
+}
+/* line 3535, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro .grid div:nth-child(2) {
+  background-image: url(store-h4.jpg);
+}
+/* line 3538, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro .grid div:nth-child(3) {
+  background-image: url(store-h3.jpg);
+}
+/* line 3541, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro .grid div:nth-child(4) {
+  background-image: url(store-h2.jpg);
+}
+/* line 3546, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-head .head-store-con .store-intro p {
+  font-size: 0.8em;
+  white-space: pre-line;
+  margin-left: 5px;
+}
+/* line 3556, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3556, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    margin-top: 100px;
+  }
+}
+/* line 3565, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 85%;
+  margin-left: 15%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3565, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+/* line 3579, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter h1 {
+  font-weight: 600;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: grey;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ededed;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3579, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter h1 {
+    font-size: 1.5em;
+  }
+}
+/* line 3591, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product {
+  width: 30%;
+  margin-bottom: 50px;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3591, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter .product {
+    width: 45%;
+  }
+}
+/* line 3598, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .custom-pro {
+  width: 100%;
+  margin-bottom: 10px;
+  background: #f3f3f3;
+  padding: 5px 10px;
+}
+/* line 3603, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .custom-pro ul {
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3603, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter .product .custom-pro ul {
+    flex-direction: column;
+  }
+}
+/* line 3610, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .custom-pro ul li {
+  list-style: none;
+  margin-right: 10px;
+}
+/* line 3613, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .custom-pro ul li a {
+  font-size: 0.7em;
+  margin-right: 5px;
+  color: #4CAF50;
+  font-weight: 600;
+}
+/* line 3623, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product:hover > img {
+  transform: scale(0.9);
+  transition: all 0.2s ease-in;
+}
+/* line 3628, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product h1 {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+/* line 3634, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in;
+}
+/* line 3642, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3642, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description {
+    flex-direction: column;
+  }
+}
+/* line 3649, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc {
+  width: 48%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3649, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc {
+    width: 100%;
+  }
+}
+/* line 3657, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(1) p {
+  font-size: 0.7em;
+}
+/* line 3660, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(1) p a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #4b4b4b;
+}
+/* line 3667, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) {
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3667, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) {
+    text-align: left;
+  }
+}
+/* line 3672, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) h2 {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+/* line 3676, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) p {
+  font-size: 0.7em;
+}
+/* line 3681, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul {
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3681, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul {
+    justify-content: flex-start;
+  }
+}
+/* line 3688, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul li {
+  list-style: none;
+}
+/* line 3691, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul li a.more-info {
+  color: #4b4b4b;
+  margin-right: 10px;
+}
+/* line 3695, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul li a.cart-pro {
+  color: green;
+}
+/* line 3701, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul li form button {
+  background: none;
+  border: none;
+  color: #3aaa35;
+  padding: 0;
+}
+/* line 3707, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center .wrap-products-center-inter .product .product-description .bloque-desc:nth-child(2) nav ul li form button:focus {
+  outline: none;
+}
+/* line 3722, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-store .wrap-store-center-grid {
+  margin-top: 50px;
+}
+
+/* line 3728, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap {
+  width: 100%;
+  padding-top: 150px;
+}
+/* line 3732, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3732, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .product-show-wrap .product-show-wrap-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    flex-direction: column;
+  }
+}
+/* line 3742, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product {
+  width: 45%;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3742, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .product-show-wrap .product-show-wrap-center .show-product {
+    width: 100%;
+  }
+}
+/* line 3750, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 3756, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3756, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .product-show-wrap .product-show-wrap-center .show-product img {
+    height: 250px;
+    margin-bottom: 25px;
+  }
+}
+/* line 3766, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product img.dots {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  object-fit: inherit;
+  bottom: -50px;
+  right: -50px;
+  opacity: 0.5;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3766, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .product-show-wrap .product-show-wrap-center .show-product img.dots {
+    width: 150px;
+    height: 150px;
+    right: 0;
+  }
+}
+/* line 3782, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product h1 {
+  font-weight: 600;
+  font-size: 1.7em;
+  color: #4b4b4b;
+}
+/* line 3788, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+/* line 3793, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product nav ul li {
+  list-style: none;
+}
+/* line 3795, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product nav ul li a {
+  background: none;
+  color: green;
+  padding: 0;
+  margin: 0 10px 0 0;
+  font-size: 0.8em;
+}
+/* line 3805, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product h2 {
+  font-size: 1.3em;
+  color: #4CAF50;
+  margin: 20px 0;
+}
+/* line 3810, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product p {
+  white-space: pre-line;
+  font-size: 0.9em;
+}
+/* line 3813, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product p span {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+/* line 3819, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product .cart-content {
+  display: flex;
+  margin-bottom: 30px;
+}
+/* line 3822, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product .cart-content img {
+  width: 45px;
+  object-fit: contain;
+  height: inherit;
+  background: black;
+  padding: 0 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3822, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .product-show-wrap .product-show-wrap-center .show-product .cart-content img {
+    margin-bottom: 0;
+  }
+}
+/* line 3833, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product .cart-content input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 13px 25px;
+  width: fit-content;
+  transition: all 0.2s ease-in;
+  font-size: 0.9em;
+  border: none;
+}
+/* line 3842, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product .cart-content input[type=submit] .fas {
+  margin-right: 5px;
+}
+/* line 3845, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.product-show-wrap .product-show-wrap-center .show-product .cart-content input[type=submit]:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+/* line 3855, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products {
+  width: 100%;
+  padding-top: 150px;
+}
+/* line 3859, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3859, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .more-products .more-products-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+    flex-direction: column;
+  }
+}
+/* line 3866, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center h1 {
+  font-size: 1.2em;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #7b7b7b;
+}
+/* line 3876, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3876, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .more-products .more-products-center .more-products-grid {
+    flex-direction: column;
+  }
+}
+/* line 3885, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single {
+  width: 31%;
+  display: flex;
+  justify-content: space-between;
+  background: #efefef;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3885, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .more-products .more-products-center .more-products-grid .more-single {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+/* line 3896, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single img {
+  width: 35%;
+  height: 200px;
+  object-fit: cover;
+}
+/* line 3901, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single .more-info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+/* line 3909, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single .more-info h1 {
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4b4b4b;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+/* line 3919, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single .more-info h2 {
+  color: #4CAF50;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+/* line 3925, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single .more-info p {
+  font-size: 0.7em;
+}
+/* line 3928, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single .more-info a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: grey;
+}
+/* line 3936, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.more-products .more-products-center .more-products-grid .more-single .more-info a:hover {
+  text-decoration: underline;
+}
+
+/* line 3946, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer {
+  width: 100%;
+  margin-top: 100px;
+}
+/* line 3950, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 3957, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center a img {
+  width: 80px;
+}
+/* line 3962, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center nav {
+  margin-top: 50px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3962, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  footer .footer-center nav {
+    margin: 25px 0 0 0;
+  }
+}
+/* line 3967, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center nav ul {
+  padding: 0;
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3967, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  footer .footer-center nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* line 3977, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center nav ul a {
+  font-size: 0.8em;
+  padding: 0 10px;
+}
+/* line 3981, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center nav ul a:hover {
+  background: none;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  /* line 3977, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  footer .footer-center nav ul a {
+    margin: 0 0 10px 0;
+  }
+}
+/* line 3994, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center .no-registro-nav ul li {
+  list-style: none;
+}
+/* line 3996, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center .no-registro-nav ul li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+/* line 4000, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center .no-registro-nav ul li a:hover {
+  background: none;
+  text-decoration: underline;
+}
+/* line 4009, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center .credits {
+  font-size: 0.7em;
+  color: #4b4b4b;
+}
+/* line 4013, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+footer .footer-center .credits span {
+  color: #fd0e3d;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* line 4022, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.footer-home {
+  background-color: black;
+  margin-top: 0;
+  padding-top: 10%;
+}
+/* line 4027, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.footer-home a {
+  color: white;
+}
+
+/* line 4031, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.footer-sections {
+  background-color: #f1f1f1;
+  margin-top: 0;
+  padding-top: 5%;
+  position: relative;
+  z-index: 9999;
+}
+
+/* line 4038, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.footer-store {
+  background-color: white;
+  margin-top: 0;
+  padding-top: 5%;
+}
+
+/* line 4046, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-backdrop {
+  z-index: 9;
+  height: 100%;
+}
+
+/* line 4051, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom {
+  padding-top: 67px;
+  background: rgba(0, 0, 0, 0.72);
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+@media only screen and (max-width: 768px) {
+  /* line 4051, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .modal-custom {
+    padding-top: 150px;
+  }
+}
+/* line 4058, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom ::-webkit-scrollbar {
+  width: 10px;
+}
+/* line 4063, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 15px;
+}
+/* line 4069, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom ::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 15px;
+}
+/* line 4075, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom ::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4078, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .modal-custom .modal-dialog-custom {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/* line 4085, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom {
+  padding: 20px;
+  overflow: auto;
+  min-height: auto;
+  max-height: 428px;
+}
+/* line 4091, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom h1 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e3e3e3;
+  white-space: pre-line;
+}
+/* line 4099, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom h1 span {
+  font-weight: normal;
+  font-size: 0.8em;
+}
+/* line 4104, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+/* line 4109, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile:last-child {
+  margin-bottom: 0;
+}
+/* line 4113, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow {
+  display: flex;
+}
+/* line 4115, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* line 4122, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .info-name {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 4126, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .info-name a {
+  color: #2196F3;
+  font-weight: 600;
+}
+/* line 4130, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .info-name p {
+  color: grey;
+  margin: 0;
+  font-size: 0.8em;
+}
+/* line 4137, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .follow-blo {
+  display: flex;
+  align-items: center;
+}
+/* line 4140, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .follow-blo a {
+  color: grey;
+  border: 1px solid #d9d9d9;
+  padding: 10px 25px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 5px;
+}
+/* line 4148, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .follow-blo a:hover {
+  text-decoration: none;
+}
+/* line 4152, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .follower-profile .bloque-follow .follow-blo a.active-follow {
+  background-color: #0095f6;
+  color: white;
+  border: 1px solid #0095f6;
+  padding: 10px 25px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 5px;
+}
+/* line 4172, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .likes-modal a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 15px;
+  position: relative;
+}
+/* line 4179, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .likes-modal a:before {
+  content: url(heart-active.svg);
+  width: 15px;
+  display: flex;
+  z-index: 9999;
+  position: absolute;
+  top: 4px;
+}
+/* line 4189, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .likes-modal a img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+/* line 4199, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .likes-modal a p {
+  white-space: pre-line;
+  font-size: 1em;
+  color: #2196F3;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.1em;
+}
+/* line 4207, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.modal-custom .modal-content-custom .likes-modal a p span {
+  color: grey;
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+/* line 4222, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap {
+  width: 100%;
+}
+/* line 4225, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-top: 100px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4225, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .order-wrap .order-wrap-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+/* line 4233, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center h1 {
+  color: #4b4b4b;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4233, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .order-wrap .order-wrap-center h1 {
+    font-size: 1.5em;
+  }
+}
+/* line 4242, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center h1.cart-empty {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+/* line 4249, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center h1.cart-empty img {
+  width: 30px;
+  margin-right: 7px;
+}
+/* line 4255, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center p {
+  font-size: 1em;
+  margin-top: 10px;
+  color: grey;
+}
+/* line 4259, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center p a {
+  text-decoration: none;
+  color: #3aaa35;
+}
+/* line 4263, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center p a:hover {
+  text-decoration: underline;
+}
+/* line 4269, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 40px;
+}
+/* line 4276, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-product {
+  width: 50%;
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4276, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .order-wrap .order-wrap-center .product-wrap .detail-product {
+    width: 85%;
+  }
+}
+/* line 4284, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-product img {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+/* line 4292, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-product div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 4297, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-product div h1 {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+/* line 4301, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-product div span {
+  color: #fd0e3d;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin: 2px 0;
+}
+/* line 4307, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-product div p {
+  font-size: 0.8em;
+  color: #b8b8b8;
+  margin-bottom: 0;
+}
+/* line 4315, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-last {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4315, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .order-wrap .order-wrap-center .product-wrap .detail-last {
+    width: 10%;
+  }
+}
+/* line 4325, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .product-wrap .detail-last a {
+  font-size: 1.2em;
+  color: grey;
+}
+/* line 4333, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .more-access {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+/* line 4338, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .more-access a {
+  padding: 18px 32px;
+  font-size: 0.8em;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+/* line 4345, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .more-access a:hover {
+  opacity: 0.5;
+}
+/* line 4349, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .more-access a:first-child {
+  background-color: #c8c8c8;
+  color: white;
+}
+/* line 4354, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.order-wrap .order-wrap-center .more-access a:last-child {
+  background-color: #3aaa35;
+}
+
+/* line 4367, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching {
+  width: 100%;
+  background: #f1f1f1;
+  min-height: 100%;
+  padding: 100px 0;
+}
+/* line 4373, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 65%;
+  margin: 0 auto;
+  max-width: 700px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4373, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-searching .wrap-searching-center {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+/* line 4383, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center h1 {
+  font-weight: 600;
+  font-size: 2em;
+  color: #4b4b4b;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4383, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-searching .wrap-searching-center h1 {
+    font-size: 1.5em;
+  }
+}
+/* line 4393, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results {
+  margin-bottom: 20px;
+}
+/* line 4395, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+/* line 4401, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* line 4408, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user .user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 4412, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user .user-info a {
+  text-decoration: none;
+  color: #fd0e3d;
+  font-weight: 600;
+}
+/* line 4417, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user .user-info a:hover {
+  text-decoration: underline;
+}
+/* line 4421, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user .user-info h2 {
+  font-size: 0.8em;
+  color: grey;
+}
+/* line 4426, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .searching-results .user .user-info p {
+  font-size: 0.7em;
+}
+/* line 4432, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .not-results {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 4438, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .not-results h1 {
+  display: flex;
+  align-items: center;
+  font-size: 4em;
+  color: #131313;
+  letter-spacing: -2px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4438, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-searching .wrap-searching-center .not-results h1 {
+    font-size: 2em;
+  }
+}
+/* line 4448, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .not-results h1 img {
+  width: 50px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4448, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-searching .wrap-searching-center .not-results h1 img {
+    width: 40px;
+  }
+}
+/* line 4459, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .not-results p {
+  text-align: center;
+  white-space: pre-line;
+  color: grey;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+/* line 4465, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+.wrap-searching .wrap-searching-center .not-results p span {
+  font-weight: 100;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4459, /home/mario/Escritorio/atoallae/app/assets/stylesheets/home.scss */
+  .wrap-searching .wrap-searching-center .not-results p {
+    font-size: 0.7em;
+    margin-top: 10px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes bell-vibrate {
+  0% {
+    transform: rotate(0);
+  }
+  4% {
+    transform: rotate(8deg);
+  }
+  8% {
+    transform: rotate(-8deg);
+  }
+  12% {
+    transform: rotate(8deg);
+  }
+  16% {
+    transform: rotate(-8deg);
+  }
+  20% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: inherit;
+  }
+}
+@-webkit-keyframes menu-nav {
+  0% {
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

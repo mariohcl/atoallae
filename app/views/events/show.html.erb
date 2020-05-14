@@ -22,7 +22,6 @@
             <% else %>
               <%= link_to 'Asistir', like_page_event_path(@event), method: :put %>
             <% end %>
-            <a href="#">Más info del evento</a>
 
           </ul>
         </nav>
@@ -42,7 +41,7 @@
               <% if @event.get_likes.size.to_i > 1 %>
                 y otras <span><%= ( @event.get_likes.size.to_i - 1 ) %></span> personas asistirán al evento
               <% else %>
-                asistirà a este evento
+                asistirá a este evento
               <% end %>
             </p>
 
