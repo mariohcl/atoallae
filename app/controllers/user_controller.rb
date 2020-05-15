@@ -1,7 +1,7 @@
 class UserController < ApplicationController
   load_and_authorize_resource
   check_authorization
-  
+
   def show
     @user_profile = User.find(params[:id])
   end

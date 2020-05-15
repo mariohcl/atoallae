@@ -30,6 +30,8 @@ class Ability
 
         can :manage, Profile, user_id: user.id
 
+        can :read, Profile
+
         # can :edit, Event, user_id: user.id
 
         can :create, Comment

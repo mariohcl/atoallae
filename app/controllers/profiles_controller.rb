@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :follow]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :follow, :searching]
   load_and_authorize_resource
   skip_authorization_check
 
