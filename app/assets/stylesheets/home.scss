@@ -155,7 +155,7 @@ header{
             width: 180px;
 
             @media only screen and (max-width: $mobile) {
-              width: 120px;
+              width: 100px;
             }
         }
     }
@@ -182,6 +182,10 @@ header{
                     color: white;
                     text-decoration: none;
                     font-size: 0.8em;
+
+                    @media only screen and (max-width: $mobile) {
+                      font-size: 0.6em;
+                    }
 
                     &:hover{
                       color: yellow;
@@ -542,7 +546,7 @@ header{
                 -webkit-text-fill-color: transparent;
 
                 @media only screen and (max-width: $mobile) {
-                    font-size: xxx-large;
+                    font-size: 2.5em;
                     text-align: left;
                 }
             }
@@ -578,8 +582,9 @@ header{
 
             @media only screen and (max-width: $mobile) {
               margin: 3% 0 5%;
-              font-size: 0.9em;
+              font-size: 0.7em;
               white-space: pre-line;
+              font-weight: 100;
             }
 
             span{
@@ -599,7 +604,7 @@ header{
                 display: flex;
                 padding: 0;
                 @media only screen and (max-width: $mobile) {
-                  flex-direction: column;
+                  align-items: center;
                 }
                 li{
                     list-style: none;
@@ -622,7 +627,13 @@ header{
                             border-radius: 5px;
                             border: 1px solid #676767;
                             @media only screen and (max-width: $mobile) {
-                              display: block;
+                              padding: 10px 22px;
+                              color: white;
+                              font-size: 0.7em;
+                              border-radius: 5px;
+                              border: 1px solid #676767;
+                          }
+
                             }
                         }
                         &.registro{
@@ -633,8 +644,13 @@ header{
                             border-radius: 5px;
                             font-weight: 600;
                             @media only screen and (max-width: $mobile) {
-                              display: block;
-                              text-align: center;
+                              padding: 10px 22px;
+                              color: white;
+                              font-size: 0.7em;
+                              border-radius: 5px;
+                              border: 1px solid #fd0e3d;
+                              margin-left: 10px;
+                              background: #fd0e3d;
                             }
                         }
 
@@ -708,9 +724,13 @@ header{
 
             h1{
                 color: $color-uno;
-                margin-bottom: 20px;
+                margin: 10px 0 20px;
                 font-size: 1.3em;
                 font-weight: 600;
+
+                @media only screen and (max-width: $mobile) {
+                  font-size: 1.1em;
+                }
             }
 
             p{
@@ -719,6 +739,9 @@ header{
                 font-size: 0.8em;
                 white-space: pre-line;
                 line-height: 1.5em;
+                @media only screen and (max-width: $mobile) {
+                  font-size: 0.7em;
+                }
             }
 
             img{
@@ -765,6 +788,7 @@ header{
             white-space: pre-line;
             @media only screen and (max-width: $mobile) {
               white-space: inherit;
+              font-size: 0.7em;
             }
         }
 
