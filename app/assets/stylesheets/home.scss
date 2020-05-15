@@ -3254,6 +3254,10 @@ header{
         font-size: 0.8em;
         font-weight: 600;
 
+        .fas{
+          color: orange;
+        }
+
         span{
           font-weight: 100;
 
@@ -3787,9 +3791,19 @@ header{
           }
         }
 
-        &:hover > img{
-          transform: scale(0.9);
+        a{
+          text-decoration: none;
           transition: all 0.2s ease-in;
+
+          &:hover{
+            text-decoration: none;
+            opacity: 0.5;
+          }
+
+          &:hover > img{
+            transform: scale(0.9);
+            transition: all 0.2s ease-in;
+          }
         }
 
         h1{

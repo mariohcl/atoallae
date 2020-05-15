@@ -16,6 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       Profile.create(:user_id => resource.id, :fullname => params[:user][:name])
 
     end
+
   end
 
   # GET /resource/edit
@@ -55,9 +56,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    my_profile_path
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

@@ -13,9 +13,9 @@
           <div></div>
           <div></div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Atque aliquam vitae possimus perspiciatis fuga?
-          sapiente, hic mollitia quae provident.</p>
+        <p>Nos dedicamoes exclusivamente a la creación de productos
+          que tenga todo el estilo que necesitas para ser el/la mejor.
+          Vístete con nuestros productos y disfruta!</p>
       </div>
 
     </article>
@@ -38,9 +38,10 @@
 
       <a href=""></a>
 
-
-      <img src="<%= product.imagen %>" alt="">
-      <h1><%= product.name %></h1>
+      <%= link_to product, class: 'more-info' do %>
+        <img src="<%= product.imagen %>" alt="">
+        <h1><%= product.name %></h1>
+      <% end %>
 
       <% if current_user.admin? %>
 

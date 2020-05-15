@@ -4,14 +4,14 @@
     <section class="header-pages">
       <section class="bloque">
         <h1>Mis páginas</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae delectus,arum assumenda.</p>
+        <p>Desde tus páginas podrás crear eventos para invitar a todos los usuarios de nuestra red.</p>
       </section>
       <section class="bloque">
         <%= link_to 'Crear nueva página', new_page_path, class: 'btn btn-success' %>
       </section>
     </section>
 
-
+<% if @my_pages.count > 0 %>
 
     <section class="grid-card-pages">
 
@@ -57,6 +57,13 @@
 
 
     </section>
+
+    <% else %>
+    <section class="grid-card-pages grid-card-pages-custom">
+      <p><i class="fas fa-exclamation-circle"></i> No Tienes ninguna página creada
+      <span>Te recomendamos crear una página propia</span></p>
+    </section>
+    <% end %>
 
   </section>
 </section>
