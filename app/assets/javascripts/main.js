@@ -31,7 +31,7 @@ $(document).on('ready turbolinks:load', function(){
     $("#search-block").addClass("search-active");
   });
 
-  $("a.close").click(function(){
+  $("a.close-form").click(function(){
     $("#search-block").removeClass("search-active");
   });
 

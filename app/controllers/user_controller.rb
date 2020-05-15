@@ -1,5 +1,7 @@
 class UserController < ApplicationController
-
+  load_and_authorize_resource
+  check_authorization
+  
   def show
     @user_profile = User.find(params[:id])
   end
@@ -17,7 +19,7 @@ class UserController < ApplicationController
   end
 
   def searching
-    @profiles = Profile.where('username ILIKE ?', "%#{params[:search]}%")
+    @profiles = Profile.where('fullname ILIKE ?', "%#{params[:search]}%")
   end
 
 end

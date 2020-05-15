@@ -18,10 +18,7 @@
            <%= link_to 'Actividad', posts_path, class: 'activity-navbar' %>
        </div>
 
-       <%= form_tag searching_path, method: :get do %>
-         <i class="fas fa-search"></i>
-         <%= text_field_tag :search, params[:search], placeholder: 'Buscar Amigos' %>
-       <% end %>
+       <button id="search-btn"><i class="fas fa-search"></i></button>
 
          <% if current_user.orders.count > 0 %>
            <a href="<%= orders_path %>" class="cart"><%= image_tag("cart-active.svg", :alt => "Carrito compra") %></a>
@@ -72,7 +69,8 @@
 
   <section class="search" id="search-block">
     <section class="center-search">
-      <p>Busca a tus amigos</p>
+      <p><%= image_tag("Logo-atoallae-int.svg", :alt => "Logo Atoallae") %>
+        Haz una busqueda entre nuestros usuarios y encuentra a tus amigos</p>
 
       <%= form_tag searching_path, method: :get do %>
         <%= text_field_tag :search, params[:search], placeholder: 'Buscar Amigos' %>
@@ -81,7 +79,7 @@
         <% end %>
       <% end %>
 
-      <a href="" class="close"><i class="far fa-times-circle"></i></a>
+      <a href="" class="close-form"> <%= image_tag("close.svg", :alt => "cerrar buscador") %> </a>
 
     </section>
   </section>

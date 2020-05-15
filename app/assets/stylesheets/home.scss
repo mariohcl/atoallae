@@ -210,6 +210,9 @@ header{
 
         img{
             width: 50px;
+            @media only screen and (max-width: $mobile) {
+               width: 40px;
+            }
         }
 
         .custom-nav{
@@ -226,8 +229,8 @@ header{
                 align-items: center;
 
                 @media only screen and (max-width: $mobile) {
-                  width: 80%;
-                  justify-content: flex-end;
+                  width: 70%;
+                  justify-content: space-between;
                 }
 
                 div.user-top-info{
@@ -266,7 +269,7 @@ header{
                         @media only screen and (max-width: $mobile) {
                           border: none;
                           padding-left: 0;
-                          margin: 0 15px;
+                          margin: 0 0 0 15px;
                         }
                     }
                 }
@@ -407,33 +410,12 @@ header{
 
 #search-btn{
   border: none;
-  background: #434343;
+  background: none;
   color: #929292;
-  font-size: 0.7em;
-  padding: 9px 15px;
-  border-radius: 5px;
   display: flex;
-  align-items: center;
-  width: 174px;
-  justify-content: flex-end;
-  position: relative;
-
-    &:before{
-      content: 'Buscar Amigos';
-      position: absolute;
-      left: 15px;
-
-      @media only screen and (max-width: $mobile) {
-        display: none;
-      }
-    }
 
     @media only screen and (max-width: $mobile) {
-      background: none;
       padding: 0;
-      width: auto;
-      margin: 0 6px;
-      color: #bbbbbb;
     }
 
     &:focus{
@@ -441,10 +423,9 @@ header{
     }
 
     .fas{
-      margin-left: 50px;
-      font-size: 1.3em;
+      font-size: 1.5em;
       @media only screen and (max-width: $mobile) {
-        font-size: 2em;
+        font-size: 1.5em;
         margin-left: 0;
       }
     }
@@ -460,7 +441,7 @@ header{
   justify-content: center;
   align-items: center;
   position: fixed;
-  background: #000000e8;
+  background: rgba(0, 0, 0, 0.97);
   width: 100%;
   height: 100%;
   z-index: 99999;
@@ -469,18 +450,84 @@ header{
   animation: intro 0.3s linear;
 
   .center-search{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 
-    .follower-profile{
-      .bloque-follow{
-        display:flex;
-        img{
-          width: 50px;
-          height: 50px;
-          object-fit: cover;
-        }
-        .info-name{
+    @media only screen and (max-width: $mobile) {
+      width: 90%;
+    }
 
+    p{
+      color: #222222;
+      font-size: 0.8em;
+
+      @media only screen and (max-width: $mobile) {
+        font-size: 0.6em;
+      }
+
+      img{
+        display: none;
+
+        @media only screen and (max-width: $mobile) {
+          display: inherit;
+          width: 30px;
+          margin-bottom: 5px;
         }
+      }
+
+    }
+
+    form{
+      width: 100%;
+      margin-bottom: 50px;
+
+      input[type="text"]{
+        background: none;
+        border: none;
+        border-bottom: 1px solid #303030;
+        width: 90%;
+        padding: 20px;
+        border-radius: 5px;
+        transition: all 0.2s ease-in;
+
+        @media only screen and (max-width: $mobile) {
+          width: 100%;
+          font-size: 0.8em;
+        }
+
+        &:focus{
+          outline: none;
+          background-color: #a3a3a3;
+        }
+
+      }
+      button{
+        width: 9%;
+        background: none;
+        border: none;
+        @media only screen and (max-width: $mobile) {
+          display: none;
+        }
+        .fas{
+          color: #4CAF50;
+          font-size: 1.5em;
+        }
+      }
+
+    }
+
+    a.close-form{
+      position: absolute;
+      bottom: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      opacity: 0.2;
+      img{
+        width: 35px;
       }
     }
 
@@ -612,7 +659,7 @@ header{
                     &:nth-child(2){
                             margin-left: 10px;
                             @media only screen and (max-width: $mobile) {
-                              margin-top: 10px;
+                              margin-top: 0;
                               margin-left: 0;
                             }
                         }
@@ -662,7 +709,11 @@ header{
                           border-radius: 5px;
                           border: 1px solid #676767;
                           @media only screen and (max-width: $mobile) {
-                            display: block;
+                            padding: 10px 22px;
+                            color: white;
+                            font-size: 0.7em;
+                            border-radius: 5px;
+                            border: 1px solid #676767;
                           }
                         }
 
@@ -1212,7 +1263,7 @@ header{
                     @media only screen and (max-width: $mobile) {
                       margin-left: 0;
                       width: 100%;
-                      margin-bottom: 100px;
+                      margin-bottom: 50px;
                     }
 
                     h1{
@@ -1331,6 +1382,10 @@ header{
                         font-size: 1.1em;
                         margin-right: 15px;
                         transition: all 0.3s ease-in;
+
+                        @media only screen and (max-width: $mobile) {
+                          font-size: 0.9em;
+                        }
 
                         &:hover{
                            opacity: 0.3;
@@ -1464,6 +1519,7 @@ header{
 
         @media only screen and (max-width: $mobile) {
           @include size-container-resp;
+          padding: 12% 0;
         }
 
 
@@ -2234,6 +2290,10 @@ header{
                     font-weight: 600;
                     white-space: pre-line;
                     margin-bottom: 0;
+
+                    @media only screen and (max-width: $mobile) {
+                      font-size: 1.2em;
+                    }
                   }
                   p.desc{
                     font-size: 0.7em;
@@ -2450,6 +2510,10 @@ header{
 
     img{
       width: 70px;
+
+      @media only screen and (max-width: $mobile) {
+        display: none;
+      }
     }
 
     h2{
@@ -2457,6 +2521,10 @@ header{
       font-weight: 600;
       font-size: 0.8em;
       margin: 10px 0 20px;
+
+      @media only screen and (max-width: $mobile) {
+        margin: 10px 0 7px;
+      }
     }
     form{
       width: 55%;
@@ -2478,6 +2546,11 @@ header{
         font-size: 0.8em;
         color: #4a4a4a;
         transition: all 0.2s ease-in;
+
+        @media only screen and (max-width: $mobile) {
+          padding: 10px 25px;
+          font-size: 0.7;
+        }
 
         &::placeholder {
           color: #404040;
@@ -2525,6 +2598,10 @@ header{
       color: white;
       font-weight: 600;
       margin-bottom: 30px;
+
+      @media only screen and (max-width: $mobile) {
+        margin-bottom: 15px;
+      }
     }
 
     a{
@@ -2545,6 +2622,10 @@ header{
       width: 55%;
       margin: 20px 0 40px;
       text-align: center;
+
+      @media only screen and (max-width: $mobile) {
+            margin: 0 0 20px;
+      }
 
       &:after{
         content: 'O si prefieres';
@@ -2581,7 +2662,8 @@ header{
   .form-login{
 
     @media only screen and (max-width: $mobile) {
-      width: 100%
+      width: 100%;
+      padding-top: 30px;
     }
 
     .divider{
@@ -2678,6 +2760,9 @@ header{
     @media only screen and (max-width: $mobile) {
       width: 100%;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 40px;
     }
 
 
@@ -2686,6 +2771,9 @@ header{
       font-weight: 600;
       font-size: 0.8em;
       margin: 10px 0 20px;
+      @media only screen and (max-width: $mobile) {
+        margin: 10px 0;
+      }
     }
 
     form{
@@ -2697,6 +2785,11 @@ header{
         padding: 17px 25px;
         font-size: 0.8em;
         color: #4a4a4a;
+
+        @media only screen and (max-width: $mobile) {
+          padding: 10px 25px;
+          font-size: 0.7em;
+        }
 
         &::placeholder {
           color: grey;
@@ -2718,6 +2811,10 @@ header{
          background-color: $color-dos;
          margin-top: 20px;
          padding: 12px;
+
+         @media only screen and (max-width: $mobile) {
+           margin: 11px 0 20px;
+         }
        }
      }
     }
@@ -2992,6 +3089,8 @@ header{
 
           @media only screen and (max-width: $mobile) {
             justify-content: flex-start;
+            flex-direction: column;
+            align-items: baseline;
           }
         }
 
@@ -3010,7 +3109,11 @@ header{
           color: $color-tit;
         }
         a{
-          font-size: 0.7em
+          font-size: 0.7em;
+
+          @media only screen and (max-width: $mobile) {
+            margin: 0 0 10px 0;
+          }
         }
         form{
           width: 200px;
@@ -3018,6 +3121,10 @@ header{
           display: flex;
           justify-content: space-between;
           align-items: center;
+
+          @media only screen and (max-width: $mobile) {
+            margin: 0;
+          }
 
           input[type=text]{
             width: 88%;
@@ -3258,7 +3365,7 @@ header{
           font-size: 3em;
           margin: -35px 0 20px 0;
           @media only screen and (max-width: $mobile) {
-            font-size: 2.5em;
+            font-size: 2em;
           }
         }
         h2{
@@ -3311,6 +3418,9 @@ header{
         }
         nav{
           margin-top: 40px;
+          @media only screen and (max-width: $mobile) {
+            margin-top: 10px;
+          }
           ul{
             padding: 0;
             display: flex;
@@ -3339,6 +3449,12 @@ header{
                   background-color: $color-dos;
                   border-color: $color-dos;
 
+                  @media only screen and (max-width: $mobile) {
+                    margin-bottom: 10px;
+                    padding: 10px 20px;
+                    font-size: 0.7em;
+                  }
+
                 }
 
                 &:hover{
@@ -3359,6 +3475,8 @@ header{
                 border-radius: 5px;
                 @media only screen and (max-width: $mobile) {
                   margin-bottom: 10px;
+                  padding: 10px 20px;
+                  font-size: 0.7em;
                 }
                 .fas{
                   margin-right: 3px;
@@ -3515,7 +3633,7 @@ header{
     justify-content: center;
     @media only screen and (max-width: $mobile) {
       @include size-container-resp;
-      justify-content: space-between;
+      justify-content: space-around;
     }
     h1{
       width: 15%;
@@ -4167,6 +4285,11 @@ footer{
           object-fit: cover;
           border-radius: 50%;
           margin-right: 10px;
+
+          @media only screen and (max-width: $mobile) {
+              width: 50px;
+              height: 50px;
+          }
         }
         .info-name{
           display: flex;
@@ -4174,12 +4297,18 @@ footer{
           flex-direction: column;
           a{
             color: #2196F3;
-            font-weight: 600
+            font-weight: 600;
+            @media only screen and (max-width: $mobile) {
+                font-size: 0.9em;
+            }
           }
           p{
             color: grey;
             margin: 0;
             font-size: 0.8em;
+            @media only screen and (max-width: $mobile) {
+                font-size: 0.7em;
+            }
           }
         }
 
@@ -4194,6 +4323,10 @@ footer{
             font-weight: 600;
             border-radius: 5px;
 
+            @media only screen and (max-width: $mobile) {
+                font-size: 0.6em;
+            }
+
             &:hover{
               text-decoration: none;
             }
@@ -4206,6 +4339,10 @@ footer{
               font-size: 0.75em;
               font-weight: 600;
               border-radius: 5px;
+
+              @media only screen and (max-width: $mobile) {
+                  font-size: 0.6em;
+              }
             }
 
           }
@@ -4493,6 +4630,7 @@ footer{
 
         @media only screen and (max-width: $mobile) {
           font-size: 2em;
+          margin-bottom: 5px;
         }
         img{
           width: 50px;
@@ -4515,7 +4653,7 @@ footer{
           font-weight: 100;
         }
         @media only screen and (max-width: $mobile) {
-          font-size: 0.7em;
+          font-size: 0.6em;
           margin-top: 10px;
         }
       }

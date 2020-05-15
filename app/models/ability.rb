@@ -28,13 +28,13 @@ class Ability
           event.user_id == user.id
         end
 
+        can :manage, Profile, user_id: user.id
+
         # can :edit, Event, user_id: user.id
 
         can :create, Comment
-        can :edit, Profile, user_id: user.id
-        can :update, Profile, user_id: user.id
-        can :like, Post
         can :like, Event
+        can :like, Post
 
         #Follow
         can :follow, Profile

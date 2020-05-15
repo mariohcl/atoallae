@@ -25,7 +25,7 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave'
 gem 'acts_as_votable'
 gem 'omniauth-facebook'
-gem 'dotenv-rails', group: :production #Al pasar a produccion agregar el group: :produccion, en terminos locales retirarlo
+gem 'dotenv-rails'
 gem 'cancancan'
 
 # Use CoffeeScript for .coffee assets and views
