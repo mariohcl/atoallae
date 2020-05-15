@@ -23,7 +23,7 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave'
-gem 'acts_as_votable'
+gem 'acts_as_votable', group: :production
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'cancancan'
