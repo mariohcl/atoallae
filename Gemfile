@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.7'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'pg', '>= 0.18', '< 2.0', group: :production
+gem 'pg', '>= 0.18', '< 2.0', group: :production #Al pasar a produccion agregar el group: :produccion, en terminos locales retirarlo
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -25,7 +25,7 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'carrierwave'
 gem 'acts_as_votable'
 gem 'omniauth-facebook'
-gem 'dotenv-rails', group: :production
+gem 'dotenv-rails', group: :production #Al pasar a produccion agregar el group: :produccion, en terminos locales retirarlo
 gem 'cancancan'
 
 # Use CoffeeScript for .coffee assets and views
